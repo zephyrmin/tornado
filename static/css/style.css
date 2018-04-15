@@ -1,0 +1,3 @@
+.table > th:nth-child(2), .table > tr:nth-child(2){
+    float:right;
+}

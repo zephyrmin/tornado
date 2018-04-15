@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta content="all" name="robots"/>
+    <meta name="alexaVerifyID" content="r0zKWeJsLbLJXVXlc4rj2eRQOws"/>
+    <meta name="google-site-verification" content="SeznkKg0SbsJdRDAREzQVwYhljzLL4Xbi8In7K-7Mtw"/>
+    <meta name="baidu-site-verification" content="OrrMMW7ZP4"/>
+    <meta name="author" content="美西"/>
+    <meta name="Copyright" content="www.meici.com"/>
+    <meta name="Keywords" content="奢侈品,奢侈品网购,奢侈品网站,奢侈品购物网站,中国最大奢侈品网站,美西时尚">
+    <meta name="Description"
+          content="中国奢侈品时尚网购平台【美西时尚】提供国际一线奢侈品品牌包包,服装,配件,鞋履等系列产品,100%正品保障,限量特卖4折起,7天无理由退换货,订购热线：4000-250-630 轻松享受奢华！">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="applicable-device" content="pc">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta name="mobile-agent" content="format=xhtml; url=http://m.meici.com/">
+    <meta name="mobile-agent" content="format=html5; url=http://m.meici.com/">
+    <title>美西--全球奢侈品购物网站,奢侈品网购,正品折扣,尽在MEICI.COM</title>
+
+    <link rel="stylesheet" href="/static/css/index.css"/>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/json.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/placeholder.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/in-min.js"></script>
+    <!--[if lt IE 10]>
+    <script type="text/javascript" src="/static/web/js/lib/PIE.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/static/web/js/lib/public.js"></script>
+    <script type="text/javascript">
+        var product = co_id = sz_id = sku = '';
+        var app="";
+
+
+    </script>
+
+    <!-- BEGIN GOOGLE ANALYTICS CODE -->
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-364122-3','auto');
+        ga('require','displayfeatures');
+        ga('send', 'pageview');
+
+
+    </script>
+    </if>
+    <!-- END GOOGLE ANALYTICS CODE -->
+
+
+    <script>
+	var _hmt = _hmt || [];
+	console.log(_hmt);
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?8f7f39ef6ebe3ffe473a8f090c3e8517";
+	  var s = document.getElementsByTagName("script")[0];
+	  s.parentNode.insertBefore(hm, s);
+	})();
+
+
+    </script>
+
+</head>
+<body>
+<script>
+    function searcha(){
+        $(function(){
+            var $keyword=$("#sch_kwd").val()
+            $.ajax({
+
+                    url:"http://192.168.11.83:8888/goodslist",
+                    type:"GET",
+                    async:false,
+                    data:{
+                        type1:$keyword,
+
+                    },
+                    dataType:"json",
+                    success:function(goodslist) {
+                        location.href="http://192.168.11.83:8888/static/html/productlist.html?type1="+$keyword
+                    },
+                    error:function(){
+                        alert('guilin')
+                    }
+                })
+
+        })
+
+    }
+
+</script>
+<script>
+        function seachgoods(data){
+            var type = []
+            console.log(data);
+            var a=data[1].split('-')[1];
+            var b=data[3].split(' ')[0];
+            console.log(a,b)
+            $.ajax({
+
+                    url:"http://192.168.11.83:8888/goodslist",
+                    type:"GET",
+                    async:false,
+                    data:{
+                        type1:a,
+                        type2:b
+                    },
+                    dataType:"json",
+                    success:function(goodslist) {
+                        location.href="http://192.168.11.83:8888/static/html/productlist.html?type1="+a+"&type2="+b
+                    },
+                    error:function(){
+                        alert('guilin')
+                    }
+                })
+        }
+    </script>
+<div id="bc_cart_header" class="ac_box ac_medium">
+    <div class="ac_box_tit">
+        <span>温馨提示</span>
+        <div class="close_btn ab_btn03">╳</div>
+    </div>
+    <div class="ac_box_msg">确认要删除该商品吗？</div>
+    <div class="ac_btn_box">
+        <a class="ab_btn01 delpro close_btn" href="javascript:void(0);">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+<div id="header">
+    <div class="header_m">
+        <!--顶部通栏-->
+        <div class="headerbar">
+            <div style="width:1300px;margin:auto;"><a href="/register" style="float:right;display:block;margin-right:40px;">注册</a><a href="/login" style="float:right;display:block;margin-right:20px;">登录</a></div>
+        </div>
+
+        <!--logo和搜索-->
+        <div class="header_middle">
+            <div class="header_logo"><a href="/" title="美西"><img src="/static/img/logo.png" width="220" height="60"
+                                                                 alt="美西"/></a></div>
+            <div class="header_search clearfix">
+                <div class="header_search_int float_l"><input id="sch_kwd" type="text" value="" placeholder="请输入关键字"/>
+                </div>
+                <button class="header_search_btn float_l" onclick="searcha();"><em></em></button>
+            </div>
+        </div>
+
+        <!--导航-->
+        <div class="header_nav">
+            <div class="header_nav_m">
+                <ul class="clearfix">
+                    <li><a href="javascript:void(0);" title="/" target="首页_blank" onclick="seachgoods(['_trackEvent', '导航', '点击', '首页']);">首页</a>
+                    </li>
+                    <li><a href="javascript:void(0);" title="/new" target="新近单品_blank"
+                           onclick="seachgoods(['_trackEvent', '导航', '点击', '新近单品']);">新近单品</a><em></em></li>
+                    <li><a href="javascript:void(0);" title="/global " target="全球购_blank"
+                           onclick="seachgoods(['_trackEvent', '导航', '点击', '全球购']);">全球购</a></li>
+                    <li><a href="javascript:void(0);" title="/women?type=女士" target="女士_blank"
+                           onclick="seachgoods(['_trackEvent', '导航', '点击', '女士']);">女士</a><em></em></li>
+                    <li><a href="javascript:void(0);" title="/man?type=男仕" target="男仕_blank"
+                           onclick="seachgoods(['_trackEvent', '导航', '点击', '男仕']);">男仕</a><em></em></li>
+                    <li><a href="javascript:void(0);" title="/children?type=童装" target="童装_blank"
+                           onclick="seachgoods(['_trackEvent', '导航', '点击', '童装']);">童装</a><em></em></li>
+                    <li><a href="javascript:void(0);" title="/watch" target="腕表_blank"
+                           onclick="seachgoods(['_trackEvent', '导航', '点击', '腕表']);">腕表</a><em></em></li>
+                    <li><a href="javascript:void(0);" title="/brands" target="品牌_blank"
+                           onclick="seachgoods(['_trackEvent', '导航', '点击', '品牌']);">品牌</a><em></em></li>
+                    <!--<li><a href="javascript:void(0);" title="/sales" target="特惠_blank" onclick="seachgoods(['_trackEvent', '导航', '点击', '特惠']);">特惠</a><em></em></li>-->
+                    <li><a href="javascript:void(0);" title="/app" target="Mzine_blank"
+                           onclick="seachgoods(['_trackEvent', '导航', '点击', 'M潮流']);">Mzine</a></li>
+                    <!--<li>
+                            <a href="javascript:void(0);" title="/new.html" target="新品来袭_blank">新品来袭</a><em></em>
+                        </li><li>
+                            <a href="javascript:void(0);" title="/woman.html" target="女士_blank">女士</a><em></em>
+                        </li><li>
+                            <a href="javascript:void(0);" title="/man.html" target="男仕_blank">男仕</a><em></em>
+                        </li><li>
+                            <a href="javascript:void(0);" title="/children.html" target="童装_blank">童装</a><em></em>
+                        </li><li>
+                            <a href="javascript:void(0);" title="/watch.html" target="腕表_blank">腕表</a><em></em>
+                        </li><li>
+                            <a href="javascript:void(0);" title="/brands.html" target="品牌_blank">品牌</a><em></em>
+                        </li><li>
+                            <a href="javascript:void(0);" title="/sales.html" target="特惠区_blank">特惠区</a><em></em>
+                        </li><li>
+                            <a href="javascript:void(0);" title="/mzine.html" target="M潮流_blank">M潮流</a><em></em>
+                        </li>-->
+                </ul>
+            </div>
+            <div class="header_nav_n">
+                <div class="header_nav_sel"></div>
+                <!--新品-->
+                <div class="header_nav_sel">
+                    <div class="header_nav_sel_m">
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/new/index/cyc/1" target="本周新品_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '本周新品']);">本周新品</a>
+                            </li>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/new/index/cyc/2" target="本月新品_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '本月新品']);">本月新品</a>
+                            </li>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/new/index/cyc/3" target="当季新品_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '当季新品']);">当季新品</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/new/index/fp/20.html" target="男仕 Man_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '男仕 Man']);">男仕
+                                Man</a></li>
+                            <li><a href="javascript:void(0);" title="/new/index/fp/20/ca/1.html" target="包袋 Bags_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '包袋 Bags']);">包袋 Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/new/index/fp/20/ca/3.html" target="配饰 Accessories_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '配饰 Accessories']);">配饰
+                                Accessories</a></li>
+                            <li><a href="javascript:void(0);" title="/new/index/fp/20/ca/8.html" target="鞋履 Shoes_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '鞋履 Shoes']);">鞋履 Shoes</a></li>
+                            <li><a href="javascript:void(0);" title="/new/index/fp/20/ca/24.html" target="服装 Clothes_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '服装 Clothes']);">服装 Clothes</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/new/index/fp/30.html" target="女士 Woman_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '女士 Woman']);">女士
+                                Woman</a></li>
+                            <li><a href="javascript:void(0);" title="/new/index/fp/30/ca/1.html" target="包袋 Bags_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '包袋 Bags']);">包袋 Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/new/index/fp/30/ca/3.html" target="配饰 Accessories_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '配饰 Accessories']);">配饰
+                                Accessories</a></li>
+                            <li><a href="javascript:void(0);" title="/new/index/fp/30/ca/8.html" target="鞋履 Shoes_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '鞋履 Shoes']);">鞋履 Shoes</a></li>
+                            <li><a href="javascript:void(0);" title="/new/index/fp/30/ca/24.html" target="服装 Clothes_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-新品', '点击', '服装 Clothes']);">服装 Clothes</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="headerShadow"></div>
+                </div>
+                <div class="header_nav_sel"></div>
+                <!--女士-->
+                <div class="header_nav_sel">
+                    <div class="header_nav_sel_m">
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/woman/index/ca/1.html" target="包袋 Bags_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '包袋 Bags']);">包袋
+                                Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/1.html" target="所有包袋_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '所有包袋']);">所有包袋</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/13.html" target="手提包 Totes_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '手提包 Totes']);">手提包 Totes</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/14.html" target="单肩包 Shoulder Bags_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '单肩包 Shoulder Bags']);">单肩包
+                                Shoulder Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/15.html" target="斜挎包 Messenger Bags_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '斜挎包 Messenger Bags']);">斜挎包
+                                Messenger Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/16.html" target="手拿包 Clutch Bags_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '手拿包 Clutch Bags']);">手拿包 Clutch
+                                Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/27.html" target="双肩包 Travel Bags_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '双肩包 Travel Bags']);">双肩包 Travel
+                                Bags</a></li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/woman/index/ca/3.html" target="配饰 Accessories_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '配饰 Accessories']);">配饰
+                                Accessories</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/3.html" target="所有配饰_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '所有配饰']);">所有配饰</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/125.html" target="钱包 Wallets_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '钱包 Wallets']);">钱包 Wallets</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/10.html" target="手表 Watches_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '手表 Watches']);">手表 Watches</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/5.html" target="太阳眼镜 Sunglasses_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '太阳眼镜 Sunglasses']);">太阳眼镜
+                                Sunglasses</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/4.html" target="饰品 Jewelry_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '饰品 Jewelry']);">饰品 Jewelry</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/6.html" target="腰带 Belts_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '腰带 Belts']);">腰带 Belts</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/181.html" target="围巾 Scarf_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '围巾 Scarf']);">围巾 Scarf</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/28.html" target="小配件 Small Acc._blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '小配件 Small Acc.']);">小配件 Small
+                                Acc.</a></li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/woman/index/ca/8.html" target="鞋履 Shoes_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '鞋履 Shoes']);">鞋履
+                                Shoes</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/8.html" target="所有鞋履_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '所有鞋履']);">所有鞋履</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/306.html" target="平底鞋 Flat Shoes_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '平底鞋 Flat Shoes']);">平底鞋 Flat
+                                Shoes</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/158.html" target="高跟鞋 Pumps_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '高跟鞋 Pumps']);">高跟鞋 Pumps</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/150.html" target="靴子 Boots_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '靴子 Boots']);">靴子 Boots</a></li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/woman/index/ca/24.html" target="服装 Clothes_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '服装 Clothes']);">服装
+                                Clothes</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/24.html" target="所有服装_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '所有服装']);">所有服装</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/205.html" target="卫衣 Hoodies_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '卫衣 Hoodies']);">卫衣 Hoodies</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/208.html" target="衬衫 Shirt_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '衬衫 Shirt']);">衬衫 Shirt</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/210.html" target="针织/毛衫 Knit/Sweater_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '针织/毛衫 Knit/Sweater']);">针织/毛衫
+                                Knit/Sweater</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/212.html" target="夹克 Jacket_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '夹克 Jacket']);">夹克 Jacket</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/177.html" target="大衣 Coat_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '大衣 Coat']);">大衣 Coat</a></li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/35.html" target="半裙 Skirts_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '半裙 Skirts']);">半裙 Skirts</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/woman/index/ca/187.html" target="连衣裙 Dresses_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-女士', '点击', '连衣裙 Dresses']);">连衣裙 Dresses</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="headerShadow"></div>
+                </div>
+                <!--男仕-->
+                <div class="header_nav_sel">
+                    <div class="header_nav_sel_m">
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/man/index/ca/1.html" target="包袋 Bags_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '包袋 Bags']);">包袋
+                                Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/1.html" target="所有包袋_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '所有包袋']);">所有包袋</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/13.html" target="手提包 Totes_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '手提包 Totes']);">手提包 Totes</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/14.html" target="单肩包 Shoulder Bags_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '单肩包 Shoulder Bags']);">单肩包
+                                Shoulder Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/15.html" target="斜挎包 Messenger Bags_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '斜挎包 Messenger Bags']);">斜挎包
+                                Messenger Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/16.html" target="手拿包 Clutch Bags_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '手拿包 Clutch Bags']);">手拿包 Clutch
+                                Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/27.html" target="双肩包 Travel Bags_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '双肩包 Travel Bags']);">双肩包 Travel
+                                Bags</a></li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/man/index/ca/3.html" target="配饰 Accessories_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '配饰 Accessories']);">配饰
+                                Accessories</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/3.html" target="所有配饰_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '所有配饰']);">所有配饰</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/125.html" target="钱包 Wallets_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '钱包 Wallets']);">钱包 Wallets</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/10.html" target="手表 Watches_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '手表 Watches']);">手表 Watches</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/5.html" target="太阳眼镜 Sunglasses_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '太阳眼镜 Sunglasses']);">太阳眼镜
+                                Sunglasses</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/6.html" target="腰带 Belts_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '腰带 Belts']);">腰带 Belts</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/181.html" target="围巾 Scarf_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '围巾 Scarf']);">围巾 Scarf</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/180.html" target="领带 Ties_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '领带 Ties']);">领带 Ties</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/296.html" target="数码周边 Technology_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '数码周边 Technology']);">数码周边
+                                Technology</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/28.html" target="小配件 Small Acc._blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '小配件 Small Acc.']);">小配件 Small
+                                Acc.</a></li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/man/index/ca/8.html" target="鞋履 Shoes_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '鞋履 Shoes']);">鞋履
+                                Shoes</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/8.html" target="所有鞋履_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '所有鞋履']);">所有鞋履</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/306.html" target="平底鞋 Flat Shoes_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '平底鞋 Flat Shoes']);">平底鞋 Flat
+                                Shoes</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/149.html" target="休闲皮鞋 Casual Shoes_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '休闲皮鞋 Casual Shoes']);">休闲皮鞋
+                                Casual Shoes</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/152.html" target="正装皮鞋 Business Shoes_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '正装皮鞋 Business Shoes']);">正装皮鞋
+                                Business Shoes</a></li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/man/index/ca/24.html" target="服装 Clothes_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '服装 Clothes']);">服装
+                                Clothes</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/24.html" target="所有服装_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '所有服装']);">所有服装</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/205.html" target="卫衣 Hoodies_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '卫衣 Hoodies']);">卫衣 Hoodies</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/206.html" target="T恤/POLO T-Shirt/POLO_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', 'T恤/POLO T-Shirt/POLO']);">T恤/POLO
+                                T-Shirt/POLO</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/208.html" target="衬衫 Shirt_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '衬衫 Shirt']);">衬衫 Shirt</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/100.html" target="西装套装 Suit_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '西装套装 Suit']);">西装套装 Suit</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/212.html" target="夹克 Jacket_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '夹克 Jacket']);">夹克 Jacket</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/177.html" target="大衣 Coat_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '大衣 Coat']);">大衣 Coat</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/214.html" target="羽绒服/棉衣 Down Jacket_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '羽绒服/棉衣 Down Jacket']);">羽绒服/棉衣
+                                Down Jacket</a></li>
+                            <li><a href="javascript:void(0);" title="/man/index/ca/102.html" target="休闲裤 Casual Pants_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-男仕', '点击', '休闲裤 Casual Pants']);">休闲裤 Casual
+                                Pants</a></li>
+                        </ul>
+                    </div>
+                    <div class="headerShadow"></div>
+                </div>
+                <!--童装-->
+                <div class="header_nav_sel">
+                    <div class="header_nav_sel_m">
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/children" target="儿童 Children_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', '儿童 Children']);">儿童
+                                Children</a></li>
+                            <li><a href="javascript:void(0);" title="/children/index/ca/206.html" target="T恤/POLO T-Shirt/POLO_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', 'T恤/POLO T-Shirt/POLO']);">T恤/POLO
+                                T-Shirt/POLO</a></li>
+                            <li><a href="javascript:void(0);" title="/children/index/ca/208.html" target="衬衫 Shirt_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', '衬衫 Shirt']);">衬衫 Shirt</a></li>
+                            <li><a href="javascript:void(0);" title="/children/index/ca/205.html" target="卫衣 Hoodies_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', '卫衣 Hoodies']);">卫衣 Hoodies</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/children/index/ca/214.html" target="羽绒服/棉服 Down Jackets_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', '羽绒服/棉服 Down Jackets']);">羽绒服/棉服
+                                Down Jackets</a></li>
+                            <li><a href="javascript:void(0);" title="/children/index/ca/187.html" target="连衣裙 Dresses_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', '连衣裙 Dresses']);">连衣裙 Dresses</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/children/index/ca/102.html" target="休闲裤 Casual Pants_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', '休闲裤 Casual Pants']);">休闲裤 Casual
+                                Pants</a></li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/children" target="热门品牌_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', '热门品牌']);">热门品牌</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/children/index/b/13.html" target="Gucci 古驰_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', 'Gucci 古驰']);">Gucci 古驰</a></li>
+                            <li><a href="javascript:void(0);" title="/children/index/b/34.html" target="Kenzo 高田贤三_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', 'Kenzo 高田贤三']);">Kenzo 高田贤三</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/children/index/b/506.html" target="Little Dickins &amp; Jones_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', 'Little Dickins &amp; Jones']);">Little
+                                Dickins &amp; Jones</a></li>
+                            <li><a href="javascript:void(0);" title="/children/index/b/345.html" target="RIDERS ON THE STORM_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-童装', '点击', 'RIDERS ON THE STORM']);">RIDERS
+                                ON THE STORM</a></li>
+                        </ul>
+                    </div>
+                    <div class="headerShadow"></div>
+                </div>
+                <!--腕表-->
+                <div class="header_nav_sel">
+                    <div class="header_nav_sel_m">
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/watch/index/fp/20.html" target="男仕腕表_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', '男仕腕表']);">男仕腕表</a>
+                            </li>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/watch/index/fp/30.html" target="女士腕表_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', '女士腕表']);">女士腕表</a>
+                            </li>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/watch/index/ca/251.html" target="石英石_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', '石英石']);">石英石</a>
+                            </li>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/watch/index/ca/252.html" target="机械表_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', '机械表']);">机械表</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/watch" target="热门品牌_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', '热门品牌']);">热门品牌</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/watch/index/b/504.html" target="sevenfriday_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', 'sevenfriday']);">sevenfriday</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/watch/index/b/20.html" target="Calvin Klein 卡尔文·克莱恩_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', 'Calvin Klein 卡尔文·克莱恩']);">Calvin
+                                Klein 卡尔文·克莱恩</a></li>
+                            <li><a href="javascript:void(0);" title="/watch/index/b/540.html" target="Daniel Wellington 丹尼尔·惠灵顿_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', 'Daniel Wellington 丹尼尔·惠灵顿']);">Daniel
+                                Wellington 丹尼尔·惠灵顿</a></li>
+                            <li><a href="javascript:void(0);" title="/watch/index/b/388.html" target="Tissot 天梭_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', 'Tissot 天梭']);">Tissot 天梭</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/watch/index/b/212.html" target="OMEGA 欧米茄_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', 'OMEGA 欧米茄']);">OMEGA 欧米茄</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/watch/index/b/66.html" target="Longines 浪琴_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-腕表', '点击', 'Longines 浪琴']);">Longines 浪琴</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="headerShadow"></div>
+                </div>
+                <!--品牌-->
+                <div class="header_nav_sel">
+                    <div class="header_nav_sel_m">
+                        <ul>
+                            <li class="hnsTit"><a href="/product/index/bty/1.html" title="国际大牌 Luxury Brand"
+                                                  target="_blank"
+                                                  onclick="seachgoods(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">国际大牌
+                                Luxury Brand</a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/28.html" target="Diesel 迪赛_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">Diesel
+                                迪赛</a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/8.html" target="Chloe 蔻依_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Bra8nd']);">Chloe
+                                蔻依</a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/9.html" target="Dior 迪奥_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">Dior
+                                迪奥</a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/63.html" target="BVLGARI 宝格丽_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">BVLGARI
+                                宝格丽</a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/94.html" target="3.1 Phillip Lim 菲利林_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">3.1
+                                Phillip Lim 菲利林</a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/456.html" target="Love Moschino 莫斯奇诺_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">Love
+                                Moschino 莫斯奇诺</a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/255.html" target="Giuseppe Zanotti 朱塞佩·萨诺_blank"
+                                   onclick="seachgoods(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">Giuseppe
+                                Zanotti 朱塞佩·萨诺</a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/109.html" target="Moschino 莫斯奇诺_blank">Moschino
+                                莫斯奇诺</a></li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="/product/index/bty/2.html" title="设计师品牌 Designer Brand"
+                                                  target="_blank">设计师品牌 Designer Brand</a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/333.html" target="MSGM_blank">MSGM </a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/386.html" target="Circle_blank">Circle </a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/95.html" target="Iceberg 冰山_blank">Iceberg 冰山</a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/559.html" target="MABYMA STUDIO_blank">MABYMA
+                                STUDIO </a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/572.html" target="Dune_blank">Dune </a></li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/576.html" target="ChloeChen_blank">ChloeChen </a>
+                            </li>
+                            <li><a href="javascript:void(0);" title="/brands/detail/id/462.html" target="Versus 范瑟丝_blank">Versus 范瑟丝</a>
+                            </li>
+                            <li><a href="/brands/detail/id/334.html" title="P.A.R.O.S.H."
+                                   target="_blank">P.A.R.O.S.H.</a></li>
+                        </ul>
+                    </div>
+                    <div class="headerShadow"></div>
+                </div>
+                <!--特惠-->
+                <!--<div class="header_nav_sel">
+                    <div class="header_nav_sel_m">
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/sales/index/bty/1.html" target="国际大牌 Luxury Brand_blank">国际大牌 Luxury Brand</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/b/28.html" target="Diesel 迪赛_blank">Diesel 迪赛</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/b/8.html" target="Chloe 蔻依_blank">Chloe 蔻依</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/b/9.html" target="Dior 迪奥_blank">Dior 迪奥</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/b/63.html" target="BVLGARI 宝格丽_blank">BVLGARI 宝格丽</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/b/94.html" target="3.1 Phillip Lim 菲利林_blank">3.1 Phillip Lim 菲利林</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/b/456.html" target="Love Moschino 莫斯奇诺_blank">Love Moschino 莫斯奇诺</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/b/255.html" target="Giuseppe Zanotti 朱塞佩·萨诺_blank">Giuseppe Zanotti 朱塞佩·萨诺</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/b/109.html" target="Moschino 莫斯奇诺_blank">Moschino 莫斯奇诺</a></li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/sales/index/fp/20.html" target="男仕 Man_blank" onclick="seachgoods(['_trackEvent', '导航菜单-特惠', '点击', '男仕 Man']);">男仕 Man</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/fp/20/ca/1.html" target="包袋 Bags_blank" onclick="seachgoods(['_trackEvent', '导航菜单-特惠', '点击', '包袋 Bags']);">包袋 Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/fp/20/ca/3.html" target="配饰 Accessories_blank" onclick="seachgoods(['_trackEvent', '导航菜单-特惠', '点击', '配饰 Accessories']);">配饰 Accessories</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/fp/20/ca/8.html" target="鞋履 Shoes_blank" onclick="seachgoods(['_trackEvent', '导航菜单-特惠', '点击', '鞋履 Shoes']);">鞋履 Shoes</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/fp/20/ca/24.html" target="服装 Clothes_blank" onclick="seachgoods(['_trackEvent', '导航菜单-特惠', '点击', '服装 Clothes']);">服装 Clothes</a></li>
+                        </ul>
+                        <ul>
+                            <li class="hnsTit"><a href="javascript:void(0);" title="/sales/index/fp/30.html" target="女士 Woman_blank" onclick="seachgoods(['_trackEvent', '导航菜单-特惠', '点击', '女士 Woman']);">女士 Woman</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/fp/30/ca/1.html" target="包袋 Bags_blank" onclick="seachgoods(['_trackEvent', '导航菜单-特惠', '点击', '包袋 Bags']);">包袋 Bags</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/fp/30/ca/3.html" target="配饰 Accessories_blank" onclick="seachgoods(['_trackEvent', '导航菜单-特惠', '点击', '配饰 Accessories']);">配饰 Accessories</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/fp/30/ca/8.html" target="鞋履 Shoes_blank" onclick="seachgoods(['_trackEvent', '导航菜单-特惠', '点击', '鞋履 Shoes']);">鞋履 Shoes</a></li>
+                            <li><a href="javascript:void(0);" title="/sales/index/fp/30/ca/24.html" target="服装 Clothes_blank" onclick="seachgoods(['_trackEvent', '导航菜单-特惠', '点击', '服装 Clothes']);">服装 Clothes</a></li>
+                        </ul>
+                    </div>
+                    <div class="headerShadow"></div>
+                </div>-->
+                <div class="header_nav_sel"></div>
+
+                <!--<div class="header_nav_sel">
+                        <div class="header_nav_sel_m">
+                            <div class="header_nav_man clearfix">
+                                                    </div>
+                        </div>
+                        <div class="headerShadow"></div>
+                    </div><div class="header_nav_sel">
+                        <div class="header_nav_sel_m">
+                            <div class="header_nav_man clearfix">
+                                <ul>
+                                        <li class="hnsTit"><a href="javascript:void(0);" title="/woman.html" target="所有_blank">所有</a></li>
+                                                                    </ul><ul>
+                                        <li class="hnsTit"><a href="javascript:void(0);" title="" target="包袋_blank">包袋</a></li>
+                                        <li><a href="javascript:void(0);" title="" target="单肩包_blank">单肩包</a></li>                            </ul>                    </div>
+                        </div>
+                        <div class="headerShadow"></div>
+                    </div><div class="header_nav_sel">
+                        <div class="header_nav_sel_m">
+                            <div class="header_nav_man clearfix">
+                                                    </div>
+                        </div>
+                        <div class="headerShadow"></div>
+                    </div><div class="header_nav_sel">
+                        <div class="header_nav_sel_m">
+                            <div class="header_nav_man clearfix">
+                                                    </div>
+                        </div>
+                        <div class="headerShadow"></div>
+                    </div><div class="header_nav_sel">
+                        <div class="header_nav_sel_m">
+                            <div class="header_nav_man clearfix">
+                                                    </div>
+                        </div>
+                        <div class="headerShadow"></div>
+                    </div><div class="header_nav_sel">
+                        <div class="header_nav_sel_m">
+                            <div class="header_nav_man clearfix">
+                                                    </div>
+                        </div>
+                        <div class="headerShadow"></div>
+                    </div><div class="header_nav_sel">
+                        <div class="header_nav_sel_m">
+                            <div class="header_nav_man clearfix">
+                                                    </div>
+                        </div>
+                        <div class="headerShadow"></div>
+                    </div><div class="header_nav_sel">
+                        <div class="header_nav_sel_m">
+                            <div class="header_nav_man clearfix">
+                                                    </div>
+                        </div>
+                        <div class="headerShadow"></div>
+                    </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="headerShadow"></div>
+</div>
+<div class="mask"></div>
+<script>
+    $(function() {
+        refreshLoginBar(function () { cart();});
+        $('#sch_kwd').keyup(function (e) { if(e.keyCode==13) { search(); } });
+        //$('#sch_kwd').placeholder();
+    });
+
+
+</script>
+
+<div class="container">
+    <style type="text/css">
+        .indexLoad {text-align:center; padding:100px 0;}
+        .theme {height:54px; margin:23px 0 10px 0;}
+        .mid_line {border-bottom:1px solid #e8e8e8; top:24px; *top:5px; left:0; width:100%; z-index:1;}
+        .theme_n {width:260px; background:#fff; margin:0 auto; text-align:center; font-size:16px; font-family:微软雅黑; color:#333; z-index:2;}
+        .scroll_pro {margin:0 auto;}
+        .m_hot_pro {width:1200px; height:265px; margin:0 auto; overflow:hidden;}
+        .m_hot_pro li {width:160px; height:260px; margin:5px 20px 0 20px; text-align:center; float:left;}
+        .m_hot_pro li p {padding-top:2px; color: #999;}
+        .m_hot_pro li a p {width: 160px;height:44px; padding-top:0; word-break:normal\0; word-wrap:normal\0; overflow:hidden; color:#555; white-space:nowrap; -o-text-overflow:ellipsis;text-overflow:ellipsis;}
+        .cart_next {}
+        .cart_prev {}
+        .m_prev,.m_next {width:17px; height:38px; top:100px; position:absolute; cursor:pointer; z-index:5;}
+        .m_prev{left:0; background: url(/static/img/pre_btn.png) no-repeat;}
+        .m_next{right:0; background: url(/static/img/next_btn.png) no-repeat;}
+
+
+    </style>
+    <div id="content" class="content">
+        <div id="ad_Pc_Index_Top_Slideshow" style="">
+            <div class="ad_list" style="overflow:hidden;width:1200px;height:600px;position:static;">
+                <div class="slidesJq">
+                    <ul class="slides_container">
+                        <div class="slides_control">
+                            <li>
+                                <a href="">
+                                    <!--<img src="https://img3.meicicdn.com/u/WstAd/image/20170831/15402659a7bd6a327fb.jpg" alt="">-->
+                                    <img src="https://img3.meicicdn.com/u/WstAd/image/20170831/15402659a7bd6a327fb.jpg"
+                                         width="1200" height="600" title="大长腿+sneaker正好 valentino/Common Projects">
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(function(){$.jsonP('cms','frontend/adplace/show',{label:'Pc_Index_Top_Slideshow'},function(r){if($.isPlainObject(r)) {$('.indexLoad').remove();$('#ad_Pc_Index_Top_Slideshow').show().find('.ad_list').html(r.data);In.ready("Slides",function(){ mcSlides($('#ad_Pc_Index_Top_Slideshow .slidesJq'));});}});});
+
+    </script>
+        <div id="ad_Pc_Index_5Grid" style="">
+        <div class="ad_list" style="overflow:hidden;position:static;">
+            <div class="grid5_212">
+                <div style="width:1200px;overflow:hidden;">
+                    <div class="theme relative">
+                        <div class="mid_line absolute"></div>
+                        <p class="theme_n relative"><span style="color: #666;">特别推荐</span><br><span
+                                style="font-size: 14px;color: #999;">Special Offer</span></p></div>
+                    <div style="float:left;width:392px;">
+                        <div style="font-size:0;"><a href=""
+                                                     target="_blank" title="新会员专享福利" style="display:block;"><img
+                                width="392" height="243"
+                                src="https://img3.meicicdn.com/u/WstAd/image/20170831/14235059a7ab76db39a.jpg"></a>
+                        </div>
+                        <div style="font-size:0;margin-top:12px;"><a
+                                href="#" target="_blank"
+                                title=" 一周包袋 TOP100榜单 解决选择困难症" style="display:block;"><img width="392" height="243"
+                                                                                           src="https://img3.meicicdn.com/u/WstAd/image/20170831/14340759a7addf0d2c0.jpg"></a>
+                        </div>
+                    </div>
+                    <div style="float:left;width:392px;height:498px;margin:0 12px;font-size:0;"><a
+                            href="#" target="_blank"
+                            title="品牌折扣透心凉 Gucci /Valentino /D&amp;G 5折起" style="display:block;"><img width="392"
+                                                                                                      height="498"
+                                                                                                      src="https://img3.meicicdn.com/u/WstAd/image/20170831/14251859a7abcee6a36.jpg"></a>
+                    </div>
+                    <div style="float:left;width:392px;">
+                        <div style="font-size:0;"><a href="#"
+                                                     target="_blank" title="MEICICLUB私享 加速升级"
+                                                     style="display:block;"><img width="392" height="243"
+                                                                                 src="https://img3.meicicdn.com/u/WstAd/image/20170831/14331059a7ada64b5f5.jpg"></a>
+                        </div>
+                        <div style="font-size:0;margin-top:12px;"><a
+                                href="#" target="_blank"
+                                title=" 一周包袋TOP100榜单 新草入坑" style="display:block;"><img width="392" height="243"
+                                                                                       src="https://img3.meicicdn.com/u/WstAd/image/20170831/14341959a7adeba8174.jpg"></a>
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div style="width:1200px;overflow:hidden;">
+                    <div class="theme relative">
+                        <div class="mid_line absolute"></div>
+                        <p class="theme_n relative"><span style="color: #666;">男仕精选</span><br><span
+                                style="font-size: 14px;color: #999;">For Him</span></p></div>
+                    <div style="float:left;width:392px;">
+                        <div style="font-size:0;"><a href="#"
+                                                     target="_blank" title="Gucci 8折起" style="display:block;"><img
+                                width="392" height="243"
+                                src="https://img3.meicicdn.com/u/WstAd/image/20170831/14372959a7aea9c730e.jpg"></a>
+                        </div>
+                        <div style="font-size:0;margin-top:12px;"><a
+                                href="#" target="_blank"
+                                title="Burberry  5折起" style="display:block;"><img width="392" height="243"
+                                                                                  src="https://img3.meicicdn.com/u/WstAd/image/20170831/14374259a7aeb66afbb.jpg"></a>
+                        </div>
+                    </div>
+                    <div style="float:left;width:392px;height:498px;margin:0 12px;font-size:0;"><a
+                            href="#" target="_blank"
+                            title="Dolce&amp;Gabbana  5折起" style="display:block;"><img width="392" height="498"
+                                                                                       src="https://img3.meicicdn.com/u/WstAd/image/20170831/14373359a7aeadc6b26.jpg"></a>
+                    </div>
+                    <div style="float:left;width:392px;">
+                        <div style="font-size:0;"><a href="#"
+                                                     target="_blank" title="Valentino  7折起" style="display:block;"><img
+                                width="392" height="243"
+                                src="https://img3.meicicdn.com/u/WstAd/image/20170831/14373859a7aeb210dd7.jpg"></a>
+                        </div>
+                        <div style="font-size:0;margin-top:12px;"><a
+                                href="#" target="_blank" title="Prada 6折起"
+                                style="display:block;"><img width="392" height="243"
+                                                            src="https://img3.meicicdn.com/u/WstAd/image/20170831/14374659a7aeba3183b.jpg"></a>
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div style="width:1200px;overflow:hidden;">
+                    <div class="theme relative">
+                        <div class="mid_line absolute"></div>
+                        <p class="theme_n relative"><span style="color: #666;">女士精选</span><br><span
+                                style="font-size: 14px;color: #999;">For Her</span></p></div>
+                    <div style="float:left;width:392px;">
+                        <div style="font-size:0;"><a href="#"
+                                                     target="_blank" title="Saint Laurent  8折起"
+                                                     style="display:block;"><img width="392" height="243"
+                                                                                 src="https://img3.meicicdn.com/u/WstAd/image/20170831/14405559a7af7786f32.jpg"></a>
+                        </div>
+                        <div style="font-size:0;margin-top:12px;"><a
+                                href="#" target="_blank"
+                                title="Valentino 7折起" style="display:block;"><img width="392" height="243"
+                                                                                  src="https://img3.meicicdn.com/u/WstAd/image/20170831/14411159a7af8709d75.jpg"></a>
+                        </div>
+                    </div>
+                    <div style="float:left;width:392px;height:498px;margin:0 12px;font-size:0;"><a
+                            href="#" target="_blank" title="Gucci 8折起"
+                            style="display:block;"><img width="392" height="498"
+                                                        src="https://img3.meicicdn.com/u/WstAd/image/20170831/14410059a7af7c5aafc.jpg"></a>
+                    </div>
+                    <div style="float:left;width:392px;">
+                        <div style="font-size:0;"><a href="#"
+                                                     target="_blank" title="Fendi 7折起" style="display:block;"><img
+                                width="392" height="243"
+                                src="https://img3.meicicdn.com/u/WstAd/image/20170831/14410559a7af81480a8.jpg"></a>
+                        </div>
+                        <div style="font-size:0;margin-top:12px;"><a
+                                href="#" target="_blank"
+                                title="Burberry  5折起" style="display:block;"><img width="392" height="243"
+                                                                                  src="https://img3.meicicdn.com/u/WstAd/image/20170831/14411559a7af8b00aea.jpg"></a>
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script type="text/javascript">
+        $(function(){$.jsonP('cms','frontend/adplace/show',{label:'Pc_Index_5Grid'},function(r){if($.isPlainObject(r)) {$('.indexLoad').remove();$('#ad_Pc_Index_5Grid').show().find('.ad_list').html(r.data);}});});
+
+    </script>
+        <div class="top_re">
+        <div class="theme relative" style="margin-top: 30px;">
+            <div class="mid_line absolute"></div>
+            <p class="theme_n relative"><span style="color: #666;">正被选购</span><br/><span
+                    style="font-size: 14px;color: #999;">BEING SOLD</span></p>
+        </div>
+        <div class="m_hot_pro">
+            <div id="scroll_pro" class="scroll_pro">
+                <div class="cart_prev">
+                    <div class="m_prev"></div>
+                </div>
+                <div class="cart_next">
+                    <div class="m_next"></div>
+                </div>
+                <ul class="clearfix" id="hotrec_pro">
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/35068/saleid/32548.html" target="全棉 男士 牛仔裤_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/36/035068/h-035068-1.jpg"
+                                 alt="全棉 男士 牛仔裤" width="160" height="192"/>
+                            <p>Dolce&Gabbana<br/>杜嘉班纳</p></a>
+                        <div class="c_gray">已被购买</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/47197/saleid/44660.html" target="全棉 男士 卫衣_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/48/047197/h-047197-1.jpg"
+                                 alt="全棉 男士 卫衣" width="160" height="192"/>
+                            <p>Kenzo<br/>高田贤三</p></a>
+                        <div class="c_gray">已加入收藏</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/56143/saleid/53607.html" target="牛皮 女士 斜挎包_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/57/056143/h-056143-1.jpg"
+                                 alt="牛皮 女士 斜挎包" width="160" height="192"/>
+                            <p>Salvatore Ferragamo<br/>菲拉格慕</p></a>
+                        <div class="c_gray">已加入收藏</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/74488/saleid/71950.html" target="棉麻 男仕 休闲裤_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/75/074488/h-074488-1.jpg"
+                                 alt="棉麻 男仕 休闲裤" width="160" height="192"/>
+                            <p>Dolce&Gabbana<br/>杜嘉班纳</p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/102590/saleid/100052.html" target="人造革 男仕 皮带_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/103/102590/h-102590-1.jpg"
+                                 alt="人造革 男仕 皮带" width="160" height="192"/>
+                            <p>Gucci<br/>古驰</p></a>
+                        <div class="c_gray">已加入收藏</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/103698/saleid/101160.html" target="PVC/牛皮边饰男士 短钱包_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/104/103698/h-103698-1.jpg"
+                                 alt="PVC/牛皮边饰男士 短钱包" width="160" height="192"/>
+                            <p>Burberry<br/>博柏利</p></a>
+                        <div class="c_gray">已加入收藏</div>
+                    </li>
+                    <li>
+                        <a href="/product/detail/id/116833/saleid/114295.html" title="迪通拿系列 18K玫瑰金 男仕 机械表"
+                           target="_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/117/116833/h-116833-1.jpg"
+                                 alt="迪通拿系列 18K玫瑰金 男仕 机械表" width="160" height="192"/>
+                            <p>Rolex<br/>劳力士</p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/117026/saleid/114488.html" target="迪通拿 皮革 男仕 机械表_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/118/117026/h-117026-1.jpg"
+                                 alt="迪通拿 皮革 男仕 机械表" width="160" height="192"/>
+                            <p>Rolex<br/>劳力士</p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/130206/saleid/127663.html" target="PVC/配皮 女士两用手提包_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/131/130206/h-130206-1.jpg"
+                                 alt="PVC/配皮 女士两用手提包" width="160" height="192"/>
+                            <p>Gucci<br/>古驰</p></a>
+                        <div class="c_gray">已被购买</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/130643/saleid/128098.html" target="牛皮 男仕 正装鞋_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/131/130643/h-130643-1.jpg"
+                                 alt="牛皮 男仕 正装鞋" width="160" height="192"/>
+                            <p>CAMPANILE<br/></p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/130694/saleid/128149.html" target="牛皮 男仕 正装鞋_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/131/130694/h-130694-1.jpg"
+                                 alt="牛皮 男仕 正装鞋" width="160" height="192"/>
+                            <p>SOLDINI<br/></p></a>
+                        <div class="c_gray">已加入收藏</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/264066/saleid/110396.html" target="全棉 男仕 短袖POLO_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/113/112934/h-112934-1.jpg"
+                                 alt="全棉 男仕 短袖POLO" width="160" height="192"/>
+                            <p>Salvatore Ferragamo<br/>菲拉格慕</p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/277057/saleid/118625.html" target="全棉 男仕 工字印花短袖T恤_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/122/121165/h-121165-1.jpg"
+                                 alt="全棉 男仕 工字印花短袖T恤" width="160" height="192"/>
+                            <p>Just Cavalli<br/>卡沃利</p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/284838/saleid/124366.html" target="17春夏新款 尼龙 男士 运动鞋_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/127/126908/h-126908-1.jpg"
+                                 alt="17春夏新款 尼龙 男士 运动鞋" width="160" height="192"/>
+                            <p>Y-3<br/></p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="/product/detail/id/284921/saleid/124392.html" title="17春夏新款 织物 男仕 Logo点缀运动鞋"
+                           target="_blank">
+                            <img class="productImg" src="https://img.meicicdn.com/p/127/126934/h-126934-1.jpg"
+                                 alt="17春夏新款 织物 男仕 Logo点缀运动鞋" width="160" height="192"/>
+                            <p>Y-3<br/></p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/301330/saleid/157098.html" target="棉 男士 短外衣夹克_blank">
+                            <img class="productImg"
+                                 src="https://img3.meicicdn.com/u/LvProduct/pic/20170801/17494059804eb409446-160x192.JPG"
+                                 alt="棉 男士 短外衣夹克" width="160" height="192"/>
+                            <p>Hugo Boss<br/>雨果波士</p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/306511/saleid/159475.html" target="棉 男士 短外衣夹克_blank">
+                            <img class="productImg"
+                                 src="https://img3.meicicdn.com/u/LvProduct/pic/20170817/152632599545283ba66-160x192.jpg"
+                                 alt="棉 男士 短外衣夹克" width="160" height="192"/>
+                            <p>Emporio Armani<br/>安普里奥·阿玛尼</p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/307064/saleid/159767.html" target="羊毛 男士 长袖针织/毛衫_blank">
+                            <img class="productImg"
+                                 src="https://img3.meicicdn.com/u/LvProduct/pic/20170818/142741599688dd8457e-160x192.JPG"
+                                 alt="羊毛 男士 长袖针织/毛衫" width="160" height="192"/>
+                            <p>Gucci<br/>古驰</p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/307775/saleid/160204.html" target="牛皮  手拿包_blank">
+                            <img class="productImg"
+                                 src="https://img3.meicicdn.com/u/LvProduct/pic/20170823/102426599ce75a36232-160x192.jpg"
+                                 alt="牛皮  手拿包" width="160" height="192"/>
+                            <p>Givenchy<br/>纪梵希</p></a>
+                        <div class="c_gray">已加入购物袋</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/308275/saleid/160538.html" target="尼龙 男士 手拿包_blank">
+                            <img class="productImg"
+                                 src="https://img3.meicicdn.com/u/LvProduct/pic/20170828/14541759a3be19d71b1-160x192.jpg"
+                                 alt="尼龙 男士 手拿包" width="160" height="192"/>
+                            <p>Valentino<br/>华伦天奴</p></a>
+                        <div class="c_gray">已加入收藏</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/308736/saleid/160942.html" target="尼龙 男士 手拿包_blank">
+                            <img class="productImg"
+                                 src="https://img3.meicicdn.com/u/LvProduct/pic/20170829/15323859a5189656df1-160x192.jpg"
+                                 alt="尼龙 男士 手拿包" width="160" height="192"/>
+                            <p>Valentino<br/>华伦天奴</p></a>
+                        <div class="c_gray">已加入收藏</div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" title="/product/detail/id/309026/saleid/161051.html" target="老虎头 棉 女士 卫衣_blank">
+                            <img class="productImg"
+                                 src="https://img3.meicicdn.com/u/LvProduct/pic/20170831/16561359a7cf2d13b3f-160x192.jpg"
+                                 alt="老虎头 棉 女士 卫衣" width="160" height="192"/>
+                            <p>Kenzo<br/>高田贤三</p></a>
+                        <div class="c_gray">已被购买</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+</div>
+<script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/cookie.js"></script>
+<script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/jcarousellite_1.0.1.pack.js"></script>
+<script type="text/javascript">
+$(function(){
+	var startNo = parseInt(Math.random()*10+1);
+    $("#scroll_pro").jCarouselLite({
+        visible:6,
+        btnNext: ".cart_next",
+        btnPrev: ".cart_prev",
+        auto:5000,
+        speed:500,
+        start:startNo
+    });
+    Setcookie();
+});
+
+
+</script>
+
+<!--Criteo Home page tag 首页 #Jungle---->
+<!--
+<script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+<script type="text/javascript">
+    window.criteo_q = window.criteo_q || [];
+    window.criteo_q.push(
+        { event: "setAccount", account: 19582 },
+        { event: "setSiteType", type: "d" },
+    { event: "viewHome" }
+    );
+
+</script>-->
+
+
+
+
+<div id="footer">
+    <div class="container">
+        <div class="p_footer">
+            <div class="p_footer_c clearfix">
+                <div class="help_intro clearfix">
+                    <ul>
+                        <li class="footer_t">购物指南</li>
+                        <li><a href="javascript:void(0);" title="/services/shoppingGuide.html" target="购物流程_blank">购物流程</a></li>
+                        <li><a href="javascript:void(0);" title="/services/shipping.html" target="配送方式_blank">配送方式</a></li>
+                    </ul>
+                    <ul>
+                        <li class="footer_t">支付方式</li>
+                        <li><a href="javascript:void(0);" title="/services/payOnline.html" target="如何付款_blank">如何付款</a></li>
+                        <li><a href="javascript:void(0);" title="/services/receipt.html" target="发票制度_blank">发票制度</a></li>
+                    </ul>
+                    <ul>
+                        <li class="footer_t">商品说明</li>
+                        <li><a href="javascript:void(0);" title="/services/clothSize.html" target="商品尺码_blank">商品尺码</a></li>
+                        <li><a href="javascript:void(0);" title="/services/Packing.html" target="商品包装_blank">商品包装</a></li>
+                    </ul>
+                    <ul>
+                        <li class="footer_t">客服中心</li>
+                        <li><a href="javascript:void(0);" title="/services/service.html" target="七天退换_blank">七天退换</a></li>
+                        <li><a href="javascript:void(0);" title="/services/FAQ.html" target="常见问题_blank">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="service_phone">
+                    <span class="footer_t">客服电话</span>
+                    <h5>4000-250-630</h5>
+                    <p>工作日 08:30-21:30</p>
+                    <p>节假日 10:00-18:00</p>
+                </div>
+                <div class="foot_subscription">
+                    <p class="foot_subscription_t">订阅美西杂志</p>
+                    <input class="foot_subscription_m" id="rssIn" type="text" value="" placeholder="E-mail">
+                    <div class="foot_subscription_b" onclick="subscriber(); seachgoods(['_trackEvent', '公共底部', '点击', '订阅邮件']);
+">即刻订阅
+                    </div>
+                </div>
+                <div class="download_main">
+                    <div class="float_l download_app">
+                        <span class="footer_t">美西APP</span>
+                        <div><span class="app_img"></span></div>
+                    </div>
+                    <div class="float_r wechat">
+                        <span class="footer_t">官方微信</span>
+                        <div><span class="wechat_img"></span></div>
+                    </div>
+                    <div class="clear"></div>
+                    <p>手机扫码即可下载美西APP或关注官方微信 </p>
+                </div>
+            </div>
+        </div>
+        <div class="pw_footer">
+            <div class="pw_footer_top">
+                <ul>
+                    <li>
+                        <div class="footer_icon03"></div>
+                        <span>100%正品保证</span></li>
+                    <li class="pw_footer_m">
+                        <div class="footer_icon02"></div>
+                        <span>7天无忧退货</span></li>
+                    <li>
+                        <div class="footer_icon01"></div>
+                        <span>九年专注，品质保障</span></li>
+                </ul>
+            </div>
+            <div class="pw_footer_cut"></div>
+            <div class="pw_footer_btm clearfix">
+                <div class="float_l pw_footer_btm_l">
+                    <ul>
+                        <li><a href="javascript:void(0);" title="/services/media.html" target="媒体报道_blank">媒体报道</a></li>
+                        <li><a href="javascript:void(0);" title="/services/qualityAssurance.html" target="正品保证_blank">正品保证</a></li>
+                        <li><a href="javascript:void(0);" title="/services/coop.html" target="业务合作_blank">业务合作</a></li>
+                        <li><a href="javascript:void(0);" title="/services/privacy.html" target="隐私声明_blank">隐私声明</a></li>
+                        <li><a href="javascript:void(0);" title="/services/join.html" target="加入美西_blank">加入美西</a></li>
+                        <li><a href="javascript:void(0);" title="/services/contacts.html" target="联系我们_blank">联系我们</a></li>
+                    </ul>
+                    <div class="clear"></div>
+                    <div><p>Copyright &copy;2008-2017，美西-高端时尚生活电商</p></div>
+                    <div><span>沪ICP备09001221号</span><span>沪公网安备11010802017116号</span></div>
+                </div>
+                <div class="footer_btm_cut float_l"></div>
+                <div class="float_r pw_footer_btm_r">
+                    <div><span>合作支持</span></div>
+                    <ul class="clearfix">
+                        <li class="partner_01" style="padding-top:5px;"><a
+                                href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=dov73ne26zbqpz06h12ypxbndnhhch3lzn"
+                                target="_blank"></a></li>
+                        <li class="partner_03" style="padding-top:6px;"><a class="clearfix"
+                                                                           href="http://cn.unionpay.com"
+                                                                           target="_blank"><span
+                                style="margin-right: 4px;"></span><i class="float_l">银联特约商户</i></a></li>
+                        <li class="partner_02" style="padding-top:5px;"><a href="http://v.qq.com/fashion/"
+                                                                           target="_blank"></a></li>
+                        <li class="partner_04"><a href="http://d1.sina.com.cn/minisite/meixi/index.html"
+                                                  target="_blank"></a></li>
+                        <li class="partner_05" style="padding-top:4px;"><a
+                                href="http://women.sohu.com/20090318/n262873311.shtml" target="_blank"></a></li>
+                        <li class="partner_06" style="padding-right: 0;padding-top: 4px;"><a
+                                href="http://www.haibao.com" target="_blank"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+<script>
+    function subscriber() {
+        var emailRss = $("#rssIn").val();
+        if (emailRss == '请填写您的E-mail' || emailRss == '') {
+            //alert('请填写您的E-mail');
+            showMsg('showMsg1','温馨提示',"请填写您的E-mail");
+            $("#rssIn").focus();
+            return false;
+        }
+        $.post("/Member/Index/selectRss",{emailRss:emailRss},function(data){
+            if(data == "1"){
+                showMsg('showMsg2','温馨提示',"订阅成功");
+            }else if(data == "2"){
+                showMsg('showMsg3','温馨提示',"E-mail格式错误");
+            }else if(data == "0"){
+                showMsg('showMsg4','温馨提示',"E-mail不能为空");
+            }else if(data == "3"){
+                showMsg('showMsg5','温馨提示',"该E-mail已经订阅");
+            }else{
+                showMsg('showMsg6','温馨提示',"订阅失败，请检查您的E-mail");
+            }
+        });
+
+        return false;
+    }
+    $(function () {
+        $('.pw_footer_btm_l ul li').eq(0).css('border-left','none');
+    })
+
+
+</script>

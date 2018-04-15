@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/index.css" />
+	<script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<div id="header">
+	<div class="header_m">
+        <!--顶部通栏-->
+        <div class="headerbar"></div>
+
+        <!--logo和搜索-->
+        <div class="header_middle">
+            <div class="header_logo"><a href="/" title="美西"><img src="/static/img/logo.png" width="220" height="60" alt="美西" /></a></div>
+            <div class="header_search clearfix">
+                <div class="header_search_int float_l"><input id="sch_kwd" type="text" value="" placeholder="请输入关键字" /></div>
+                <button class="header_search_btn float_l" onclick="search();"><em></em></button>
+            </div>
+        </div>
+
+        <!--导航-->
+        <div class="header_nav">
+    <div class="header_nav_m">
+        <ul class="clearfix">
+            <li><a href="/" title="首页" target="_blank" onclick="_hmt.push(['_trackEvent', '导航', '点击', '首页']);">首页</a></li>
+            <li><a href="/new" title="新近单品" target="_blank" onclick="_hmt.push(['_trackEvent', '导航', '点击', '新近单品']);">新近单品</a><em></em></li>
+            <li><a href="/global " title="全球购" target="_blank" onclick="_hmt.push(['_trackEvent', '导航', '点击', '全球购']);">全球购</a></li>
+            <li><a href="/woman" title="女士" target="_blank" onclick="_hmt.push(['_trackEvent', '导航', '点击', '女士']);">女士</a><em></em></li>
+            <li><a href="/man" title="男仕" target="_blank" onclick="_hmt.push(['_trackEvent', '导航', '点击', '男仕']);">男仕</a><em></em></li>
+            <li><a href="/children" title="童装" target="_blank" onclick="_hmt.push(['_trackEvent', '导航', '点击', '童装']);">童装</a><em></em></li>
+            <li><a href="/watch" title="腕表" target="_blank" onclick="_hmt.push(['_trackEvent', '导航', '点击', '腕表']);">腕表</a><em></em></li>
+            <li><a href="/brands" title="品牌" target="_blank" onclick="_hmt.push(['_trackEvent', '导航', '点击', '品牌']);">品牌</a><em></em></li>
+            <!--<li><a href="/sales" title="特惠" target="_blank" onclick="_hmt.push(['_trackEvent', '导航', '点击', '特惠']);">特惠</a><em></em></li>-->
+            <li><a href="/app" title="Mzine" target="_blank" onclick="_hmt.push(['_trackEvent', '导航', '点击', 'M潮流']);">Mzine</a></li>
+            <!--<li>
+                    <a href="/new.html" title="新品来袭" target="_blank">新品来袭</a><em></em>
+                </li><li>
+                    <a href="/woman.html" title="女士" target="_blank">女士</a><em></em>
+                </li><li>
+                    <a href="/man.html" title="男仕" target="_blank">男仕</a><em></em>
+                </li><li>
+                    <a href="/children.html" title="童装" target="_blank">童装</a><em></em>
+                </li><li>
+                    <a href="/watch.html" title="腕表" target="_blank">腕表</a><em></em>
+                </li><li>
+                    <a href="/brands.html" title="品牌" target="_blank">品牌</a><em></em>
+                </li><li>
+                    <a href="/sales.html" title="特惠区" target="_blank">特惠区</a><em></em>
+                </li><li>
+                    <a href="/mzine.html" title="M潮流" target="_blank">M潮流</a><em></em>
+                </li>-->
+        </ul>
+    </div>
+    <div class="header_nav_n">
+    	<div class="header_nav_sel"></div>
+        <!--新品-->
+        <div class="header_nav_sel">
+        	<div class="header_nav_sel_m">
+            	<ul>
+                	<li class="hnsTit"><a href="/new/index/cyc/1" title="本周新品" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '本周新品']);">本周新品</a></li>
+                    <li class="hnsTit"><a href="/new/index/cyc/2" title="本月新品" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '本月新品']);">本月新品</a></li>
+                    <li class="hnsTit"><a href="/new/index/cyc/3" title="当季新品" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '当季新品']);">当季新品</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/new/index/fp/20.html" title="男仕 Man" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '男仕 Man']);">男仕 Man</a></li>
+                    <li><a href="/new/index/fp/20/ca/1.html" title="包袋 Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '包袋 Bags']);">包袋 Bags</a></li>
+                    <li><a href="/new/index/fp/20/ca/3.html" title="配饰 Accessories" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '配饰 Accessories']);">配饰 Accessories</a></li>
+                    <li><a href="/new/index/fp/20/ca/8.html" title="鞋履 Shoes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '鞋履 Shoes']);">鞋履 Shoes</a></li>
+                    <li><a href="/new/index/fp/20/ca/24.html" title="服装 Clothes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '服装 Clothes']);">服装 Clothes</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/new/index/fp/30.html" title="女士 Woman" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '女士 Woman']);">女士 Woman</a></li>
+                    <li><a href="/new/index/fp/30/ca/1.html" title="包袋 Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '包袋 Bags']);">包袋 Bags</a></li>
+                    <li><a href="/new/index/fp/30/ca/3.html" title="配饰 Accessories" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '配饰 Accessories']);">配饰 Accessories</a></li>
+                    <li><a href="/new/index/fp/30/ca/8.html" title="鞋履 Shoes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '鞋履 Shoes']);">鞋履 Shoes</a></li>
+                    <li><a href="/new/index/fp/30/ca/24.html" title="服装 Clothes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-新品', '点击', '服装 Clothes']);">服装 Clothes</a></li>
+                </ul>
+            </div>
+            <div class="headerShadow"></div>
+        </div>
+        <div class="header_nav_sel"></div>
+        <!--女士-->
+        <div class="header_nav_sel">
+        	<div class="header_nav_sel_m">
+                <ul>
+                    <li class="hnsTit"><a href="/woman/index/ca/1.html" title="包袋 Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '包袋 Bags']);">包袋 Bags</a></li>
+                    <li><a href="/woman/index/ca/1.html" title="所有包袋" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '所有包袋']);">所有包袋</a></li>
+                    <li><a href="/woman/index/ca/13.html" title="手提包 Totes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '手提包 Totes']);">手提包 Totes</a></li>
+                    <li><a href="/woman/index/ca/14.html" title="单肩包 Shoulder Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '单肩包 Shoulder Bags']);">单肩包 Shoulder Bags</a></li>
+                    <li><a href="/woman/index/ca/15.html" title="斜挎包 Messenger Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '斜挎包 Messenger Bags']);">斜挎包 Messenger Bags</a></li>
+                    <li><a href="/woman/index/ca/16.html" title="手拿包 Clutch Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '手拿包 Clutch Bags']);">手拿包 Clutch Bags</a></li>
+                    <li><a href="/woman/index/ca/27.html" title="双肩包 Travel Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '双肩包 Travel Bags']);">双肩包 Travel Bags</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/woman/index/ca/3.html" title="配饰 Accessories" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '配饰 Accessories']);">配饰 Accessories</a></li>
+                    <li><a href="/woman/index/ca/3.html" title="所有配饰" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '所有配饰']);">所有配饰</a></li>
+                    <li><a href="/woman/index/ca/125.html" title="钱包 Wallets" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '钱包 Wallets']);">钱包 Wallets</a></li>
+                    <li><a href="/woman/index/ca/10.html" title="手表 Watches" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '手表 Watches']);">手表 Watches</a></li>
+                    <li><a href="/woman/index/ca/5.html" title="太阳眼镜 Sunglasses" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '太阳眼镜 Sunglasses']);">太阳眼镜 Sunglasses</a></li>
+                    <li><a href="/woman/index/ca/4.html" title="饰品 Jewelry" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '饰品 Jewelry']);">饰品 Jewelry</a></li>
+                    <li><a href="/woman/index/ca/6.html" title="腰带 Belts" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '腰带 Belts']);">腰带 Belts</a></li>
+                    <li><a href="/woman/index/ca/181.html" title="围巾 Scarf" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '围巾 Scarf']);">围巾 Scarf</a></li>
+                    <li><a href="/woman/index/ca/28.html" title="小配件 Small Acc." target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '小配件 Small Acc.']);">小配件 Small Acc.</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/woman/index/ca/8.html" title="鞋履 Shoes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '鞋履 Shoes']);">鞋履 Shoes</a></li>
+                    <li><a href="/woman/index/ca/8.html" title="所有鞋履" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '所有鞋履']);">所有鞋履</a></li>
+                    <li><a href="/woman/index/ca/306.html" title="平底鞋 Flat Shoes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '平底鞋 Flat Shoes']);">平底鞋 Flat Shoes</a></li>
+                    <li><a href="/woman/index/ca/158.html" title="高跟鞋 Pumps" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '高跟鞋 Pumps']);">高跟鞋 Pumps</a></li>
+                    <li><a href="/woman/index/ca/150.html" title="靴子 Boots" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '靴子 Boots']);">靴子 Boots</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/woman/index/ca/24.html" title="服装 Clothes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '服装 Clothes']);">服装 Clothes</a></li>
+                    <li><a href="/woman/index/ca/24.html" title="所有服装" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '所有服装']);">所有服装</a></li>
+                    <li><a href="/woman/index/ca/205.html" title="卫衣 Hoodies" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '卫衣 Hoodies']);">卫衣 Hoodies</a></li>
+                    <li><a href="/woman/index/ca/208.html" title="衬衫 Shirt" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '衬衫 Shirt']);">衬衫 Shirt</a></li>
+                    <li><a href="/woman/index/ca/210.html" title="针织/毛衫 Knit/Sweater" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '针织/毛衫 Knit/Sweater']);">针织/毛衫 Knit/Sweater</a></li>
+                    <li><a href="/woman/index/ca/212.html" title="夹克 Jacket" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '夹克 Jacket']);">夹克 Jacket</a></li>
+                    <li><a href="/woman/index/ca/177.html" title="大衣 Coat" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '大衣 Coat']);">大衣 Coat</a></li>
+                    <li><a href="/woman/index/ca/35.html" title="半裙 Skirts" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '半裙 Skirts']);">半裙 Skirts</a></li>
+                    <li><a href="/woman/index/ca/187.html" title="连衣裙 Dresses" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-女士', '点击', '连衣裙 Dresses']);">连衣裙 Dresses</a></li>
+                </ul>
+            </div>
+            <div class="headerShadow"></div>
+        </div>
+        <!--男仕-->
+        <div class="header_nav_sel">
+        	<div class="header_nav_sel_m">
+                <ul>
+                    <li class="hnsTit"><a href="/man/index/ca/1.html" title="包袋 Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '包袋 Bags']);">包袋 Bags</a></li>
+                    <li><a href="/man/index/ca/1.html" title="所有包袋" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '所有包袋']);">所有包袋</a></li>
+                    <li><a href="/man/index/ca/13.html" title="手提包 Totes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '手提包 Totes']);">手提包 Totes</a></li>
+                    <li><a href="/man/index/ca/14.html" title="单肩包 Shoulder Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '单肩包 Shoulder Bags']);">单肩包 Shoulder Bags</a></li>
+                    <li><a href="/man/index/ca/15.html" title="斜挎包 Messenger Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '斜挎包 Messenger Bags']);">斜挎包 Messenger Bags</a></li>
+                    <li><a href="/man/index/ca/16.html" title="手拿包 Clutch Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '手拿包 Clutch Bags']);">手拿包 Clutch Bags</a></li>
+                    <li><a href="/man/index/ca/27.html" title="双肩包 Travel Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '双肩包 Travel Bags']);">双肩包 Travel Bags</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/man/index/ca/3.html" title="配饰 Accessories" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '配饰 Accessories']);">配饰 Accessories</a></li>
+                    <li><a href="/man/index/ca/3.html" title="所有配饰" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '所有配饰']);">所有配饰</a></li>
+                    <li><a href="/man/index/ca/125.html" title="钱包 Wallets" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '钱包 Wallets']);">钱包 Wallets</a></li>
+                    <li><a href="/man/index/ca/10.html" title="手表 Watches" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '手表 Watches']);">手表 Watches</a></li>
+                    <li><a href="/man/index/ca/5.html" title="太阳眼镜 Sunglasses" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '太阳眼镜 Sunglasses']);">太阳眼镜 Sunglasses</a></li>
+                    <li><a href="/man/index/ca/6.html" title="腰带 Belts" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '腰带 Belts']);">腰带 Belts</a></li>
+                    <li><a href="/man/index/ca/181.html" title="围巾 Scarf" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '围巾 Scarf']);">围巾 Scarf</a></li>
+                    <li><a href="/man/index/ca/180.html" title="领带 Ties" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '领带 Ties']);">领带 Ties</a></li>
+                    <li><a href="/man/index/ca/296.html" title="数码周边 Technology" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '数码周边 Technology']);">数码周边 Technology</a></li>
+                    <li><a href="/man/index/ca/28.html" title="小配件 Small Acc." target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '小配件 Small Acc.']);">小配件 Small Acc.</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/man/index/ca/8.html" title="鞋履 Shoes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '鞋履 Shoes']);">鞋履 Shoes</a></li>
+                    <li><a href="/man/index/ca/8.html" title="所有鞋履" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '所有鞋履']);">所有鞋履</a></li>
+                    <li><a href="/man/index/ca/306.html" title="平底鞋 Flat Shoes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '平底鞋 Flat Shoes']);">平底鞋 Flat Shoes</a></li>
+                    <li><a href="/man/index/ca/149.html" title="休闲皮鞋 Casual Shoes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '休闲皮鞋 Casual Shoes']);">休闲皮鞋 Casual Shoes</a></li>
+                    <li><a href="/man/index/ca/152.html" title="正装皮鞋 Business Shoes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '正装皮鞋 Business Shoes']);">正装皮鞋 Business Shoes</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/man/index/ca/24.html" title="服装 Clothes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '服装 Clothes']);">服装 Clothes</a></li>
+                    <li><a href="/man/index/ca/24.html" title="所有服装" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '所有服装']);">所有服装</a></li>
+                    <li><a href="/man/index/ca/205.html" title="卫衣 Hoodies" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '卫衣 Hoodies']);">卫衣 Hoodies</a></li>
+                    <li><a href="/man/index/ca/206.html" title="T恤/POLO T-Shirt/POLO" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', 'T恤/POLO T-Shirt/POLO']);">T恤/POLO T-Shirt/POLO</a></li>
+                    <li><a href="/man/index/ca/208.html" title="衬衫 Shirt" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '衬衫 Shirt']);">衬衫 Shirt</a></li>
+                    <li><a href="/man/index/ca/100.html" title="西装套装 Suit" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '西装套装 Suit']);">西装套装 Suit</a></li>
+                    <li><a href="/man/index/ca/212.html" title="夹克 Jacket" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '夹克 Jacket']);">夹克 Jacket</a></li>
+                    <li><a href="/man/index/ca/177.html" title="大衣 Coat" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '大衣 Coat']);">大衣 Coat</a></li>
+                    <li><a href="/man/index/ca/214.html" title="羽绒服/棉衣 Down Jacket" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '羽绒服/棉衣 Down Jacket']);">羽绒服/棉衣 Down Jacket</a></li>
+                    <li><a href="/man/index/ca/102.html" title="休闲裤 Casual Pants" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-男仕', '点击', '休闲裤 Casual Pants']);">休闲裤 Casual Pants</a></li>
+                </ul>
+            </div>
+            <div class="headerShadow"></div>
+        </div>
+        <!--童装-->
+        <div class="header_nav_sel">
+        	<div class="header_nav_sel_m">
+            	<ul>
+                    <li class="hnsTit"><a href="/children" title="儿童 Children" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', '儿童 Children']);">儿童 Children</a></li>
+                    <li><a href="/children/index/ca/206.html" title="T恤/POLO T-Shirt/POLO" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', 'T恤/POLO T-Shirt/POLO']);">T恤/POLO T-Shirt/POLO</a></li>
+                    <li><a href="/children/index/ca/208.html" title="衬衫 Shirt" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', '衬衫 Shirt']);">衬衫 Shirt</a></li>
+                    <li><a href="/children/index/ca/205.html" title="卫衣 Hoodies" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', '卫衣 Hoodies']);">卫衣 Hoodies</a></li>
+                    <li><a href="/children/index/ca/214.html" title="羽绒服/棉服 Down Jackets" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', '羽绒服/棉服 Down Jackets']);">羽绒服/棉服 Down Jackets</a></li>
+                    <li><a href="/children/index/ca/187.html" title="连衣裙 Dresses" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', '连衣裙 Dresses']);">连衣裙 Dresses</a></li>
+                    <li><a href="/children/index/ca/102.html" title="休闲裤 Casual Pants" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', '休闲裤 Casual Pants']);">休闲裤 Casual Pants</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/children" title="热门品牌" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', '热门品牌']);">热门品牌</a></li>
+                    <li><a href="/children/index/b/13.html" title="Gucci 古驰" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', 'Gucci 古驰']);">Gucci 古驰</a></li>
+                    <li><a href="/children/index/b/34.html" title="Kenzo 高田贤三" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', 'Kenzo 高田贤三']);">Kenzo 高田贤三</a></li>
+                    <li><a href="/children/index/b/506.html" title="Little Dickins &amp; Jones" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', 'Little Dickins &amp; Jones']);">Little Dickins &amp; Jones</a></li>
+                    <li><a href="/children/index/b/345.html" title="RIDERS ON THE STORM" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-童装', '点击', 'RIDERS ON THE STORM']);">RIDERS ON THE STORM</a></li>
+                </ul>
+            </div>
+        	<div class="headerShadow"></div>
+        </div>
+        <!--腕表-->
+        <div class="header_nav_sel">
+        	<div class="header_nav_sel_m">
+            	<ul>
+                	<li class="hnsTit"><a href="/watch/index/fp/20.html" title="男仕腕表" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', '男仕腕表']);">男仕腕表</a></li>
+                    <li class="hnsTit"><a href="/watch/index/fp/30.html" title="女士腕表" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', '女士腕表']);">女士腕表</a></li>
+                    <li class="hnsTit"><a href="/watch/index/ca/251.html" title="石英石" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', '石英石']);">石英石</a></li>
+                    <li class="hnsTit"><a href="/watch/index/ca/252.html" title="机械表" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', '机械表']);">机械表</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/watch" title="热门品牌" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', '热门品牌']);">热门品牌</a></li>
+                    <li><a href="/watch/index/b/504.html" title="sevenfriday" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', 'sevenfriday']);">sevenfriday</a></li>
+                    <li><a href="/watch/index/b/20.html" title="Calvin Klein 卡尔文·克莱恩" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', 'Calvin Klein 卡尔文·克莱恩']);">Calvin Klein 卡尔文·克莱恩</a></li>
+                    <li><a href="/watch/index/b/540.html" title="Daniel Wellington 丹尼尔·惠灵顿" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', 'Daniel Wellington 丹尼尔·惠灵顿']);">Daniel Wellington 丹尼尔·惠灵顿</a></li>
+                    <li><a href="/watch/index/b/388.html" title="Tissot 天梭" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', 'Tissot 天梭']);">Tissot 天梭</a></li>
+                    <li><a href="/watch/index/b/212.html" title="OMEGA 欧米茄" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', 'OMEGA 欧米茄']);">OMEGA 欧米茄</a></li>
+                    <li><a href="/watch/index/b/66.html" title="Longines 浪琴" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-腕表', '点击', 'Longines 浪琴']);">Longines 浪琴</a></li>
+                </ul>
+            </div>
+            <div class="headerShadow"></div>
+        </div>
+        <!--品牌-->
+        <div class="header_nav_sel">
+        	<div class="header_nav_sel_m">
+            	<ul>
+                    <li class="hnsTit"><a href="/product/index/bty/1.html" title="国际大牌 Luxury Brand" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">国际大牌 Luxury Brand</a></li>
+                    <li><a href="/brands/detail/id/28.html" title="Diesel 迪赛" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">Diesel 迪赛</a></li>
+                    <li><a href="/brands/detail/id/8.html" title="Chloe 蔻依" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Bra8nd']);">Chloe 蔻依</a></li>
+                    <li><a href="/brands/detail/id/9.html" title="Dior 迪奥" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">Dior 迪奥</a></li>
+                    <li><a href="/brands/detail/id/63.html" title="BVLGARI 宝格丽" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">BVLGARI 宝格丽</a></li>
+                    <li><a href="/brands/detail/id/94.html" title="3.1 Phillip Lim 菲利林" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">3.1 Phillip Lim 菲利林</a></li>
+                    <li><a href="/brands/detail/id/456.html" title="Love Moschino 莫斯奇诺" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">Love Moschino 莫斯奇诺</a></li>
+                    <li><a href="/brands/detail/id/255.html" title="Giuseppe Zanotti 朱塞佩·萨诺" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-品牌', '点击', '国际大牌 Luxury Brand']);">Giuseppe Zanotti 朱塞佩·萨诺</a></li>
+                    <li><a href="/brands/detail/id/109.html" title="Moschino 莫斯奇诺" target="_blank">Moschino 莫斯奇诺</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/product/index/bty/2.html" title="设计师品牌 Designer Brand" target="_blank">设计师品牌 Designer Brand</a></li>
+                    <li><a href="/brands/detail/id/333.html" title="MSGM" target="_blank">MSGM </a></li>
+                    <li><a href="/brands/detail/id/386.html" title="Circle" target="_blank">Circle </a></li>
+                    <li><a href="/brands/detail/id/95.html" title="Iceberg 冰山" target="_blank">Iceberg 冰山</a></li>
+                    <li><a href="/brands/detail/id/559.html" title="MABYMA STUDIO" target="_blank">MABYMA STUDIO </a></li>
+                    <li><a href="/brands/detail/id/572.html" title="Dune" target="_blank">Dune </a></li>
+                    <li><a href="/brands/detail/id/576.html" title="ChloeChen" target="_blank">ChloeChen </a></li>
+                    <li><a href="/brands/detail/id/462.html" title="Versus 范瑟丝" target="_blank">Versus 范瑟丝</a></li>
+                    <li><a href="/brands/detail/id/334.html" title="P.A.R.O.S.H." target="_blank">P.A.R.O.S.H.</a></li>
+                </ul>
+            </div>
+            <div class="headerShadow"></div>
+        </div>
+        <!--特惠-->
+        <!--<div class="header_nav_sel">
+        	<div class="header_nav_sel_m">
+        		<ul>
+                    <li class="hnsTit"><a href="/sales/index/bty/1.html" title="国际大牌 Luxury Brand" target="_blank">国际大牌 Luxury Brand</a></li>
+                    <li><a href="/sales/index/b/28.html" title="Diesel 迪赛" target="_blank">Diesel 迪赛</a></li>
+                    <li><a href="/sales/index/b/8.html" title="Chloe 蔻依" target="_blank">Chloe 蔻依</a></li>
+                    <li><a href="/sales/index/b/9.html" title="Dior 迪奥" target="_blank">Dior 迪奥</a></li>
+                    <li><a href="/sales/index/b/63.html" title="BVLGARI 宝格丽" target="_blank">BVLGARI 宝格丽</a></li>
+                    <li><a href="/sales/index/b/94.html" title="3.1 Phillip Lim 菲利林" target="_blank">3.1 Phillip Lim 菲利林</a></li>
+                    <li><a href="/sales/index/b/456.html" title="Love Moschino 莫斯奇诺" target="_blank">Love Moschino 莫斯奇诺</a></li>
+                    <li><a href="/sales/index/b/255.html" title="Giuseppe Zanotti 朱塞佩·萨诺" target="_blank">Giuseppe Zanotti 朱塞佩·萨诺</a></li>
+                    <li><a href="/sales/index/b/109.html" title="Moschino 莫斯奇诺" target="_blank">Moschino 莫斯奇诺</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/sales/index/fp/20.html" title="男仕 Man" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-特惠', '点击', '男仕 Man']);">男仕 Man</a></li>
+                    <li><a href="/sales/index/fp/20/ca/1.html" title="包袋 Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-特惠', '点击', '包袋 Bags']);">包袋 Bags</a></li>
+                    <li><a href="/sales/index/fp/20/ca/3.html" title="配饰 Accessories" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-特惠', '点击', '配饰 Accessories']);">配饰 Accessories</a></li>
+                    <li><a href="/sales/index/fp/20/ca/8.html" title="鞋履 Shoes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-特惠', '点击', '鞋履 Shoes']);">鞋履 Shoes</a></li>
+                    <li><a href="/sales/index/fp/20/ca/24.html" title="服装 Clothes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-特惠', '点击', '服装 Clothes']);">服装 Clothes</a></li>
+                </ul>
+                <ul>
+                    <li class="hnsTit"><a href="/sales/index/fp/30.html" title="女士 Woman" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-特惠', '点击', '女士 Woman']);">女士 Woman</a></li>
+                    <li><a href="/sales/index/fp/30/ca/1.html" title="包袋 Bags" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-特惠', '点击', '包袋 Bags']);">包袋 Bags</a></li>
+                    <li><a href="/sales/index/fp/30/ca/3.html" title="配饰 Accessories" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-特惠', '点击', '配饰 Accessories']);">配饰 Accessories</a></li>
+                    <li><a href="/sales/index/fp/30/ca/8.html" title="鞋履 Shoes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-特惠', '点击', '鞋履 Shoes']);">鞋履 Shoes</a></li>
+                    <li><a href="/sales/index/fp/30/ca/24.html" title="服装 Clothes" target="_blank" onclick="_hmt.push(['_trackEvent', '导航菜单-特惠', '点击', '服装 Clothes']);">服装 Clothes</a></li>
+                </ul>
+            </div>
+            <div class="headerShadow"></div>
+        </div>-->
+    	<div class="header_nav_sel"></div>
+
+        <!--<div class="header_nav_sel">
+                <div class="header_nav_sel_m">
+                    <div class="header_nav_man clearfix">
+                                            </div>
+                </div>
+                <div class="headerShadow"></div>
+            </div><div class="header_nav_sel">
+                <div class="header_nav_sel_m">
+                    <div class="header_nav_man clearfix">
+                        <ul>
+                                <li class="hnsTit"><a href="/woman.html" title="所有" target="_blank">所有</a></li>
+                                                            </ul><ul>
+                                <li class="hnsTit"><a href="" title="包袋" target="_blank">包袋</a></li>
+                                <li><a href="" title="单肩包" target="_blank">单肩包</a></li>                            </ul>                    </div>
+                </div>
+                <div class="headerShadow"></div>
+            </div><div class="header_nav_sel">
+                <div class="header_nav_sel_m">
+                    <div class="header_nav_man clearfix">
+                                            </div>
+                </div>
+                <div class="headerShadow"></div>
+            </div><div class="header_nav_sel">
+                <div class="header_nav_sel_m">
+                    <div class="header_nav_man clearfix">
+                                            </div>
+                </div>
+                <div class="headerShadow"></div>
+            </div><div class="header_nav_sel">
+                <div class="header_nav_sel_m">
+                    <div class="header_nav_man clearfix">
+                                            </div>
+                </div>
+                <div class="headerShadow"></div>
+            </div><div class="header_nav_sel">
+                <div class="header_nav_sel_m">
+                    <div class="header_nav_man clearfix">
+                                            </div>
+                </div>
+                <div class="headerShadow"></div>
+            </div><div class="header_nav_sel">
+                <div class="header_nav_sel_m">
+                    <div class="header_nav_man clearfix">
+                                            </div>
+                </div>
+                <div class="headerShadow"></div>
+            </div><div class="header_nav_sel">
+                <div class="header_nav_sel_m">
+                    <div class="header_nav_man clearfix">
+                                            </div>
+                </div>
+                <div class="headerShadow"></div>
+            </div>-->
+    </div>
+</div>
+    </div>
+    <div class="headerShadow"></div>
+</div>
+<div class="mask"></div>
+<style type="text/css">
+    body {background:#f5f5f5;}
+</style>
+<script>
+
+    function goods(data){
+            var type = []
+            console.log(data);
+            var a=data[1].split('-')[1];
+            var b=data[3].split(' ')[0];
+            console.log(a,b)
+            $.ajax({
+
+                    url:"http://192.168.11.83:8888/women",
+                    type:"GET",
+                    async:false,
+                    data:{
+                        type1:a,
+                        type2:b
+                    },
+                    dataType:"json",
+                    success:function(goodslist) {
+                        location.href="http://192.168.11.83:8888/static/html/productlist.html?type1="+a+"&type2="+b
+                    },
+                    error:function(){
+                        alert('guilin')
+                    }
+                })
+        }
+</script>
+<div id="content" class="content">
+
+    <div class="product">
+        <div class="pro_top clearfix">
+            <!--左侧-->
+            <div class="pro_l clearFix">
+                <!--商品缩略图片-->
+                <div class="pro_img_list">
+                    <div class="goods_scroll">
+                        <div class="prev"></div>
+                        <div class="prev_cur"></div>
+                        <div class="next"></div>
+                        <div class="next_cur"></div>
+                        <div class="scroll_mask">
+                            <ul id="mycarousel1" class="goods_list3">
+                                <!--图片右侧缩略小图-->
+                                <li class="list_edit"><a class="" picnum="1" href="javascript:void(0);" rel="{gallery:'gal1',smallimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg', largeimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg'}"><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg" alt=""  width="50" height="60"/></a></li><li class="list_edit"><a class="" picnum="2" href="javascript:void(0);" rel="{gallery:'gal1',smallimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263059940fc6b7c02-800x960.jpg', largeimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263059940fc6b7c02-800x960.jpg'}"><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263059940fc6b7c02-800x960.jpg" alt=""  width="50" height="60"/></a></li><li class="list_edit"><a class="" picnum="3" href="javascript:void(0);" rel="{gallery:'gal1',smallimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263259940fc897094-800x960.jpg', largeimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263259940fc897094-800x960.jpg'}"><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263259940fc897094-800x960.jpg" alt=""  width="50" height="60"/></a></li><li class="list_edit"><a class="" picnum="4" href="javascript:void(0);" rel="{gallery:'gal1',smallimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263459940fca38750-800x960.jpg', largeimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263459940fca38750-800x960.jpg'}"><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263459940fca38750-800x960.jpg" alt=""  width="50" height="60"/></a></li><li class="list_edit"><a class="" picnum="5" href="javascript:void(0);" rel="{gallery:'gal1',smallimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263659940fcc24d64-800x960.jpg', largeimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263659940fcc24d64-800x960.jpg'}"><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263659940fcc24d64-800x960.jpg" alt=""  width="50" height="60"/></a></li>                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--商品大图-->
+                <div class="pro_img">
+                    <a class="jqzoom" href="javascript:void(0);" name="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg" rel="gal1"><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg" onerror="javascript:this.src='/static/img/list_load.gif';" alt="" width="383" height="460" /></a>
+                </div>
+            </div>
+            <!--左侧结束-->
+
+            <!--右侧-->
+            <div class="pro_r float_l">
+                <!--品牌以及商品标题-->
+                <h1 class="relative clearfix">
+                    <a class="c_purple float_l " href="javascript:void(0);" onclick="goods(['_trackEvent', '导航', '点击', '新近单品'])" title="了解品牌" target="_blank">Chloe</a>
+                </h1>
+
+                <div class="clearfix">
+                    <div class="ws_pro_r_detail">牛皮 女士 单肩包</div><!--全球购--><div class="ws_pro_r_global"></div>                </div>
+                <!--参考价格-->
+                <div class="position_rel" >
+                    <div class="pro_r_price relative clearfix">
+                        <div class="now_price"><i class="c_gray_2" style="display:inline-block; width:55px;">美西价</i><span>￥<em>11438.00</em></span></div>
+                                                                            <!--<div class="pro_taxes_fees">
+                                                    </div>
+                        <div class="pro_hint"><span></span>该商品售价由商品单价、<br/>行邮税、运费组成。</div>-->
+                    </div>
+                </div>
+                <!--选择颜色-->
+                    <div class="pro_color">
+                        <table width="100%">
+                            <colgroup>
+                                <col width="55px" />
+                            </colgroup>
+                            <tr>
+                                <th>颜色</th>
+                                <td>
+                                    <ul class="clearfix">
+                                        <li class="colorcur" color-id="13" title="黄色">
+                                            <div class="listColor listColor13"></div>
+                                            </li>                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!--选择尺码-->
+                    <div class="pro_size"  style="padding: 15px 0;">
+                        <table width="100%" style="display:none;">
+                        <colgroup>
+                            <col width="55px" />
+                        </colgroup>
+                        <tr>
+                            <th>尺码</th>
+                            <td>
+                                <ul class="clearfix">
+                                                                    </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span class="proshowsize">查看尺码说明</span></td>
+                        </tr>
+                        <tr></tr>
+                        </table>
+
+                    </div>
+                    <!--购买按钮-->
+                    <div id="addbutton" class="pro_btn clearfix" style="display:block">
+                    <input id="skuId" class="productskuId" type="hidden" name="skuId" value="305865">
+                    <button type="button" class="btn_add_shopping float_l" onclick="member_cart_buyone(); _hmt.push(['_trackEvent', '商品详细页', '即刻购买', $('#skuId').val() ]);">即刻购买</button>
+                    <button type="button" class="btn_buy_now float_l" onclick="member_cart_add(); _hmt.push(['_trackEvent', '商品详细页', '加入购物袋', $('#skuId').val() ]);">加入购物袋</button>
+
+                    <div class="pro_collect">
+                        <!--是否收藏-->
+                        <a title="加入收藏" class=" pro_collect_y" href="javascript:void(0);" onclick="addcollect(this); _hmt.push(['_trackEvent', '商品详细页', '标签', '加入收藏']);"></a>
+                    </div>
+                    <div class="pro_share">
+                        <div class="pro_share_m">
+                            <div class="header_sj"></div>
+                            <div class="pro_share_n bdsharebuttonbox public_share">
+                                <a class="ps_wechat" href="javascript:void(0);" data-cmd="weixin" title="分享到微信"></a>
+                                <a class="ps_sina" href="javascript:void(0);" data-cmd="tsina" title="分享到新浪微博"></a>
+                                <a class="ps_qq" href="javascript:void(0);" data-cmd="sqq" title="分享到QQ好友"></a>
+                            </div>
+
+                            <div class="bdsharebuttonbox">
+                                <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!--售罄状态-->
+            <div class="pro_btn_none" style="display:none">该商品已售罄<!-- ，<a class="link_purple" href="javascript:void(0);">订阅到货通知</a> 。 --></div>
+                <div class="pro_statement">
+            <ul>
+                <li class="clearfix">
+                    <span class="pro_statement_tit">到货时间</span>
+                    <span class="pro_statement_con">该商品到货时间预计15-20个工作日,具体时间受海关放行效率影响。</span>
+                    <!--<div class="pro_statement_t clearfix"><div class="pst_l float_l">到货时间</div><div class="pst_r float_r"><em class="pst01"></em></div></div>-->
+                    <!--<div class="pro_statement_b">该商品到货时间预计15-20个工作日,具体时间受海关放行效率影响。</div>-->
+                </li>
+                                <li class="clearfix">
+                        <span class="pro_statement_tit">退货说明</span>
+                        <span class="pro_statement_con">若该商品无质量问题不支持退换货</span>
+
+                        <!--<div class="pro_statement_t clearfix"><div class="pst_l float_l">退货说明</div><div class="pst_r float_r"><em class="pst01"></em></div></div>-->
+                        <!--<div class="pro_statement_b">-->
+                        <!--若该商品无质量问题不支持退换货&lt;!&ndash; 若该商品无质量问题不支持退换货。 &ndash;&gt;-->
+                        <!--</div>-->
+                    </li>            </ul>
+        </div>
+
+
+    </div>
+    <!--右侧结束-->
+</div>
+
+<!--相关推荐-->
+<div class="pro_hty">
+    <div class="pro_pubtit">
+        <div class="tabTitle">
+            <div class="tabTitle_m">Product <span>Recommend</span></div>
+            <p>相关推荐</p>
+        </div>
+    </div>
+    <div id="Product_Recommend" class="pro_recommend">
+        <div class="cart_prev"><div class="cart_prev_m"></div></div>
+        <div class="cart_next"><div class="cart_next_m"></div></div>
+        <ul class="clearfix">
+            <li>
+                    <a title="" href="/product/detail/id/298265/saleid/156059.html" title=" 皮革 女士 平底鞋" target="_blank">
+                        <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170724/1606165975aa78a8c24-160x192.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Valentino 华伦天奴</span><br>
+                            <span class="prn_m"> 皮革 女士 平底鞋</span><br>
+                            <span class="prn_m">3930.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/305864/saleid/159206.html" title="牛皮 女士 单肩包" target="_blank">
+                        <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170816/163754599404629c12d-160x192.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Chloe 蔻依</span><br>
+                            <span class="prn_m">牛皮 女士 单肩包</span><br>
+                            <span class="prn_m">11438.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/305283/saleid/158976.html" title="牛皮 女士 斜挎包" target="_blank">
+                        <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170814/12050659912172c651f-160x192.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Marni 玛尼</span><br>
+                            <span class="prn_m">牛皮 女士 斜挎包</span><br>
+                            <span class="prn_m">9375.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/305267/saleid/158964.html" title="牛皮 女士 单肩包" target="_blank">
+                        <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170815/1702055992b88dcf442-160x192.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Chloe 蔻依</span><br>
+                            <span class="prn_m">牛皮 女士 单肩包</span><br>
+                            <span class="prn_m">11500.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/302683/saleid/157733.html" title="金属 女士 颈饰" target="_blank">
+                        <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170803/1826315982fa5746269-160x192.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Hermes 爱马仕</span><br>
+                            <span class="prn_m">金属 女士 颈饰</span><br>
+                            <span class="prn_m">55714.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/296580/saleid/155347.html" title="18K/钻石 女士 颈饰" target="_blank">
+                        <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170717/142403596c58035b3b5-160x192.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Isabel 伊珊贝</span><br>
+                            <span class="prn_m">18K/钻石 女士 颈饰</span><br>
+                            <span class="prn_m">280000.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/125618/saleid/123076.html" title="17新款 牛皮 女士 手提包" target="_blank">
+                        <img src="https://img.meicicdn.com/p/126/125618/h-125618-1.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Chloe 蔻依</span><br>
+                            <span class="prn_m">17新款 牛皮 女士 手提包</span><br>
+                            <span class="prn_m">11200.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/121564/saleid/119024.html" title="Serpenti Forever翻盖包" target="_blank">
+                        <img src="https://img.meicicdn.com/p/122/121564/h-121564-1.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">BVLGARI 宝格丽</span><br>
+                            <span class="prn_m">Serpenti Forever翻盖包</span><br>
+                            <span class="prn_m">17790.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/120594/saleid/118056.html" title="牛皮 女士 宝石单肩包" target="_blank">
+                        <img src="https://img.meicicdn.com/p/121/120594/h-120594-1.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Marni 玛尼</span><br>
+                            <span class="prn_m">牛皮 女士 宝石单肩包</span><br>
+                            <span class="prn_m">12110.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/119521/saleid/116983.html" title="合金 女士 手链" target="_blank">
+                        <img src="https://img.meicicdn.com/p/120/119521/h-119521-1.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Hermes 爱马仕</span><br>
+                            <span class="prn_m">合金 女士 手链</span><br>
+                            <span class="prn_m">3220.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/116644/saleid/114106.html" title="仿蛇皮 女士 斜挎包" target="_blank">
+                        <img src="https://img.meicicdn.com/p/117/116644/h-116644-1.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Chloe 蔻依</span><br>
+                            <span class="prn_m">仿蛇皮 女士 斜挎包</span><br>
+                            <span class="prn_m">12620.00</span>
+                        </div>
+                    </a>
+                </li><li>
+                    <a title="" href="/product/detail/id/113428/saleid/110890.html" title="羊皮 女士 斜挎包" target="_blank">
+                        <img src="https://img.meicicdn.com/p/114/113428/h-113428-1.jpg" width="160" height="192" alt="" /><br />
+                        <div class="pro_recommend_name">
+                            <span class="prn_t">Chloe 蔻依</span><br>
+                            <span class="prn_m">羊皮 女士 斜挎包</span><br>
+                            <span class="prn_m">11638.00</span>
+                        </div>
+                    </a>
+                </li>        </ul>
+    </div>
+</div>
+<div class="proTab_bg" style="width: 1200px;left: 50%;margin-left: -600px; background: white;height: 60px;display: none;z-index: 6;"></div>
+<div class="proTab" style="*background: white;">
+    <div class="proTab_m clearfix">
+        <ul id="tab" class="float_l">
+            <li class="current" onclick="_hmt.push(['_trackEvent', '商品详细页', '标签', '商品详情']);">商品详情</li>
+            <li onclick="_hmt.push(['_trackEvent', '商品详细页', '商品尺寸', '商品详情']);">商品尺寸</li>            <li onclick="_hmt.push(['_trackEvent', '商品详细页', '商品尺寸', '配送及售后']);">配送及售后</li>
+        </ul>
+
+        <div class="proTab_btns" style="display:block">
+        <div class="proTab_btn float_r" >
+            <button id="btn-shopping2" class="btn_add_shopping" onclick="member_cart_buyone();_hmt.push(['_trackEvent', '商品详细页', '浮动即刻购买', $('#skuId').val()]);">即刻购买</button>
+            <button id="btn-shopping1" class="btn_buy_now" onclick="member_cart_add();_hmt.push(['_trackEvent', '商品详细页', '浮动加入购物袋', $('#skuId').val()]);">加入购物袋</button>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="pro_main clearfix">
+    <!--商品详情，商品尺码，配送及售后-->
+    <div id="product_con">
+        <div class="tabCon" style="display:block;">
+            <div class="tabCon_m">
+                <div class="pro_pubtit">
+                    <div class="tabTitle">
+                        <div class="tabTitle_m">Product <span>Information</span></div>
+                        <p>商品信息</p>
+                    </div>
+                </div>
+                <div class="proTableinfo">
+                    <table class="proTable" width="100%">
+                        <colgroup>
+                            <col width="70px" /><col width="195px" /><col width="70px" /><col width="195px" /><col width="70px" /><col width="195px" /><col width="70px" /><col width="195px" />
+                        </colgroup>
+                        <tr>
+                            <th>美西编号</th><td class="product_sku">305865</td>
+                            <th>货　　号</th><td>3S1031 H5I BJN</td>
+                            <th>产　　地</th><td>意大利</td>
+                            <th>年　　份</th><td>2017</td>
+                        </tr>
+                        <tr>
+                            <th>适用人群</th><td>女士</td>
+                            <th>颜　　色</th><td class="product_color">黄色</td>
+                            <th>季　　节</th><td>-</td>
+                            <th>系　　列</th><td>DREW系列</td>
+                        </tr>
+                        <tr><th>材　　质</th><td colspan="7">牛皮</td></tr>
+                        <tr>
+                            <th style="border:none;" valign="top"><div>商品描述</div></th>
+                            <td colspan="7" style="border:none;" valign="top">
+                                <div style="width: 100%;word-break:break-all;padding-top: 16px;">
+                                    【开合方式】锁扣开合
+【内部结构】内侧平整口袋
+【外部结构】golden黄铜效果
+【底部结构】无
+【附属肩带】无
+【肩带尺寸】约104cm
+【款式说明】横款
+【规格尺寸】23.5长*21高*8宽(cm)
+【商品附件】防尘 品卡 号卡                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+			<div class="tabCon_m">
+                <div class="pro_pubtit">
+                    <div class="tabTitle">
+                        <div class="tabTitle_m">Brand <span>Story</span></div>
+                        <p>品牌故事</p>
+                    </div>
+                </div>
+                <div class="brand_story">
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <div class="proBrand_l">
+                                    <p>Chloé于1952年创立于法国巴黎，诞生时只有女装，后来逐渐增加了眼镜、香水和包包手袋、鞋靴系列。女装的标志风格是轻纱上的花卉图案、轻柔飘逸的衣衫线条，虽然设计师频频更换，但蔻依的浪漫风格延续至今。在这60多年的品牌历史中Chloe大胆起用了来自不同国家、不同设计风格的设计师。所以品牌风格灵活多变，不如其他老品牌般僵化守旧。但品牌的风格框架并未因设计师的更迭而改变，一直保持着法兰西风格的色彩特征和优雅情调。</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="proBrand_r">
+                                    <div class="proBrand_r_line"></div>
+                                    <img src="http://img.meicicdn.com/upload/image/brand/logo/8.jpg">
+                                    <a class="moreBrandCon" href="/brands/detail/id/8.html" target="_blank" onclick="_hmt.push(['_trackEvent', '商品详细页', '查看更多品牌商品', 'Chloe 蔻依']);">查看更多品牌商品</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+			</div>
+			<div class="tabCon_m">
+                <div class="pro_pubtit">
+                    <div class="tabTitle">
+                        <div class="tabTitle_m">Product <span>Details</span></div>
+                        <p>商品详情</p>
+                    </div>
+                </div>
+                <div class="proImg">
+                    <ul class="clearfix">
+                        <li><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg" width="485"></li><li><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263059940fc6b7c02-800x960.jpg" width="485"></li><li><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263259940fc897094-800x960.jpg" width="485"></li><li><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263459940fca38750-800x960.jpg" width="485"></li><li><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263659940fcc24d64-800x960.jpg" width="485"></li>                    </ul>
+                </div>
+            </div>
+		</div>
+
+
+        <div class="tabCon">
+            <div class="tabCon_m">
+                <div class="pro_pubtit">
+                    <div class="tabTitle">
+                        <div class="tabTitle_m">Distribution</div>
+                        <p>配送</p>
+                    </div>
+                </div>
+                <div class="pro_service">
+                    <div class="ser_t">配送方式：</div>
+                    <p>为了给您提供快捷、可靠的快递服务，我们选择全球最具规模的快递公司-顺丰快递为您配送。若您选择货到付款，需加收2%的手续费，注册并验证后可免手续费。</p>
+                    <p>如遇超出配送范围的地址，您亦可选择网络覆盖范围最广的中国邮政速递物流-EMS。</p>
+                    <p>若您身处上海，也可以到美西的实体展厅前来挑选购买，支持现场刷卡和现金支付。</p>
+                </div>
+				<div class="pro_pubtit">
+                    <div class="tabTitle">
+                        <div class="tabTitle_m">After <span>Service</span></div>
+                        <p>售后服务</p>
+                    </div>
+                </div>
+                <div class="pro_service">
+                    <div class="ser_t">1.退换货政策：</div>
+                    <p>美西秉承“轻松享受奢华”的服务理念，希望您所购买的商品都是最满意的。因此当您在收到商品觉得不满意时，我们会竭诚为您提供退换货服务。</p>
+                    <p>（1）商品发货后自签收之日起的七日内，若对商品质量有任何不满意，都可以联系我们要求退换货；由于个人原因不喜欢商品，退货运费由买家承担。一个订单，只提供一次退换货服务。</p>
+                    <p>（2）商品发货后自签收之日起的七日之后，我们将不再提供任何退换货服务。</p>
+                    <p>（3）请保证美西安全封绳的完好无损，退换的商品没有被使用过，并带有所有商品相关配件，包括说明书、身份证卡、防尘袋、包装盒等。</p>
+                    <p>（4）如果商品是一个系列中的一件，退换时需要包括整个系列。</p>
+                    <p>（5）特殊商品（见特别提示）非因质量问题不予退换货 。</p>
+                    <p>（6）参与活动的商品，非因质量问题不予退换货。</p>
+                    <p>（7）商品因人为使用不当导致得损坏及使用中造成的正常磨损：例如商品上的金属制品使用后出现氧化、褪色等情况不予退换货。</p>
+                    <p>（8）退款服务处理周期：正常退货退款处理周期为自接收到商品之日起5-7个工作日（国家法定假日除外）；</p>
+                    <p>若货到付款签收商品后，退货退款处理周期为自接收到商品之日起10-15个工作日。</p>
+                                    </div>
+                <div class="pro_service">
+                    <p>如您有任何问题，欢迎您拨打 4000－250－630 联系我们 。（周一至周五 9：00－21：00   周六至周日 10：00－18：00）</p>
+                    <p>更多退换货信息，<a href="/services/service.html" target="_blank">点击查看</a></p>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+
+<!--<div class="pro_meicicafe">-->
+    <!--<div class="all_img">-->
+        <!--<img src="https://static3.meicicdn.com/web/img/pro_cafe.jpg" />-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--猜你喜欢-->
+<div class="pro_hty">
+    <div class="pro_pubtit">
+        <div class="tabTitle">
+            <div class="tabTitle_m">Guess Your Like</div>
+            <p>猜你喜欢</p>
+        </div>
+    </div>
+    <div id="GuessLike" class="pro_recommend">
+        <!--<div class="like_prev"><div class="like_prev_m"></div></div>
+        <div class="like_next"><div class="like_next_m"></div></div>
+        <ul class="clearfix">
+                    </ul>-->
+    </div>
+</div>
+
+
+</div>
+</div>
+
+</body>
+</html>
+<script>
+
+
+    var id=1;
+    $.ajax({
+        url:"http://192.168.11.83:8888/goods",
+        type:"GET",
+        async:false,
+        data:{
+            goodsid:id
+        },
+        dataType:"json",
+        success:function(goodslist){
+            console.log(goodslist)
+
+            console.log(goodslist._goods__price)
+            var _container = document.getElementsByClassName("ws_pro_r_detail");
+            console.log(_container);
+            _container[0].innerText = goodslist._goods__brand;
+        }
+    })
+
+</script>

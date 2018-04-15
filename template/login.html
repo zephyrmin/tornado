@@ -1,0 +1,173 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>美西-登陆</title>
+	<link  rel="stylesheet" href="/static/style.css">
+	<script src="/static/js/jquery-1.12.4.js"></script>
+    <script src="/static/js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/js/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="/static/js/index.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="template_header">
+			<a href="/" title='美西'>
+				<div class="tem_header_left float_l" style="background-image: url(../static/images/logo_02.png);">
+					<!-- <img src="../static/images/logo.png"> -->
+				</div>
+			</a>
+			<div class="tem_header_right float_r">
+				<div class="member_help">需要帮助？</div>
+				<div>
+					<!-- <span class="member_phone" style="background: url(../static/images/headico.png) no-repeat;"></span> -->
+					<span class="member_phone"></span>
+					4000-250-630
+				</div>
+			</div>
+		</div>
+		<div class="header_shadow" style="">
+		</div>
+	</div>
+	<div class="memberMain">
+		<div id="login_form" class="login_form">
+			<form class="form_horizontal" role="form" method="post">
+				<div class="member_m">
+					<div class="member_title">登陆美西</div>
+					<div class="member_li clearfix">
+						<div class="memberico01 float_l"></div>
+						<div class="memberint float_l">
+							<input type="text" id="phone" name="account"  placeholder="请输入手机号或邮箱"  validate-title="账号">
+						</div>
+					</div>
+					<div class="member_li clearfix">
+						<div class="memberico02 float_l"></div>
+						<div class="memberint float_l">
+							<input type="password" id="password" name="password"  placeholder="请输入密码"  validate-title="密码">
+						</div>
+					</div>
+					<div class="m_opt clearfix">
+						<span class="float_l">
+							<label for="login_auto">
+									<input type="checkbox" id="login_auto" checked="checked">
+									<span>自动登录</span>
+							</label>
+						</span>
+						<a href="#" class="float_r" target="_blank">忘记密码？</a>
+					</div>
+					<div class="mem_err_msg" id="error">
+						
+					</div>
+					<div class="member_form_btn">
+						<button type="button" id="btn" >登陆</button>
+					</div>
+					<script>
+						$(function(){
+							$("#btn").click(function(){
+								var $phone = $("#phone").val()
+								var $password = $("#password").val()
+								var error1 = "账号或密码错误，请重新输入"
+								var $error = $("#error")
+							$.post(
+								"http://192.168.11.83:8888/login",
+									{
+										phone:$phone,
+										password:$password
+									},
+									function (response) {
+										console.log(response)
+										json_obj = JSON.parse(response)
+										if(json_obj.code == 0){
+											location.href = "http://192.168.11.83:8888/static/html/index.html"
+										}else{
+											$error.text(error1)
+										}
+									}
+							)
+							})
+						})
+					</script>
+					<div class="m_t">
+						<a href="http://localhost:8888/register" class="acclink" href="#">立即注册</a>
+					</div>
+					<div class="jointLogonBox">
+						<div class="jointLogonBox_tit relative">
+							<div class="jlb_mid_line absolute"></div>
+							<p class="jlb_theme relative">其他登陆方式</p>
+						</div>
+						<div class="jointLogonBox_ico">
+							<ul>
+								<li><a href="#" class="jlb_wechat" title="微信登陆" target="_blank"></a></li>
+								<li><a href="#" class="jlb_sina" title="新浪微博登陆" target="_blank"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="contain">
+			<div class="pw_footer">
+				<div class="pw_footer_top">
+					<ul style="margin: auto;">
+						<li class="pw_footer_f">
+							<div class="footer_icon03"></div>
+							<span>100%正品保证</span>
+						</li>
+						<li class="pw_footer_m">
+							<div class="footer_icon02"></div>
+							<span>7天无忧退货</span>
+						</li>
+						<li class="pw_footer_l">
+							<div class="footer_icon01">	
+							</div>
+							<span>9年专注，品质保障</span>
+						</li>
+					</ul>
+				</div>
+				<div class="pw_footer_cut">
+				</div>
+				<div class="pw_footer_btm">
+					<div class="pw_footer_btm_l">
+						<ul>
+							<li style="border: 0;"><a href="#">媒体报道</a></li>
+							<li><a href="#">正品保证</a></li>
+							<li><a href="#">业务合作</a></li>
+							<li><a href="#">隐私声明</a></li>
+							<li><a href="#">加入美西</a></li>
+							<li><a href="#">联系我们</a></li>
+							
+						</ul>
+						<div class="clear"></div>
+						<div>
+							<p>Copyright ©2008-2017，美西-高端时尚生活电商</p>
+						</div>
+						<div>
+							<span>
+								沪ICP备09001221号
+							</span>
+							<span>
+								沪公网安备11010802017116号
+							</span>
+						</div>
+					</div>
+					<div class="pw_footer_btm_cut"></div>
+					<div class="pw_footer_btm_r">
+						<div>
+							<span>合作支持</span>
+						</div>
+						<ul>
+							<li class="partner_01"><a href="#"></a></li>
+							<li><a href="#"><span class="partner_02"></span><span class="partner_02_text">银联特约商户</span></a></li>
+							<li class="partner_03"><a href="#"></a></li>
+							<li class="partner_04"><a href="#"></a></li>
+							<li class="partner_05"><a href="#"></a></li>
+							<li class="partner_06" style="padding: 0 0 0 17px;"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

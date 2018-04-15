@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无订单页面</title>
+</head>
+<body>
+{% extends 'index.html' %}
+{% block content %}
+    <!--无商品-->
+    <div class="cart_none ng-cloak" ng-cloak ng-show="show_empty">
+        <div class="cart_none_member">
+        	<div class="cart_none_m">
+                <div class="cartNico"></div>
+                <div class="cartNtxt">购物车内暂时没有商品</div>
+                <!--未登录-->
+                <div class="cartNlog" ng-if="!is_login">登录后将显示您之前加入的商品</div>
+            </div>
+            <div class="cartNbtn clearfix">
+                <a href="/member/index/login" target="_blank" ng-if="!is_login">登录</a>
+                <a href="/new" target="_blank">随便逛逛</a>
+            </div>
+        </div>
+    </div>
+
+    <!--推荐商品-->
+    <div class="cart_recommend">
+    	<div class="cart_recommend_title">猜你喜欢</div>
+    	<div class="cart_behavior">
+            <div id="cart_like" class="cart_like pro_recommend">
+                <div class="cart_prev"><div class="cart_prev_m"></div></div>
+                <div class="cart_next"><div class="cart_next_m"></div></div>
+                <ul class="clearfix">
+                     <li>
+                        <a title="尼龙 男士 短外衣夹克" href="/product/detail/id/47637/saleid/45100.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/48/047637/h-047637-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">尼龙 男士 短外衣夹克</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥7300.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('47637');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="新款 牛皮 男仕 平底鞋" href="/product/detail/id/94833/saleid/92295.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/95/094833/h-094833-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">新款 牛皮 男仕 平底鞋</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥3899.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('94833');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="棉质 男仕 短外衣夹克" href="/product/detail/id/99498/saleid/96960.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/100/099498/h-099498-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Dior 迪奥</span><br>
+                                <span class="pro_recommend_name_b">棉质 男仕 短外衣夹克</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥7930.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('99498');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="新款 牛皮 男仕 平底鞋" href="/product/detail/id/94826/saleid/92288.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/95/094826/h-094826-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">新款 牛皮 男仕 平底鞋</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥3999.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('94826');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="聚酯纤维 男仕 黑色 短外衣夹克" href="/product/detail/id/79205/saleid/76667.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/80/079205/h-079205-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Dolce&Gabbana 杜嘉班纳</span><br>
+                                <span class="pro_recommend_name_b">聚酯纤维 男仕 黑色 短外衣夹克</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥9030.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('79205');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="男仕 藏蓝色 牛皮 乐福/莫卡辛鞋" href="/product/detail/id/92775/saleid/90237.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/93/092775/h-092775-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">男仕 藏蓝色 牛皮 乐福/莫卡辛鞋</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥3999.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('92775');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="牛皮 女士 斜挎包" href="/product/detail/id/308106/saleid/160473.html" target="_blank">
+                            <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170824/071930599e0d8249633-160x192.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">牛皮 女士 斜挎包</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥15271.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('308106');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="【2017年新款】黑色立领男士夹克" href="/product/detail/id/304481/saleid/158521.html" target="_blank">
+                            <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170807/0947235987c6abbed0c-160x192.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">【2017年新款】黑色立领男士夹克</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥5999.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('304481');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="男仕 黑色 牛皮 乐福鞋" href="/product/detail/id/91707/saleid/89169.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/92/091707/h-091707-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">男仕 黑色 牛皮 乐福鞋</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥3699.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('91707');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="金属  太阳眼镜" href="/product/detail/id/61561/saleid/59025.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/62/061561/h-061561-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Rayban 雷朋</span><br>
+                                <span class="pro_recommend_name_b">金属  太阳眼镜</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥1260.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('61561');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="【2017年新款】浅蓝色+深蓝色双面立领男士夹克" href="/product/detail/id/304468/saleid/158516.html" target="_blank">
+                            <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170807/1114015987daf95fe8d-160x192.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">【2017年新款】浅蓝色+深蓝色双面立领男士夹克</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥5999.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('304468');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="男仕 黄色 牛皮 乐福鞋" href="/product/detail/id/89849/saleid/87311.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/90/089849/h-089849-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">男仕 黄色 牛皮 乐福鞋</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥3699.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('89849');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<div id="bc01" class="ac_box ac_medium">
+	<div class="ac_box_tit">
+    	<span>温馨提示</span><div class="close_btn">╳</div>
+    </div>
+    <div class="ac_box_msg">确定要删除该商品吗？</div>
+    <div class="ac_btn_box">
+    	<a class="ab_btn01 delpro" href="javascript:void(0);" ng-click="confirm_del_one()">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+
+<div id="bc02" class="ac_box ac_medium">
+    <div class="ac_box_tit">
+        <span>温馨提示</span><div class="close_btn">╳</div>
+    </div>
+    <div class="ac_box_msg">确认移入收藏？</div>
+    <div class="ac_btn_box">
+        <a class="ab_btn01 delpro collect_btn close_btn" href="javascript:void(0);">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+
+<div id="bc04" class="ac_box ac_medium">
+    <div class="ac_box_tit">
+        <span>温馨提示</span><div class="close_btn">╳</div>
+    </div>
+    <div class="ac_box_msg">确认移入收藏？</div>
+    <div class="ac_btn_box">
+        <a class="ab_btn01 delpro all_collect_btn close_btn" href="javascript:void(0);">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+
+<div id="del_batch" class="ac_box ac_medium">
+    <div class="ac_box_tit">
+        <span>温馨提示</span><div class="close_btn">╳</div>
+    </div>
+    <div class="ac_box_msg">确定要删除已选商品吗？</div>
+    <div class="ac_btn_box">
+        <a class="ab_btn01 delpro" href="javascript:void(0);" ng-click="confirm_del_many()">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+
+<div id="bc03" class="ac_box ac_big" style="display:none;">
+	<div class="ac_box_tit">
+    	<span>选择赠品</span><div class="close_btn">╳</div>
+    </div>
+    <div class="ac_box_content">
+    	<div class="chooseGifts">
+    		<div id="choose_Gifts" class="choose_Gifts pro_recommend">
+                <div class="gift_prev"><div class="gift_prev_m"></div></div>
+                <div class="gift_next"><div class="gift_next_m"></div></div>
+                <ul class="clearfix">
+                    <li ng-repeat="present_sku in present_skus">
+                        <a title="" href="" target="_blank">
+                            <img src="{{present_sku.img_url}}" width="160" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">{{present_sku.brand_ename}} {{present_sku.brand_name}}</span><br>
+                                <span class="pro_recommend_name_b">{{present_sku.name}}</span>
+                            </div>
+                        </a>
+                        <div class=""><input type="checkbox" ng-model="present_sku.is_checked"/></div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="ac_btn_box">
+    	<a class="ab_btn01 delpro" href="javascript:void(0);" ng-click="select_present_skus()">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+
+</div>
+
+<!--<script type="text/javascript">-->
+    <!--var myApp = angular.module('meiciweb', [], function ($httpProvider) {-->
+        <!--// Use x-www-form-urlencoded Content-Type-->
+        <!--$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';-->
+
+        <!--/**-->
+         <!--* The workhorse; converts an object to x-www-form-urlencoded serialization.-->
+         <!--* @param {Object} obj-->
+         <!--* @return {String}-->
+         <!--*/-->
+        <!--var param = function (obj) {-->
+            <!--var query = '', name, value, fullSubName, subName, subValue, innerObj, i;-->
+
+            <!--for (name in obj) {-->
+                <!--value = obj[name];-->
+
+                <!--if (value instanceof Array) {-->
+                    <!--for (i = 0; i < value.length; ++i) {-->
+                        <!--subValue = value[i];-->
+                        <!--fullSubName = name + '[' + i + ']';-->
+                        <!--innerObj = {};-->
+                        <!--innerObj[fullSubName] = subValue;-->
+                        <!--query += param(innerObj) + '&';-->
+                    <!--}-->
+                <!--}-->
+                <!--else if (value instanceof Object) {-->
+                    <!--for (subName in value) {-->
+                        <!--subValue = value[subName];-->
+                        <!--fullSubName = name + '[' + subName + ']';-->
+                        <!--innerObj = {};-->
+                        <!--innerObj[fullSubName] = subValue;-->
+                        <!--query += param(innerObj) + '&';-->
+                    <!--}-->
+                <!--}-->
+                <!--else if (value !== undefined && value !== null)-->
+                    <!--query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';-->
+            <!--}-->
+
+            <!--return query.length ? query.substr(0, query.length - 1) : query;-->
+        <!--};-->
+
+        <!--// Override $http service's default transformRequest-->
+        <!--$httpProvider.defaults.transformRequest = [function (data) {-->
+            <!--return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;-->
+        <!--}];-->
+    <!--});-->
+
+<!--//    自定义过滤器保留两位小数-->
+    <!--myApp.filter("Num",function(){-->
+        <!--return function(input){-->
+            <!--input = String(input);-->
+            <!--var out = "";-->
+            <!--if(input.indexOf('.') < 0){-->
+                <!--input = input + '.00';-->
+                <!--out = input;-->
+            <!--}else {-->
+                <!--out = input;-->
+            <!--}-->
+            <!--return out;-->
+        <!--}-->
+    <!--});-->
+
+    <!--myApp.controller('CartCtrl', function ($scope, $q, $http) {-->
+        <!--// 列表-->
+        <!--$scope.cart_lists = function () {-->
+            <!--$scope.product_rows = [];-->
+            <!--$scope.activity_policy = [];-->
+            <!--$scope.show_activity = false;-->
+            <!--$scope.show_cart = false;-->
+            <!--$scope.show_empty = false;-->
+            <!--$scope.select_all = true;-->
+            <!--$scope.total_price = 0.00;-->
+            <!--$scope.total_activity_minus_price = 0.00;-->
+            <!--$scope.select_num = 0;-->
+            <!--$scope.present_skus = [];-->
+            <!--$scope.select_present_activity_id = 0;-->
+            <!--$scope.is_login = 0;-->
+            <!--$http.get('/member/cart/checkedPrice').success(function (res) {-->
+                <!--if (!res.status) {-->
+                    <!--showMsg('showMsg1','温馨提示',res.info);-->
+                    <!--return false;-->
+                <!--}-->
+                <!--$scope.product_rows = res.data.product_rows;-->
+                <!--$scope.product_rows.forEach(function(e){-->
+<!--//                    e.is_checked = true;-->
+                <!--});-->
+                <!--$scope.get_policy_price();-->
+                <!--$scope.activity_policy = res.data.activity_policy;-->
+                <!--$scope.is_login = res.data.is_login;-->
+                <!--if ($scope.activity_policy.length > 0) {-->
+                    <!--$scope.show_activity = true;-->
+                <!--}-->
+                <!--if ($scope.product_rows.length > 0) {-->
+                    <!--$scope.show_cart = true;-->
+                <!--}else{-->
+                    <!--$scope.show_empty = true;-->
+                <!--}-->
+                <!--$scope.total_price = $scope.total_price.toFixed(2);-->
+            <!--}).error(function (res) {-->
+                <!--showMsg('showMsg2','温馨提示','网络延迟，请重试');-->
+                <!--return false;-->
+            <!--});-->
+        <!--};-->
+<!--//        console.log($scope.total_price);-->
+        <!--$scope.cart_lists();-->
+
+        <!--// 加入购物袋-->
+        <!--$scope.member_cart_add = function(sku_id) {-->
+            <!--if (!sku_id) {-->
+                <!--alert('商品未选中');-->
+                <!--return false;-->
+            <!--}-->
+            <!--$http.post('/member/cart/add', {'sku_id': sku_id}).success(function (res) {-->
+                <!--if (!res) {-->
+                    <!--showMsg('showMsg01','温馨提示','网络延迟，请重试');-->
+                    <!--return false;-->
+                <!--} else {-->
+                    <!--var json = $.isPlainObject(res) ? res : $.parseJSON(res);-->
+                    <!--if (!json.status) {-->
+                        <!--showMsg('showMsg01','温馨提示',json.info);-->
+                        <!--return false;-->
+                    <!--}-->
+                    <!--//showMsg('showMsg01','温馨提示','商品已加入购物袋');-->
+                    <!--$(".headerCart_m").fadeIn(200);-->
+                    <!--$("body,html").animate({scrollTop:0},200);-->
+                    <!--cart();-->
+                    <!--$scope.cart_lists();-->
+                    <!--return false;-->
+                <!--}-->
+            <!--});-->
+        <!--};-->
+
+        <!--// 移入收藏-->
+        <!--$scope.add_favorite = function () {-->
+            <!--var that = this;-->
+            <!--boxShow('bc02');-->
+            <!--$('.collect_btn').click(function(){-->
+                <!--setTimeout(function () {-->
+                    <!--$scope.$apply(function () {-->
+                        <!--var r = true;-->
+                        <!--if(r){-->
+                            <!--var sku_id = that.product_row.id;-->
+                            <!--var type = that.product_row.type;-->
+                            <!--var activity_id = that.product_row.activity_id;-->
+                            <!--$http.post('/member/cart/addfavorite',{'sku_id':sku_id,'type':type,'activity_id':activity_id}).success(function (res) {-->
+                                <!--if (!res.status) {-->
+                                    <!--showMsg('showMsg3','温馨提示',res.info);-->
+                                    <!--return false;-->
+                                <!--}-->
+
+                                <!--$(".ac_box, .mask").hide();-->
+                                <!--$scope.get_policy_price();-->
+                            <!--}).error(function (res) {-->
+                                <!--showMsg('showMsg4','温馨提示','网络延迟，请重试');-->
+                                <!--return false;-->
+                            <!--});-->
+                        <!--}-->
+                    <!--});-->
+                <!--}, 2);-->
+            <!--});-->
+<!--//            $r = confirm('确认移入收藏？');-->
+<!--//            if($r){-->
+<!--//                var sku_id = this.product_row.id;-->
+<!--//                var type = this.product_row.type;-->
+<!--//                var activity_id = this.product_row.activity_id;-->
+<!--//                $http.post('/member/cart/addfavorite',{'sku_id':sku_id,'type':type,'activity_id':activity_id}).success(function (res) {-->
+<!--//                    if (!res.status) {-->
+<!--//                        showMsg('showMsg','温馨提示',res.info);-->
+<!--//                        return false;-->
+<!--//                    }-->
+<!--//-->
+<!--//                    $(".ac_box, .mask").hide();-->
+<!--//                    $scope.get_policy_price();-->
+<!--//                }).error(function (res) {-->
+<!--//                    showMsg('showMsg','温馨提示','网络延迟，请重试');-->
+<!--//                    return false;-->
+<!--//                });-->
+<!--//            }-->
+
+
+        <!--};-->
+
+        <!--// 批量移入收藏-->
+        <!--$scope.add_batch_favorite = function () {-->
+            <!--boxShow('bc04');-->
+            <!--$('.all_collect_btn').click(function () {-->
+                <!--setTimeout(function () {-->
+                    <!--$scope.$apply(function () {-->
+                        <!--var r = true;-->
+                        <!--if(r){-->
+                            <!--var items = [];-->
+                            <!--for (var i in $scope.product_rows) {-->
+                                <!--if ($scope.product_rows[i].is_checked) {-->
+                                    <!--items.push($scope.product_rows[i].id);-->
+                                <!--}-->
+                            <!--}-->
+                            <!--$http.post('/member/cart/addfavorite',{'sku_id':items.join()}).success(function (res) {-->
+                                <!--if (!res.status) {-->
+                                    <!--showMsg('showMsg5','温馨提示',res.info);-->
+                                    <!--return false;-->
+                                <!--}-->
+
+                                <!--$(".ac_box, .mask").hide();-->
+                                <!--$scope.get_policy_price();-->
+                            <!--}).error(function (res) {-->
+                                <!--showMsg('showMsg6','温馨提示','网络延迟，请重试');-->
+                                <!--return false;-->
+                            <!--});-->
+                        <!--}-->
+                    <!--});-->
+                <!--}, 2);-->
+            <!--});-->
+        <!--};-->
+
+        <!--// 购物车增加数量-->
+        <!--$scope.cal_add = function () {-->
+            <!--if(this.product_row.type == 5){-->
+                <!--return false;-->
+            <!--}-->
+<!--//            if(this.product_row.is_cbs == 1){-->
+<!--//                showMsg('showMsg7','温馨提示','跨境商品不能大于1件');-->
+<!--//                return false;-->
+<!--//            }-->
+            <!--var sku_id = this.product_row.id;-->
+            <!--var quantity = parseInt(this.product_row.quantity)+1;-->
+            <!--var that = this;-->
+            <!--$http.post('/member/cart/edit', {'sku_id': sku_id, 'quantity': quantity}).success(function (res) {-->
+                <!--if (!res.status) {-->
+                    <!--showMsg('showMsg8','温馨提示',res.info);-->
+                    <!--return false;-->
+                <!--}-->
+                <!--that.product_row.quantity++;-->
+                <!--$scope.get_policy_price();-->
+            <!--}).error(function (res) {-->
+                <!--showMsg('showMsg9','温馨提示','网络延迟，请重试');-->
+                <!--return false;-->
+            <!--});-->
+        <!--};-->
+
+        <!--// 购物车减少数量-->
+        <!--$scope.cal_minus = function () {-->
+            <!--if(this.product_row.type == 5){-->
+                <!--return false;-->
+            <!--}-->
+			<!--if (this.product_row.quantity > 1) {-->
+<!--//                this.product_row.quantity&#45;&#45;;-->
+                <!--var sku_id = this.product_row.id;-->
+                <!--var quantity = parseInt(this.product_row.quantity) -1;-->
+                <!--var that = this;-->
+                <!--$http.post('/member/cart/edit', {'sku_id': sku_id, 'quantity': quantity}).success(function (res) {-->
+                    <!--if (!res.status) {-->
+                        <!--showMsg('showMsg10','温馨提示',res.info);-->
+                        <!--return false;-->
+                    <!--}-->
+                    <!--that.product_row.quantity&#45;&#45;;-->
+                    <!--$scope.get_policy_price();-->
+                <!--}).error(function (res) {-->
+                    <!--showMsg('showMsg11','温馨提示','网络延迟，请重试');-->
+                    <!--return false;-->
+                <!--});-->
+            <!--}-->
+        <!--};-->
+
+        <!--// 删除单个-->
+        <!--$scope.del_one = function () {-->
+            <!--boxShow("bc01");-->
+            <!--$scope.del_sku_id = this.product_row.id;-->
+            <!--$scope.del_sku_type = this.product_row.type;-->
+            <!--$scope.del_sku_activity_id = this.product_row.activity_id;-->
+        <!--};-->
+
+        <!--// 确认删除单个-->
+        <!--$scope.confirm_del_one = function () {-->
+            <!--var sku_id = $scope.del_sku_id;-->
+            <!--var type = $scope.del_sku_type;-->
+            <!--var activity_id = $scope.del_sku_activity_id;-->
+            <!--$http.post('/member/cart/del',{'sku_id':sku_id,'type':type,'activity_id':activity_id}).success(function (res) {-->
+                <!--if (!res.status) {-->
+                    <!--showMsg('showMsg12','温馨提示',res.info);-->
+                    <!--return false;-->
+                <!--}-->
+                <!--cart();-->
+                <!--$(".ac_box, .mask").hide();-->
+                <!--$scope.get_policy_price();-->
+            <!--}).error(function (res) {-->
+                <!--showMsg('showMsg13','温馨提示','网络延迟，请重试');-->
+                <!--return false;-->
+            <!--});-->
+        <!--};-->
+
+        <!--// 批量删除-->
+        <!--$scope.del_many = function () {-->
+            <!--var items = [];-->
+            <!--for (var i in $scope.product_rows) {-->
+                <!--if ($scope.product_rows[i].is_checked) {-->
+                    <!--items.push($scope.product_rows[i].id);-->
+                <!--}-->
+            <!--}-->
+            <!--if(items.length >0){-->
+                <!--boxShow("del_batch");-->
+            <!--}else{-->
+                <!--showMsg('showMsg14','温馨提示','请选中要删除的商品');-->
+            <!--}-->
+        <!--};-->
+
+        <!--// 确认批量删除-->
+        <!--$scope.confirm_del_many = function () {-->
+            <!--var items = [];-->
+            <!--for (var i in $scope.product_rows) {-->
+                <!--if ($scope.product_rows[i].is_checked) {-->
+                    <!--items.push($scope.product_rows[i].id);-->
+                <!--}-->
+            <!--}-->
+            <!--$http.post('/member/cart/delMany',{'sku_id':items.join()}).success(function (res) {-->
+                <!--if (!res.status) {-->
+                    <!--showMsg('showMsg15','温馨提示',res.info);-->
+                    <!--return false;-->
+                <!--}-->
+                <!--cart();-->
+                <!--$(".ac_box, .mask").hide();-->
+                <!--$scope.get_policy_price();-->
+            <!--}).error(function (res) {-->
+                <!--showMsg('showMsg16','温馨提示','网络延迟，请重试');-->
+                <!--return false;-->
+            <!--});-->
+        <!--};-->
+
+        <!--// 修改件数-->
+        <!--$scope.cal_change = function () {-->
+            <!--if(this.product_row.type == 5){-->
+                <!--return false;-->
+            <!--}-->
+            <!--var re = /^[1-9]+[0-9]*]*$/;-->
+            <!--if (!re.test(this.product_row.quantity)) {-->
+                <!--this.product_row.quantity = 1;-->
+            <!--}-->
+
+<!--//            if(this.product_row.is_cbs == 1 && this.product_row.quantity>1){-->
+<!--//                showMsg('showMsg17','温馨提示','跨境商品不能大于1件');-->
+<!--//                this.product_row.quantity = 1;-->
+<!--//            }-->
+
+            <!--var sku_id = this.product_row.id;-->
+            <!--var quantity = this.product_row.quantity;-->
+            <!--$http.post('/member/cart/edit', {'sku_id': sku_id, 'quantity': quantity}).success(function (res) {-->
+                <!--if (!res.status) {-->
+                    <!--showMsg('showMsg18','温馨提示',res.info);-->
+                    <!--return false;-->
+                <!--}-->
+                <!--$scope.get_policy_price();-->
+            <!--}).error(function (res) {-->
+                <!--showMsg('showMsg19','温馨提示','网络延迟，请重试');-->
+                <!--return false;-->
+            <!--});-->
+        <!--};-->
+
+        <!--// 选中所有-->
+        <!--$scope.check_all = function () {-->
+            <!--for (var i in $scope.product_rows) {-->
+                <!--$scope.product_rows[i].is_checked = $scope.select_all;-->
+            <!--}-->
+            <!--$scope.get_policy_price();-->
+        <!--};-->
+
+        <!--// 选中单个-->
+        <!--$scope.select_one = function () {-->
+            <!--if (!this.product_row.is_checked) {-->
+                <!--$scope.select_all = false;-->
+            <!--}-->
+            <!--$scope.get_policy_price();-->
+        <!--};-->
+
+        <!--// 获取可选赠送sku-->
+<!--//        $scope.get_present_skus = function () {-->
+<!--//            $scope.select_present_activity_id = this.activity.id;-->
+<!--//            var present_skus = this.activity.present_skus.join();-->
+<!--//            $http.post('/member/cart/getpresentlists',{'present_skus':present_skus}).success(function (res) {-->
+<!--//                if (!res.status) {-->
+<!--//                    showMsg('showMsg20','温馨提示',res.info);-->
+<!--//                    return false;-->
+<!--//                }-->
+<!--//-->
+<!--//                for(var i in res.data){-->
+<!--//                    res.data[i].is_checked = false;-->
+<!--//                }-->
+<!--//                $scope.present_skus = res.data;-->
+<!--//                boxShow('bc03');-->
+<!--//            }).error(function (res) {-->
+<!--//                showMsg('showMsg21','温馨提示','网络延迟，请重试');-->
+<!--//                return false;-->
+<!--//            });-->
+<!--//        };-->
+
+        <!--// 选中赠品-->
+<!--//        $scope.select_present_skus = function () {-->
+<!--//            var items = [];-->
+<!--//            for(var i in $scope.present_skus){-->
+<!--//                if($scope.present_skus[i].is_checked){-->
+<!--//                    items.push($scope.present_skus[i]);-->
+<!--//                }-->
+<!--//            }-->
+<!--//            // 请求后台-->
+<!--//            var activity_id = $scope.select_present_activity_id;-->
+<!--//            $http.post('/member/cart/selectpresent',{'items':JSON.stringify(items),'activity_id':activity_id}).success(function (res) {-->
+<!--//                if (!res.status) {-->
+<!--//                    showMsg('showMsg22','温馨提示',res.info);-->
+<!--//                    return false;-->
+<!--//                }-->
+<!--//                $(".ac_box, .mask").hide();-->
+<!--//                $scope.get_policy_price();-->
+<!--//            }).error(function (res) {-->
+<!--//                showMsg('showMsg23','温馨提示','网络延迟，请重试');-->
+<!--//                return false;-->
+<!--//            });-->
+<!--//        };-->
+
+        <!--// 获取策略 @TODO 屏蔽赠品-->
+        <!--$scope.get_policy_price = function () {-->
+            <!--var items = {};-->
+            <!--for (var i in $scope.product_rows) {-->
+                <!--if ($scope.product_rows[i].is_checked && $scope.product_rows[i].type != 5) {-->
+                    <!--items[$scope.product_rows[i].id] = $scope.product_rows[i].quantity;-->
+                <!--}-->
+            <!--}-->
+            <!--// 活动总折扣-->
+            <!--$http.post('/member/cart/checkedPrice',{'items':JSON.stringify(items)}).success(function (res) {-->
+                <!--if (!res.status) {-->
+                    <!--showMsg('showMsg24','温馨提示',res.info);-->
+                    <!--return false;-->
+                <!--}-->
+                <!--$scope.select_num = 0;-->
+                <!--$scope.total_price = 0.00;-->
+                <!--// 购物袋信息刷新-->
+                <!--$scope.product_rows = res.data.product_rows;-->
+                <!--$scope.activity_policy = res.data.activity_policy;-->
+                <!--$scope.total_activity_minus_price =  res.data.total_activity_minus_price;-->
+
+                <!--for (var i in $scope.product_rows) {-->
+                    <!--if ($scope.product_rows[i].id in items && $scope.product_rows[i].type != 5) {-->
+                        <!--$scope.product_rows[i].is_checked = true;-->
+                        <!--$scope.total_price += parseFloat($scope.product_rows[i].activity_price) * parseInt($scope.product_rows[i].quantity);-->
+                        <!--$scope.select_num += parseInt($scope.product_rows[i].quantity);-->
+                    <!--}-->
+                <!--}-->
+                <!--if ($scope.activity_policy.length > 0) {-->
+                    <!--$scope.show_activity = true;-->
+                <!--}-->
+                <!--if ($scope.product_rows.length > 0) {-->
+                    <!--$scope.show_cart = true;-->
+                    <!--$scope.show_empty = false;-->
+                <!--}else{-->
+                    <!--$scope.show_cart = false;-->
+                    <!--$scope.show_empty = true;-->
+                <!--}-->
+            <!--}).error(function (res) {-->
+                <!--showMsg('showMsg25','温馨提示','网络延迟，请重试');-->
+                <!--return false;-->
+            <!--});-->
+        <!--};-->
+
+        <!--// 跳转到下单确认页-->
+        <!--$scope.check_order = function () {-->
+            <!--var buy_items = {};-->
+            <!--var has_cbs = false;-->
+
+
+            <!--for (var i in $scope.product_rows) {-->
+                <!--if ($scope.product_rows[i].is_checked && $scope.product_rows[i].type != 5) {-->
+                    <!--if($scope.product_rows[i].is_cbs == 1) {-->
+<!--//                        if(has_cbs){-->
+<!--//                            showMsg('showMsg26','温馨提示','全球购商品一次只能购买一件');-->
+<!--//                            return false;-->
+<!--//                        }else{-->
+<!--//                            has_cbs = true;-->
+<!--//                        }-->
+                    <!--}-->
+<!--//                    if($scope.product_rows[i].is_cbs == 1 && $scope.product_rows[i].quantity>1){-->
+<!--//                        showMsg('showMsg27','温馨提示','全球购商品一次只能购买一件');-->
+<!--//                        return false;-->
+<!--//                    }-->
+<!--//                    if(has_cbs && buy_items.length > 1){-->
+<!--//                        showMsg('showMsg28','温馨提示','含有全球购的商品一次只能购买一件');-->
+<!--//                        return false;-->
+<!--//                    }-->
+                    <!--buy_items[$scope.product_rows[i].id] = $scope.product_rows[i].quantity;-->
+                <!--}-->
+            <!--}-->
+            <!--if($.isEmptyObject(buy_items)){-->
+                <!--showMsg('showMsg29','温馨提示','购买的商品数不能为0');-->
+                <!--return false;-->
+            <!--}-->
+            <!--// 选中的商品到结算页面-->
+            <!--$http.post('/member/cart/buy',{'buy_items':JSON.stringify(buy_items)}).success(function (res) {-->
+                <!--if($.isPlainObject(res)) {-->
+                    <!--if (!res.status) {-->
+                        <!--$scope.jump_login(res);-->
+                        <!--if(res.status == 0){-->
+                            <!--showMsg('showMsg30','温馨提示',res.info);-->
+                            <!--return false;-->
+                        <!--}-->
+                    <!--}-->
+                    <!--window.location.href='/member/order';-->
+                <!--}-->
+                <!--else if(res.match('script') && res.match('login')) {-->
+                    <!--location.href="/Member/Index/login?forward_url=/member/cart/index";-->
+                <!--} else if (res.match('script') && res.match('dobind')) {-->
+                    <!--location.href="/Member/Index/bind?dobind=1&forward_url=/member/cart/index";-->
+                <!--}-->
+            <!--}).error(function (res) {-->
+                <!--showMsg('showMsg31','温馨提示','网络延迟，请重试');-->
+                <!--return false;-->
+            <!--});-->
+        <!--};-->
+
+        <!--// 跳转到登录页-->
+        <!--$scope.jump_login = function (str) {-->
+            <!--console.log(str);-->
+            <!--var reg = /^<script.*?>location\.href="(.*?)";<\/script>$/ig;-->
+            <!--if(str.match(reg)){-->
+                <!--window.location = str.replace(reg,'$1');-->
+                <!--return false;-->
+            <!--}-->
+        <!--};-->
+
+<!--//        var onload = true;-->
+<!--//        $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {-->
+<!--//            //页面加载完成后执行的js-->
+<!--//            if(onload == true){-->
+<!--//                $("#allcpro01").trigger("click");-->
+<!--//                onload = false;-->
+<!--//            }-->
+<!--//        });-->
+<!--//-->
+    <!--});-->
+
+<!--//myApp.directive('onFinishRenderFilters', function ($timeout) {-->
+<!--//    return {-->
+<!--//        restrict: 'A',-->
+<!--//        link: function(scope, element, attr) {-->
+<!--//            if (scope.$last === true) {-->
+<!--//                $timeout(function() {-->
+<!--//                    scope.$emit('ngRepeatFinished');-->
+<!--//                });-->
+<!--//            }-->
+<!--//        }-->
+<!--//    };-->
+<!--//});-->
+
+
+
+<!--</script>-->
+
+    <!--Criteo  Basket page tag 购物车---->
+<!--    <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+    <script type="text/javascript">
+        window.criteo_q = window.criteo_q || [];
+        window.criteo_q.push(
+            { event: "setAccount", account: 19582 },
+                { event: "setSiteType", type: "d" },
+        { event: "viewBasket", item: [
+            for(var i = 0 ; i < product_rows.length ; i++ ){
+                { id: product_rows[i]["id"], price: product_rows[i]["activity_price"], quantity: product_rows[i]["quantity"]} }
+            }
+        ] });
+    </script>-->
+</div>
+
+
+</div>
+
+
+{% end %}
+</body>
+</html>

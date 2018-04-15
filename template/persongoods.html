@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/index.css" />
+	<script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
+</head>
+<body>
+{% extends 'index.html' %}
+{% block content %}
+<script type="text/javascript" src="https://dl.ntalker.com/js/xn6/ntkfstat.js?siteid=kf_9801" charset="utf-8"></script>
+<!--小能客服系统结束-->
+<div ng-controller="CartCtrl">
+<div id="content" class="content">
+    <!--有商品-->
+    <div class="cart_product ng-cloak" ng-cloak ng-show="show_cart">
+    	<div class="cart_pro_tit">
+        	<div class="cpt01"><label class="allcpro" for="allcpro01"><input id="allcpro01" type="checkbox" ng-click="check_all()" ng-model="select_all" />全选</label></div>
+            <div class="cpt02">商品信息</div>
+            <div class="cpt03">单价</div>
+            <div class="cpt04">数量</div>
+            <div class="cpt05">小计</div>
+        </div>
+
+        <!--商品列表-->
+       	<div class="cartbox">
+            <table width="100%">
+                <colgroup>
+                   	<col width="415px" /><col width="175px" /><col width="215px" /><col width="185px" />
+                </colgroup>
+                <tr ng-repeat="product_row in product_rows" on-finish-render-filters>
+                    <td class="relative">
+                    	<input class="cartbox_pro_check" type="checkbox" ng-hide="product_row.type == 5" ng-click="select_one()" ng-model="product_row.is_checked" />
+                        <div class="cp_img all_img float_l"><a href="/product/detail/id/{{product_row.id}}/saleid/{{product_row.spu}}.html" target="_blank"><img src="{{product_row.img_url}}" height="90" /></a></div>
+                        <div class="cp_info float_l">
+                            <div class="cp_info_name">
+                                <a href="/product/detail/id/{{product_row.id}}/saleid/{{product_row.spu}}.html" target="_blank" title="{{product_row.brand_ename}} {{product_row.brand_name}} {{product_row.name}}">
+                                    {{product_row.brand_ename}} {{product_row.brand_name}}<br />{{product_row.name}}
+                                </a>
+                            </div>
+                            <div class="cp_info_props">
+                                <div class="cp_bra">
+                                    <span>颜色：{{product_row.color}}</span>
+                                   	<span ng-if="product_row.size != '' ">尺码：{{product_row.size}}</span>
+								</div>
+                               <div class="ws_tip clearfix">
+                                   <div class="cp_global" ng-show="product_row.is_cbs"></div>
+                                   <div class="cp_zeng" ng-if="product_row.type == 2"></div>
+                                   <div class="cp_jian" ng-if="product_row.type == 3"></div>
+                                   <div class="cp_give" ng-if="product_row.type == 5"></div>
+                                   <div class="cp_act" ng-show="product_row.type == 1 || product_row.type == 2 || product_row.type == 3 || product_row.type == 4">
+                               </div>
+                                    <!--<p ng-if="product_row.type == 1">满折</p>
+                                    <p ng-if="product_row.type == 2">满赠</p>
+                                    <p ng-if="product_row.type == 3">满减</p>
+                                    <p ng-if="product_row.type == 5">赠品</p>-->
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td align="center">￥{{product_row.activity_price|Num}}</td>
+                    <td align="center">
+                    	<div class="cart_num">
+                            <div class="cart_num_m">
+                                <a class="cart_jian" href="javascript:void(0);" ng-click="cal_minus()" ng-disabled="product_row.type == 5">-</a>
+                                <input class="cart_int" type="text" ng-model="product_row.quantity" ng-change="cal_change()"  ng-disabled="product_row.type == 5"/>
+                                <a class="cart_jia" href="javascript:void(0);" ng-click="cal_add()"  ng-disabled="product_row.type == 5">+</a>
+                            </div>
+                        </div>
+                        <!--<span class="c_gray">商品已售磬</span>-->
+
+                    </td>
+                    <td align="center">￥<span class="unitPrice">{{product_row.activity_price * product_row.quantity|Num}}</span></td>
+                    <td align="center">
+                    	<div class="cp_btn">
+                            <a class="cp_fav" href="javascript:void(0);" title="加入收藏" ng-click="add_favorite()">加入收藏</a><br />
+                            <a class="cp_del" href="javascript:void(0);" ng-click="del_one()" title="删除">删除</a>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <!--商品列表结束-->
+
+        <!--活动信息-->
+        <div class="cart_act" ng-show="show_activity">
+        	<table width="100%">
+               	<tr>
+                    <th>您正参与以下活动：</th>
+                </tr>
+                <tr ng-repeat="activity in activity_policy">
+                    <td>
+                    	<p class="cart_act_txt">{{activity.desc}}
+                            <span ng-if="activity.is_activity_use && activity.type == 1">您已满足活动条件，已打{{activity.rate * 10}}折</span>
+                            <span ng-if="activity.is_activity_use && activity.type == 2 && activity.get_type == 1">您已满足活动条件，<a href="javascript:void(0);" ng-click="get_present_skus()">挑选赠品</a></span>
+                            <span ng-if="activity.is_activity_use && activity.type == 3">您已满足活动条件，已减{{activity.activity_minus_price}}元</span>
+                            <span ng-if="!activity.is_activity_use">未满足活动条件，挑选商品。</span>
+                    	</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--活动信息-->
+
+        <div class="cart_bar">
+        	<div class="cart_bar_t clearfix">
+                <div class="cart_bar_m float_l clearfix">
+                    <div class="cbm_check float_l"><label class="allcpro" for="allcpro02"><input id="allcpro02" type="checkbox" ng-click="check_all()" ng-model="select_all" />全选</label></div>
+                    <div class="cbm_opt float_l">
+                        <a href="javascript:void(0);" ng-click="del_many()">删除选中的商品</a>
+                        <a href="javascript:void(0);" ng-click="add_batch_favorite()">加入收藏</a>
+                    </div>
+
+                </div>
+                <div class="cbm_price float_r">
+                    <table width="100%">
+                        <tr>
+                            <th>
+                            	<span class="cbm_choseNum">已选商品 <span>{{select_num}}</span> 件</span>合计（不含运费、税费）：<span class="c_purple">￥<span class="cbm_payPrice">{{total_price|Num}}</span></span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                            	活动折扣：<span>-￥<span class="cbm_discount">{{total_activity_minus_price|Num}}</span></span>
+                            </th>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="cart_bar_b clearfix">
+            	<a class="goonbuy float_l" href="/new" target="_blank">继续购物</a>
+            	<button class="cartBuy float_r" ng-click="check_order()">立即结算</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--无商品-->
+    <div class="cart_none ng-cloak" ng-cloak ng-show="show_empty">
+        <div class="cart_none_member">
+        	<div class="cart_none_m">
+                <div class="cartNico"></div>
+                <div class="cartNtxt">购物车内暂时没有商品</div>
+                <!--未登录-->
+                <div class="cartNlog" ng-if="!is_login">登录后将显示您之前加入的商品</div>
+            </div>
+            <div class="cartNbtn clearfix">
+                <a href="/member/index/login" target="_blank" ng-if="!is_login">登录</a>
+                <a href="/new" target="_blank">随便逛逛</a>
+            </div>
+        </div>
+    </div>
+
+    <!--推荐商品-->
+    <div class="cart_recommend">
+    	<div class="cart_recommend_title">猜你喜欢</div>
+    	<div class="cart_behavior">
+            <div id="cart_like" class="cart_like pro_recommend">
+                <div class="cart_prev"><div class="cart_prev_m"></div></div>
+                <div class="cart_next"><div class="cart_next_m"></div></div>
+                <ul class="clearfix">
+                     <li>
+                        <a title="牛皮 女士 长钱包" href="/product/detail/id/305147/saleid/158870.html" target="_blank">
+                            <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170815/11250859926994927e5-160x192.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Gucci 古驰</span><br>
+                                <span class="pro_recommend_name_b">牛皮 女士 长钱包</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥4630.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('305147');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="纯羊绒 男仕 卫衣" href="/product/detail/id/120987/saleid/118449.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/121/120987/h-120987-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Thom Browne 汤姆•布郎</span><br>
+                                <span class="pro_recommend_name_b">纯羊绒 男仕 卫衣</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥11100.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('120987');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="环氧树脂 女士 太阳眼镜" href="/product/detail/id/60748/saleid/58212.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/61/060748/h-060748-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Gucci 古驰</span><br>
+                                <span class="pro_recommend_name_b">环氧树脂 女士 太阳眼镜</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥1450.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('60748');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="【2017年新款】深蓝色连帽男士夹克" href="/product/detail/id/304495/saleid/158530.html" target="_blank">
+                            <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170804/175139598443abdf9ef-160x192.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">【2017年新款】深蓝色连帽男士夹克</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥5360.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('304495');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="男士皮鞋" href="/product/detail/id/96497/saleid/93959.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/97/096497/h-096497-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Salvatore Ferragamo 菲拉格慕</span><br>
+                                <span class="pro_recommend_name_b">男士皮鞋</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥3999.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('96497');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="GARDEN PARTY 36系列 Taurillion牛皮 女士 手提包" href="/product/detail/id/120299/saleid/117761.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/121/120299/h-120299-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Hermes 爱马仕</span><br>
+                                <span class="pro_recommend_name_b">GARDEN PARTY 36系列 Taurillion牛皮 女士 手提包</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥27280.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('120299');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="17春夏新款 全棉 男仕 连帽拉链卫衣" href="/product/detail/id/125186/saleid/122644.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/126/125186/h-125186-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Balmain 巴尔曼</span><br>
+                                <span class="pro_recommend_name_b">17春夏新款 全棉 男仕 连帽拉链卫衣</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥6220.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('125186');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="黑色牛皮 男仕 休闲鞋" href="/product/detail/id/126962/saleid/124420.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/127/126962/h-126962-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Prada 普拉达</span><br>
+                                <span class="pro_recommend_name_b">黑色牛皮 男仕 休闲鞋</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥3899.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('126962');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="男仕 牛皮 正装鞋" href="/product/detail/id/105963/saleid/103425.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/106/105963/h-105963-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Salvatore Ferragamo 菲拉格慕</span><br>
+                                <span class="pro_recommend_name_b">男仕 牛皮 正装鞋</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥3999.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('105963');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="棉质 ARMANI JUNIOR 适合14~17岁儿童 短袖T恤" href="/product/detail/id/95222/saleid/92684.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/96/095222/h-095222-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Armani 阿玛尼</span><br>
+                                <span class="pro_recommend_name_b">棉质 ARMANI JUNIOR 适合14~17岁儿童 短袖T恤</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥480.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('95222');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="牛皮 男仕 正装鞋" href="/product/detail/id/272121/saleid/115565.html" target="_blank">
+                            <img src="https://img.meicicdn.com/p/119/118103/h-118103-1.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Salvatore Ferragamo 菲拉格慕</span><br>
+                                <span class="pro_recommend_name_b">牛皮 男仕 正装鞋</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥3620.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('272121');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li><li>
+                        <a title="17春夏新款 棉混纺  男士 长袖卫衣" href="/product/detail/id/295569/saleid/154933.html" target="_blank">
+                            <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170711/14104559646be5a553e-160x192.jpg" width="160" height="192" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">Neil Barrett 尼奥·贝奈特</span><br>
+                                <span class="pro_recommend_name_b">17春夏新款 棉混纺  男士 长袖卫衣</span>
+                            </div>
+                        </a>
+                        <div class="pro_recommend_price">￥2875.00</div>
+                        <a class="pro_recommend_addcart" ng-click="member_cart_add('295569');" title="添加到购物袋" style="cursor: pointer;">添加到购物袋</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!--在线咨询-->
+<div class="consult">
+    <ul>
+        <li class="consultApp">
+            <a class="consult_app" href="/app" title="美西APP"><em></em></a>
+            <div class="consult_app_m">
+                <div class="consult_app_sj"></div>
+                <div class="consult_app_code">
+                    <img src="http://img.meicicdn.com/skin/df/ewm_indexTop_1.png" />
+                </div>
+            </div>
+        </li>
+        <li>
+            <a class="consult_online" href="javascript:NTKF.im_openInPageChat('kf_9801_1372750844694');" title="在线咨询" onclick="_hmt.push(['_trackEvent', '购物袋', '在线咨询', '在线咨询']);"><em></em></a>
+        </li>
+        <li>
+            <a id="BizQQWPA" class="consult_qq" href="javascript:void(0);" title="QQ咨询" onclick="_hmt.push(['_trackEvent', '购物袋', '在线咨询', 'QQ咨询']);"><em></em></a>
+        </li>
+        <li>
+            <a class="consult_top" href="javascript:void(0);" onclick="backTop();" title="返回顶部" style="border:none;"><em></em></a>
+        </li>
+    </ul>
+</div>
+
+<div id="bc01" class="ac_box ac_medium">
+	<div class="ac_box_tit">
+    	<span>温馨提示</span><div class="close_btn">╳</div>
+    </div>
+    <div class="ac_box_msg">确定要删除该商品吗？</div>
+    <div class="ac_btn_box">
+    	<a class="ab_btn01 delpro" href="javascript:void(0);" ng-click="confirm_del_one()">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+
+<div id="bc02" class="ac_box ac_medium">
+    <div class="ac_box_tit">
+        <span>温馨提示</span><div class="close_btn">╳</div>
+    </div>
+    <div class="ac_box_msg">确认移入收藏？</div>
+    <div class="ac_btn_box">
+        <a class="ab_btn01 delpro collect_btn close_btn" href="javascript:void(0);">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+
+<div id="bc04" class="ac_box ac_medium">
+    <div class="ac_box_tit">
+        <span>温馨提示</span><div class="close_btn">╳</div>
+    </div>
+    <div class="ac_box_msg">确认移入收藏？</div>
+    <div class="ac_btn_box">
+        <a class="ab_btn01 delpro all_collect_btn close_btn" href="javascript:void(0);">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+
+<div id="del_batch" class="ac_box ac_medium">
+    <div class="ac_box_tit">
+        <span>温馨提示</span><div class="close_btn">╳</div>
+    </div>
+    <div class="ac_box_msg">确定要删除已选商品吗？</div>
+    <div class="ac_btn_box">
+        <a class="ab_btn01 delpro" href="javascript:void(0);" ng-click="confirm_del_many()">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+
+<div id="bc03" class="ac_box ac_big" style="display:none;">
+	<div class="ac_box_tit">
+    	<span>选择赠品</span><div class="close_btn">╳</div>
+    </div>
+    <div class="ac_box_content">
+    	<div class="chooseGifts">
+    		<div id="choose_Gifts" class="choose_Gifts pro_recommend">
+                <div class="gift_prev"><div class="gift_prev_m"></div></div>
+                <div class="gift_next"><div class="gift_next_m"></div></div>
+                <ul class="clearfix">
+                    <li ng-repeat="present_sku in present_skus">
+                        <a title="" href="" target="_blank">
+                            <img src="{{present_sku.img_url}}" width="160" alt="" /><br />
+                            <div class="pro_recommend_name">
+                                <span class="pro_recommend_name_t">{{present_sku.brand_ename}} {{present_sku.brand_name}}</span><br>
+                                <span class="pro_recommend_name_b">{{present_sku.name}}</span>
+                            </div>
+                        </a>
+                        <div class=""><input type="checkbox" ng-model="present_sku.is_checked"/></div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="ac_btn_box">
+    	<a class="ab_btn01 delpro" href="javascript:void(0);" ng-click="select_present_skus()">确认</a>
+        <a class="ab_btn02 close_btn" href="javascript:void(0);">取消</a>
+    </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+    var myApp = angular.module('meiciweb', [], function ($httpProvider) {
+        // Use x-www-form-urlencoded Content-Type
+        $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+
+        /**
+         * The workhorse; converts an object to x-www-form-urlencoded serialization.
+         * @param {Object} obj
+         * @return {String}
+         */
+        var param = function (obj) {
+            var query = '', name, value, fullSubName, subName, subValue, innerObj, i;
+
+            for (name in obj) {
+                value = obj[name];
+
+                if (value instanceof Array) {
+                    for (i = 0; i < value.length; ++i) {
+                        subValue = value[i];
+                        fullSubName = name + '[' + i + ']';
+                        innerObj = {};
+                        innerObj[fullSubName] = subValue;
+                        query += param(innerObj) + '&';
+                    }
+                }
+                else if (value instanceof Object) {
+                    for (subName in value) {
+                        subValue = value[subName];
+                        fullSubName = name + '[' + subName + ']';
+                        innerObj = {};
+                        innerObj[fullSubName] = subValue;
+                        query += param(innerObj) + '&';
+                    }
+                }
+                else if (value !== undefined && value !== null)
+                    query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
+            }
+
+            return query.length ? query.substr(0, query.length - 1) : query;
+        };
+
+        // Override $http service's default transformRequest
+        $httpProvider.defaults.transformRequest = [function (data) {
+            return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
+        }];
+    });
+
+//    自定义过滤器保留两位小数
+    myApp.filter("Num",function(){
+        return function(input){
+            input = String(input);
+            var out = "";
+            if(input.indexOf('.') < 0){
+                input = input + '.00';
+                out = input;
+            }else {
+                out = input;
+            }
+            return out;
+        }
+    });
+
+    myApp.controller('CartCtrl', function ($scope, $q, $http) {
+        // 列表
+        $scope.cart_lists = function () {
+            $scope.product_rows = [];
+            $scope.activity_policy = [];
+            $scope.show_activity = false;
+            $scope.show_cart = false;
+            $scope.show_empty = false;
+            $scope.select_all = true;
+            $scope.total_price = 0.00;
+            $scope.total_activity_minus_price = 0.00;
+            $scope.select_num = 0;
+            $scope.present_skus = [];
+            $scope.select_present_activity_id = 0;
+            $scope.is_login = 0;
+            $http.get('/member/cart/checkedPrice').success(function (res) {
+                if (!res.status) {
+                    showMsg('showMsg1','温馨提示',res.info);
+                    return false;
+                }
+                $scope.product_rows = res.data.product_rows;
+                $scope.product_rows.forEach(function(e){
+//                    e.is_checked = true;
+                });
+                $scope.get_policy_price();
+                $scope.activity_policy = res.data.activity_policy;
+                $scope.is_login = res.data.is_login;
+                if ($scope.activity_policy.length > 0) {
+                    $scope.show_activity = true;
+                }
+                if ($scope.product_rows.length > 0) {
+                    $scope.show_cart = true;
+                }else{
+                    $scope.show_empty = true;
+                }
+                $scope.total_price = $scope.total_price.toFixed(2);
+            }).error(function (res) {
+                showMsg('showMsg2','温馨提示','网络延迟，请重试');
+                return false;
+            });
+        };
+//        console.log($scope.total_price);
+        $scope.cart_lists();
+
+        // 加入购物袋
+        $scope.member_cart_add = function(sku_id) {
+            if (!sku_id) {
+                alert('商品未选中');
+                return false;
+            }
+            $http.post('/member/cart/add', {'sku_id': sku_id}).success(function (res) {
+                if (!res) {
+                    showMsg('showMsg01','温馨提示','网络延迟，请重试');
+                    return false;
+                } else {
+                    var json = $.isPlainObject(res) ? res : $.parseJSON(res);
+                    if (!json.status) {
+                        showMsg('showMsg01','温馨提示',json.info);
+                        return false;
+                    }
+                    //showMsg('showMsg01','温馨提示','商品已加入购物袋');
+                    $(".headerCart_m").fadeIn(200);
+                    $("body,html").animate({scrollTop:0},200);
+                    cart();
+                    $scope.cart_lists();
+                    return false;
+                }
+            });
+        };
+
+        // 移入收藏
+        $scope.add_favorite = function () {
+            var that = this;
+            boxShow('bc02');
+            $('.collect_btn').click(function(){
+                setTimeout(function () {
+                    $scope.$apply(function () {
+                        var r = true;
+                        if(r){
+                            var sku_id = that.product_row.id;
+                            var type = that.product_row.type;
+                            var activity_id = that.product_row.activity_id;
+                            $http.post('/member/cart/addfavorite',{'sku_id':sku_id,'type':type,'activity_id':activity_id}).success(function (res) {
+                                if (!res.status) {
+                                    showMsg('showMsg3','温馨提示',res.info);
+                                    return false;
+                                }
+
+                                $(".ac_box, .mask").hide();
+                                $scope.get_policy_price();
+                            }).error(function (res) {
+                                showMsg('showMsg4','温馨提示','网络延迟，请重试');
+                                return false;
+                            });
+                        }
+                    });
+                }, 2);
+            });
+//            $r = confirm('确认移入收藏？');
+//            if($r){
+//                var sku_id = this.product_row.id;
+//                var type = this.product_row.type;
+//                var activity_id = this.product_row.activity_id;
+//                $http.post('/member/cart/addfavorite',{'sku_id':sku_id,'type':type,'activity_id':activity_id}).success(function (res) {
+//                    if (!res.status) {
+//                        showMsg('showMsg','温馨提示',res.info);
+//                        return false;
+//                    }
+//
+//                    $(".ac_box, .mask").hide();
+//                    $scope.get_policy_price();
+//                }).error(function (res) {
+//                    showMsg('showMsg','温馨提示','网络延迟，请重试');
+//                    return false;
+//                });
+//            }
+
+
+        };
+
+        // 批量移入收藏
+        $scope.add_batch_favorite = function () {
+            boxShow('bc04');
+            $('.all_collect_btn').click(function () {
+                setTimeout(function () {
+                    $scope.$apply(function () {
+                        var r = true;
+                        if(r){
+                            var items = [];
+                            for (var i in $scope.product_rows) {
+                                if ($scope.product_rows[i].is_checked) {
+                                    items.push($scope.product_rows[i].id);
+                                }
+                            }
+                            $http.post('/member/cart/addfavorite',{'sku_id':items.join()}).success(function (res) {
+                                if (!res.status) {
+                                    showMsg('showMsg5','温馨提示',res.info);
+                                    return false;
+                                }
+
+                                $(".ac_box, .mask").hide();
+                                $scope.get_policy_price();
+                            }).error(function (res) {
+                                showMsg('showMsg6','温馨提示','网络延迟，请重试');
+                                return false;
+                            });
+                        }
+                    });
+                }, 2);
+            });
+        };
+
+        // 购物车增加数量
+        $scope.cal_add = function () {
+            if(this.product_row.type == 5){
+                return false;
+            }
+//            if(this.product_row.is_cbs == 1){
+//                showMsg('showMsg7','温馨提示','跨境商品不能大于1件');
+//                return false;
+//            }
+            var sku_id = this.product_row.id;
+            var quantity = parseInt(this.product_row.quantity)+1;
+            var that = this;
+            $http.post('/member/cart/edit', {'sku_id': sku_id, 'quantity': quantity}).success(function (res) {
+                if (!res.status) {
+                    showMsg('showMsg8','温馨提示',res.info);
+                    return false;
+                }
+                that.product_row.quantity++;
+                $scope.get_policy_price();
+            }).error(function (res) {
+                showMsg('showMsg9','温馨提示','网络延迟，请重试');
+                return false;
+            });
+        };
+
+        // 购物车减少数量
+        $scope.cal_minus = function () {
+            if(this.product_row.type == 5){
+                return false;
+            }
+			if (this.product_row.quantity > 1) {
+//                this.product_row.quantity--;
+                var sku_id = this.product_row.id;
+                var quantity = parseInt(this.product_row.quantity) -1;
+                var that = this;
+                $http.post('/member/cart/edit', {'sku_id': sku_id, 'quantity': quantity}).success(function (res) {
+                    if (!res.status) {
+                        showMsg('showMsg10','温馨提示',res.info);
+                        return false;
+                    }
+                    that.product_row.quantity--;
+                    $scope.get_policy_price();
+                }).error(function (res) {
+                    showMsg('showMsg11','温馨提示','网络延迟，请重试');
+                    return false;
+                });
+            }
+        };
+
+        // 删除单个
+        $scope.del_one = function () {
+            boxShow("bc01");
+            $scope.del_sku_id = this.product_row.id;
+            $scope.del_sku_type = this.product_row.type;
+            $scope.del_sku_activity_id = this.product_row.activity_id;
+        };
+
+        // 确认删除单个
+        $scope.confirm_del_one = function () {
+            var sku_id = $scope.del_sku_id;
+            var type = $scope.del_sku_type;
+            var activity_id = $scope.del_sku_activity_id;
+            $http.post('/member/cart/del',{'sku_id':sku_id,'type':type,'activity_id':activity_id}).success(function (res) {
+                if (!res.status) {
+                    showMsg('showMsg12','温馨提示',res.info);
+                    return false;
+                }
+                cart();
+                $(".ac_box, .mask").hide();
+                $scope.get_policy_price();
+            }).error(function (res) {
+                showMsg('showMsg13','温馨提示','网络延迟，请重试');
+                return false;
+            });
+        };
+
+        // 批量删除
+        $scope.del_many = function () {
+            var items = [];
+            for (var i in $scope.product_rows) {
+                if ($scope.product_rows[i].is_checked) {
+                    items.push($scope.product_rows[i].id);
+                }
+            }
+            if(items.length >0){
+                boxShow("del_batch");
+            }else{
+                showMsg('showMsg14','温馨提示','请选中要删除的商品');
+            }
+        };
+
+        // 确认批量删除
+        $scope.confirm_del_many = function () {
+            var items = [];
+            for (var i in $scope.product_rows) {
+                if ($scope.product_rows[i].is_checked) {
+                    items.push($scope.product_rows[i].id);
+                }
+            }
+            $http.post('/member/cart/delMany',{'sku_id':items.join()}).success(function (res) {
+                if (!res.status) {
+                    showMsg('showMsg15','温馨提示',res.info);
+                    return false;
+                }
+                cart();
+                $(".ac_box, .mask").hide();
+                $scope.get_policy_price();
+            }).error(function (res) {
+                showMsg('showMsg16','温馨提示','网络延迟，请重试');
+                return false;
+            });
+        };
+
+        // 修改件数
+        $scope.cal_change = function () {
+            if(this.product_row.type == 5){
+                return false;
+            }
+            var re = /^[1-9]+[0-9]*]*$/;
+            if (!re.test(this.product_row.quantity)) {
+                this.product_row.quantity = 1;
+            }
+
+//            if(this.product_row.is_cbs == 1 && this.product_row.quantity>1){
+//                showMsg('showMsg17','温馨提示','跨境商品不能大于1件');
+//                this.product_row.quantity = 1;
+//            }
+
+            var sku_id = this.product_row.id;
+            var quantity = this.product_row.quantity;
+            $http.post('/member/cart/edit', {'sku_id': sku_id, 'quantity': quantity}).success(function (res) {
+                if (!res.status) {
+                    showMsg('showMsg18','温馨提示',res.info);
+                    return false;
+                }
+                $scope.get_policy_price();
+            }).error(function (res) {
+                showMsg('showMsg19','温馨提示','网络延迟，请重试');
+                return false;
+            });
+        };
+
+        // 选中所有
+        $scope.check_all = function () {
+            for (var i in $scope.product_rows) {
+                $scope.product_rows[i].is_checked = $scope.select_all;
+            }
+            $scope.get_policy_price();
+        };
+
+        // 选中单个
+        $scope.select_one = function () {
+            if (!this.product_row.is_checked) {
+                $scope.select_all = false;
+            }
+            $scope.get_policy_price();
+        };
+
+        // 获取可选赠送sku
+        $scope.get_present_skus = function () {
+            $scope.select_present_activity_id = this.activity.id;
+            var present_skus = this.activity.present_skus.join();
+            $http.post('/member/cart/getpresentlists',{'present_skus':present_skus}).success(function (res) {
+                if (!res.status) {
+                    showMsg('showMsg20','温馨提示',res.info);
+                    return false;
+                }
+
+                for(var i in res.data){
+                    res.data[i].is_checked = false;
+                }
+                $scope.present_skus = res.data;
+                boxShow('bc03');
+            }).error(function (res) {
+                showMsg('showMsg21','温馨提示','网络延迟，请重试');
+                return false;
+            });
+        };
+
+        // 选中赠品
+        $scope.select_present_skus = function () {
+            var items = [];
+            for(var i in $scope.present_skus){
+                if($scope.present_skus[i].is_checked){
+                    items.push($scope.present_skus[i]);
+                }
+            }
+            // 请求后台
+            var activity_id = $scope.select_present_activity_id;
+            $http.post('/member/cart/selectpresent',{'items':JSON.stringify(items),'activity_id':activity_id}).success(function (res) {
+                if (!res.status) {
+                    showMsg('showMsg22','温馨提示',res.info);
+                    return false;
+                }
+                $(".ac_box, .mask").hide();
+                $scope.get_policy_price();
+            }).error(function (res) {
+                showMsg('showMsg23','温馨提示','网络延迟，请重试');
+                return false;
+            });
+        };
+
+        // 获取策略 @TODO 屏蔽赠品
+        $scope.get_policy_price = function () {
+            var items = {};
+            for (var i in $scope.product_rows) {
+                if ($scope.product_rows[i].is_checked && $scope.product_rows[i].type != 5) {
+                    items[$scope.product_rows[i].id] = $scope.product_rows[i].quantity;
+                }
+            }
+            // 活动总折扣
+            $http.post('/member/cart/checkedPrice',{'items':JSON.stringify(items)}).success(function (res) {
+                if (!res.status) {
+                    showMsg('showMsg24','温馨提示',res.info);
+                    return false;
+                }
+                $scope.select_num = 0;
+                $scope.total_price = 0.00;
+                // 购物袋信息刷新
+                $scope.product_rows = res.data.product_rows;
+                $scope.activity_policy = res.data.activity_policy;
+                $scope.total_activity_minus_price =  res.data.total_activity_minus_price;
+
+                for (var i in $scope.product_rows) {
+                    if ($scope.product_rows[i].id in items && $scope.product_rows[i].type != 5) {
+                        $scope.product_rows[i].is_checked = true;
+                        $scope.total_price += parseFloat($scope.product_rows[i].activity_price) * parseInt($scope.product_rows[i].quantity);
+                        $scope.select_num += parseInt($scope.product_rows[i].quantity);
+                    }
+                }
+                if ($scope.activity_policy.length > 0) {
+                    $scope.show_activity = true;
+                }
+                if ($scope.product_rows.length > 0) {
+                    $scope.show_cart = true;
+                    $scope.show_empty = false;
+                }else{
+                    $scope.show_cart = false;
+                    $scope.show_empty = true;
+                }
+            }).error(function (res) {
+                showMsg('showMsg25','温馨提示','网络延迟，请重试');
+                return false;
+            });
+        };
+
+        // 跳转到下单确认页
+        $scope.check_order = function () {
+            var buy_items = {};
+            var has_cbs = false;
+
+
+            for (var i in $scope.product_rows) {
+                if ($scope.product_rows[i].is_checked && $scope.product_rows[i].type != 5) {
+                    if($scope.product_rows[i].is_cbs == 1) {
+//                        if(has_cbs){
+//                            showMsg('showMsg26','温馨提示','全球购商品一次只能购买一件');
+//                            return false;
+//                        }else{
+//                            has_cbs = true;
+//                        }
+                    }
+//                    if($scope.product_rows[i].is_cbs == 1 && $scope.product_rows[i].quantity>1){
+//                        showMsg('showMsg27','温馨提示','全球购商品一次只能购买一件');
+//                        return false;
+//                    }
+//                    if(has_cbs && buy_items.length > 1){
+//                        showMsg('showMsg28','温馨提示','含有全球购的商品一次只能购买一件');
+//                        return false;
+//                    }
+                    buy_items[$scope.product_rows[i].id] = $scope.product_rows[i].quantity;
+                }
+            }
+            if($.isEmptyObject(buy_items)){
+                showMsg('showMsg29','温馨提示','购买的商品数不能为0');
+                return false;
+            }
+            // 选中的商品到结算页面
+            $http.post('/member/cart/buy',{'buy_items':JSON.stringify(buy_items)}).success(function (res) {
+                if($.isPlainObject(res)) {
+                    if (!res.status) {
+                        $scope.jump_login(res);
+                        if(res.status == 0){
+                            showMsg('showMsg30','温馨提示',res.info);
+                            return false;
+                        }
+                    }
+                    window.location.href='/member/order';
+                }
+                else if(res.match('script') && res.match('login')) {
+                    location.href="/Member/Index/login?forward_url=/member/cart/index";
+                } else if (res.match('script') && res.match('dobind')) {
+                    location.href="/Member/Index/bind?dobind=1&forward_url=/member/cart/index";
+                }
+            }).error(function (res) {
+                showMsg('showMsg31','温馨提示','网络延迟，请重试');
+                return false;
+            });
+        };
+
+        // 跳转到登录页
+        $scope.jump_login = function (str) {
+            console.log(str);
+            var reg = /^<script.*?>location\.href="(.*?)";<\/script>$/ig;
+            if(str.match(reg)){
+                window.location = str.replace(reg,'$1');
+                return false;
+            }
+        };
+
+//        var onload = true;
+//        $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
+//            //页面加载完成后执行的js
+//            if(onload == true){
+//                $("#allcpro01").trigger("click");
+//                onload = false;
+//            }
+//        });
+//
+    });
+
+//myApp.directive('onFinishRenderFilters', function ($timeout) {
+//    return {
+//        restrict: 'A',
+//        link: function(scope, element, attr) {
+//            if (scope.$last === true) {
+//                $timeout(function() {
+//                    scope.$emit('ngRepeatFinished');
+//                });
+//            }
+//        }
+//    };
+//});
+
+
+
+</script>
+
+    <!--Criteo  Basket page tag 购物车---->
+<!--    <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+    <script type="text/javascript">
+        window.criteo_q = window.criteo_q || [];
+        window.criteo_q.push(
+            { event: "setAccount", account: 19582 },
+                { event: "setSiteType", type: "d" },
+        { event: "viewBasket", item: [
+            for(var i = 0 ; i < product_rows.length ; i++ ){
+                { id: product_rows[i]["id"], price: product_rows[i]["activity_price"], quantity: product_rows[i]["quantity"]} }
+            }
+        ] });
+    </script>-->
+</div>
+{% end %}
+</body>
+</html>

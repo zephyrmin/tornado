@@ -1,0 +1,480 @@
+/*====================================登陆=============================================================*/
+/*登陆和注册的头部*/
+*{
+	margin: 0;
+	padding: 0;
+
+}
+a{
+	text-decoration: none;
+}
+body{
+	font-size:12px;
+	font-family: 微软雅黑;
+	background-color:#fff;
+	color:#555;
+}
+.header{
+	margin-bottom: 20px;
+}
+.float_l{
+	float: left;
+	display: inline;
+}
+.float_r{
+	float: right;
+	display: inline;
+}
+.template_header{
+	font-size:14px;
+	height:146px;
+	line-height: 146px;
+	width:1200px;
+	margin:auto;
+}
+.tem_header_left{
+	background-repeat: no-repeat;
+	width:160px;
+	height: 65px;
+	margin-top:39px;
+
+}
+.member_help{
+	font-size:12px;
+	font-family: 微软雅黑;
+	background-color:#fff;
+	color:#555;
+	/*left:-38px;*/
+	display: inline-block;
+	float: left;
+}
+.member_phone{
+	display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(images/headico.png);
+    float: left;
+    margin-top:63px;
+    margin-left: 23px;
+}
+.tem_header_right{
+	width: 223px;
+	height: 146px;
+	position: relative;
+	line-height: 146px;
+	text-align: center;
+}
+.header_shadow{
+	background-image: url(images/headerbg.png);
+	width: 100%;
+	height: 8px;
+}
+/*------------------------------------登陆的身体-------------------------------------------------*/
+.memberMain{
+	height: 535px;
+	position: relative;
+	background: #fefefe url(images/memberbg.jpg) center 0 no-repeat;
+}
+/*-----------------------------------登陆和注册的尾部--------------------------------------------*/
+.footer{
+	width: 100%;
+	background: #eee;
+	margin-top:30px;
+
+}
+.pw_footer{
+	background: #414141;
+	width: 100%;
+	height:280px;
+	min-width: 1200px;
+}
+.pw_footer_top ul li{
+	list-style: none;
+	float: left;
+	height: 138px;
+	font-size: 18px;
+	color: white;
+}
+.pw_footer_top ul{
+	height: 138px;
+	line-height: 138px;
+	color: white;
+	width: 1200px;
+	margin:auto;
+	background: #414141;
+	padding: 0px;
+}
+.pw_footer_top .pw_footer_m{
+	width: 760px;
+	text-align: center;
+	position: relative;
+	left: 28px;
+}
+.pw_footer_m div{
+	margin-left:300px; 
+}
+.pw_footer_l{
+	width: 238px;
+}
+.pw_footer_l span{
+	width: 162px;
+}
+.pw_footer_top ul li div{
+	position: relative;
+	top: 42px;
+	margin-right: 24px;
+	float: left;
+	width: 52px;
+	height: 52px;
+}
+.pw_footer_top ul li span{
+	height: 24px;
+	font-family: 微软雅黑;
+	float: left;
+}
+.footer_icon03{
+	background: url(images/footer_icon.png) right;
+}
+.footer_icon02{
+	background: url(images/footer_icon.png) center;
+	background-position: -52px 0;
+	margin: auto;
+}
+.footer_icon01{
+	background: url(images/footer_icon.png) left;
+}
+.pw_footer_top{
+	height: 138px;
+}
+.pw_footer_cut{
+	width: 100%;
+	height: 0;
+	border-top: 1px solid #4d4d4d;
+	border-bottom: 1px solid #333;  
+
+}
+.pw_footer_btm{
+	width: 1200px;
+	height: 121px;
+	padding-top:30px;
+	margin:auto;
+}
+.pw_footer_btm_l,.pw_footer_btm_cut{
+	float: left;
+}
+.pw_footer_btm_r{
+	float: right;
+}
+.pw_footer_btm_l{
+	position: relative;
+}
+.pw_footer_btm_l ul li{
+	text-align: center;
+	float: left;
+	list-style: none;
+	height: 20px;
+	width: 72px;
+	border-left: 1px solid #999;
+	line-height: 20px;
+	margin: 0px;
+	
+}
+.pw_footer_btm_l ul{
+	padding: 0;
+}
+.pw_footer_btm_l ul li a{
+	text-decoration: none;
+	color: #999;
+	font-size:12px;
+}
+.clear{
+	clear: both;
+}
+.pw_footer_btm_l div{
+	font-size:12px;
+	color: #999;
+	padding-left: 12px;
+}
+.pw_footer_btm_l p{
+	line-height: 47px;
+	padding: 0;
+	margin:0;
+}
+.pw_footer_btm_l span{
+	margin-right: 20px;
+}
+.pw_footer_btm_cut{
+	width: 2px;
+	height: 86px;
+	border-right: 1px solid #333;
+	margin: 5px 1px 0 170px;
+}
+.pw_footer_btm_r div{
+	width: 589px;
+	margin:5px 0 23px 0;
+	line-height: 21px;
+	text-align: center;
+	font-size: 12px;
+	color: #999;
+}
+.pw_footer_btm_r div span{
+	font-size:14px;
+}
+.pw_footer_btm_r ul li{
+	list-style: none;
+	float: left;
+}
+.pw_footer_btm_r .partner_01 a{
+	width: 18px;
+	height: 20px;
+	background: url(images/partner_icon.png);
+	background-position: 0 0 ;
+	display: block;
+}
+.pw_footer_btm_r  a .partner_02{
+	float: left;
+	width: 31px;
+	height: 19px;
+	background: url(images/partner_icon.png);
+	background-position: -199px 0 ;
+}
+.partner_03 a {
+	width: 68px;
+	height: 22px;
+	background: url(images/footer.png);
+	background-position: 0 -24px;
+	display: block;
+}
+.partner_04 a {
+	width: 72px;
+	height:31px;
+	background: url(images/partner_icon.png);
+	background-position: -127px 0;
+	display: block;
+}
+.partner_05 a {
+	width: 60px;
+	height: 23px;
+	background: url(images/partner_icon.png);
+	background-position: -66px 0;
+	display: block;
+}
+.partner_06 a {
+	width: 77px;
+	height: 23px;
+	background: url(images/footer.png);
+	background-position: -77px -23px;
+	display: block;
+}
+.pw_footer_btm_r ul li{
+	padding: 0 17px 0 17px;
+}
+.pw_footer_btm_r ul{
+	padding: 0;
+}
+.partner_02_text{
+	text-decoration: none;
+	color:#999;
+	font-size: 12px;
+}
+/*-------------------------------------登陆框--------------------------------------------------------*/
+#login_form{
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	margin-left:150px;
+	width: 380px;
+	background: #fff;
+	padding: 30px 40px;
+	border: solid 1px #e8e8e8;
+	box-shadow: 3px 3px 7px #eee;
+
+}
+.member_title{
+	font-size: 18px;
+	font-weight: bolder;
+	margin-bottom: 20px;
+	color: #333;
+}
+.member_li{
+	border: solid 1px #e8e8e8;
+	background: #fff;
+	margin-bottom: 10px;
+	padding:4px 0 ;
+}
+.float_l{
+	float: left;
+	display: inline;
+}
+.memberico01,.memberico02,.memberico03,.memberico04{
+	width: 26px;
+	height: 26px;
+	padding-right:4px;
+	background: url(images/memberico.gif) no-repeat;
+	margin: 0 4px 0 6px;
+	border-right: solid 1px #e8e8e8;
+}
+.memberico02{
+	background-position: -26px 0;
+}
+.memberico03{
+	background-position: -78px 0;
+}
+.memberico04{
+	background-position: -52px 0;
+}
+.memberint{
+	width: 240px;
+	margin:0 0 0 4px;
+	position: relative;
+}
+.memberint input{
+	width: 100%;
+	padding:0;
+	border: none;
+	font-size:12px;
+	height: 26px;
+	line-height: 26px;
+	color:#333;
+	outline: none;
+}
+.clearfix:after{
+	display: block;
+	clear: both;
+	content:".";
+	visibility: hidden;
+	height: 0
+}
+.m_opt,.m_opt a{
+	color:#999;
+}
+.m_opt a:hover{
+	text-decoration: none;
+	color: #999;
+}
+.m_opt{
+	padding:7px 0 5px 0;
+}
+label{
+	cursor: pointer;
+}
+.m_opt label #login_auto, .m_opt label span{
+	vertical-align: middle;
+	margin-right: 7px;
+}
+.m_opt{
+	font-size: 12px;
+	font-family: "微软雅黑";
+	line-height: 1.5;
+	color:#999;
+}
+.member_form_btn button{
+	width: 100%;
+	height: 48px;
+	background: #333;
+	color: #fff;
+	border:none;
+	border-radius: 3px;
+	font-size: 18px;
+	font-family: "微软雅黑";
+}
+.mem_err_msg{
+	height: 30px;
+	color: #cc3d3d;
+}
+.m_t{
+	text-align: right;
+	margin:20px 0 7px 0;
+	font-size: 12px;
+	color: #669aca;
+}
+.m_t .acclink:hover{	
+	text-decoration: none;
+	color: #669aca;
+}
+.m_t .acclink{	
+	text-decoration: none;
+	color: #669aca;
+}
+
+.relative{
+	position: relative;
+}
+.absolute{
+	position: absolute;
+}
+.jointLogonBox_tit{
+	height: 20px;
+}
+.jlb_mid_line{
+	border-bottom: solid 1px #e8e8e8;
+	left: 0;
+	top: 8px;
+	width: 100%;
+	z-index: 1;
+}
+.jlb_theme{
+	background: #fff;
+	color: #999;
+	margin: auto;
+	text-align: center;
+	width: 110px;
+	z-index: 2;
+	font-size: 12px;
+
+}
+.jointLogonBox_ico{
+	padding: 20px 25px 5px 25px;
+}
+.jointLogonBox_ico ul li{
+	float: left;
+	width: 50%;
+}
+li{
+	list-style: none;
+}
+.jointLogonBox_ico .jlb_wechat{
+	background-position: -35px 0;
+}
+.jointLogonBox_ico .jlb_sina{
+	background-position: -70px 0;
+}
+.jointLogonBox_ico a{
+	display: block;
+	width: 35px;
+	height: 35px;
+	background: url(images/jointLogin.gif);
+	background-repeat: no-repeat;
+	margin: auto;
+	opacity: .5;
+	transition-duration: .1s;
+	transition-timing-function: linear;
+}
+ul{
+	padding: 0;
+}
+a{
+	color: #666;
+	text-decoration: none;
+}
+.verifyInt{
+	width: 166px;
+	height: 36px;
+}
+.verifyInt input{
+	width: 98%;
+	border:solid 1px #e8e8e8;
+	height: 36px;
+	line-height: 36px;
+	font-size: 12px;
+	padding-left: 8px;
+	outline: none;
+}
+.verifyImg{
+	width: 120px;
+	height: 32px;
+}
+/*===================================注册===============================================================
+.table > th:nth-child(2), .table > tr:nth-child(2){
+    float:right;
+}

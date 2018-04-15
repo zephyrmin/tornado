@@ -1,0 +1,1082 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container">
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/modules/Member/Index.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/validate.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/jcarousellite_1.0.1.pack.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/jquery.history.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/modules/Member/Cart.js"></script>
+    <script type="text/javascript">
+    product = $.isPlainObject({"spu":{"id":"159207","supplier_id":"241","brand_id":"8","category_id":"14","name":"\u725b\u76ae \u5973\u58eb \u5355\u80a9\u5305","is_cbs":"1","fit_person":"30","years":"2017","category_ids":"1,14","sku_num_sales":"1","size_chart":"","measure":[],"brand_name":"\u853b\u4f9d","brand_ename":"Chloe","brand_img_url":"http:\/\/img.meicicdn.com\/upload\/image\/brand\/p\/8.jpg","brand_logo_url":"http:\/\/img.meicicdn.com\/upload\/image\/brand\/logo\/8.jpg","brand_disable":0,"cate_name":"\u5355\u80a9\u5305","cate_ename":"Shoulder Bags","default_sku":"305865","default_color":"13","default_szie":"0","colors":["13"],"sizes":[],"skus":{"305865":{"id":"305865","spu":"159207","color_id":"13","size_id":"0","price":"11438.00","quantity":"4","status":"1","sku":"305865","quantity_cache":"4","favNum":1550,"isFav":0,"img":["http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17262859940fc40a689-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263059940fc6b7c02-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263259940fc897094-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263459940fca38750-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263659940fcc24d64-800x960.jpg"],"is_club_price":1,"urlKey":"\/product\/detail\/id\/305865\/saleid\/159207.html"}},"category_id_one":"1"},"colorSize":{"sku":{"13":"305865"}},"colors":{"13":{"id":"13","value":"\u9ec4\u8272","ename":"yellow"}},"sizes":[]})?{"spu":{"id":"159207","supplier_id":"241","brand_id":"8","category_id":"14","name":"\u725b\u76ae \u5973\u58eb \u5355\u80a9\u5305","is_cbs":"1","fit_person":"30","years":"2017","category_ids":"1,14","sku_num_sales":"1","size_chart":"","measure":[],"brand_name":"\u853b\u4f9d","brand_ename":"Chloe","brand_img_url":"http:\/\/img.meicicdn.com\/upload\/image\/brand\/p\/8.jpg","brand_logo_url":"http:\/\/img.meicicdn.com\/upload\/image\/brand\/logo\/8.jpg","brand_disable":0,"cate_name":"\u5355\u80a9\u5305","cate_ename":"Shoulder Bags","default_sku":"305865","default_color":"13","default_szie":"0","colors":["13"],"sizes":[],"skus":{"305865":{"id":"305865","spu":"159207","color_id":"13","size_id":"0","price":"11438.00","quantity":"4","status":"1","sku":"305865","quantity_cache":"4","favNum":1550,"isFav":0,"img":["http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17262859940fc40a689-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263059940fc6b7c02-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263259940fc897094-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263459940fca38750-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263659940fcc24d64-800x960.jpg"],"is_club_price":1,"urlKey":"\/product\/detail\/id\/305865\/saleid\/159207.html"}},"category_id_one":"1"},"colorSize":{"sku":{"13":"305865"}},"colors":{"13":{"id":"13","value":"\u9ec4\u8272","ename":"yellow"}},"sizes":[]}:$.parseJSON({"spu":{"id":"159207","supplier_id":"241","brand_id":"8","category_id":"14","name":"\u725b\u76ae \u5973\u58eb \u5355\u80a9\u5305","is_cbs":"1","fit_person":"30","years":"2017","category_ids":"1,14","sku_num_sales":"1","size_chart":"","measure":[],"brand_name":"\u853b\u4f9d","brand_ename":"Chloe","brand_img_url":"http:\/\/img.meicicdn.com\/upload\/image\/brand\/p\/8.jpg","brand_logo_url":"http:\/\/img.meicicdn.com\/upload\/image\/brand\/logo\/8.jpg","brand_disable":0,"cate_name":"\u5355\u80a9\u5305","cate_ename":"Shoulder Bags","default_sku":"305865","default_color":"13","default_szie":"0","colors":["13"],"sizes":[],"skus":{"305865":{"id":"305865","spu":"159207","color_id":"13","size_id":"0","price":"11438.00","quantity":"4","status":"1","sku":"305865","quantity_cache":"4","favNum":1550,"isFav":0,"img":["http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17262859940fc40a689-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263059940fc6b7c02-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263259940fc897094-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263459940fca38750-800x960.jpg","http:\/\/img3.meicicdn.com\/u\/LvProduct\/pic\/20170816\/17263659940fcc24d64-800x960.jpg"],"is_club_price":1,"urlKey":"\/product\/detail\/id\/305865\/saleid\/159207.html"}},"category_id_one":"1"},"colorSize":{"sku":{"13":"305865"}},"colors":{"13":{"id":"13","value":"\u9ec4\u8272","ename":"yellow"}},"sizes":[]});
+    //console.log(product);
+    var get_parment = {"id":"305865","saleid":"159207","from":"special_643"};
+    co_id = product['spu']['default_color'];
+    sz_id = product['spu']['default_szie'];
+    sku = product['spu']['default_sku']; //设置默认sku
+
+    </script>
+
+    <!-- 企业QQ -->
+    <script charset="utf-8" src="https://wpa.b.qq.com/cgi/wpa.php"></script>
+    <script type="text/javascript">
+        BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800019121, selector: 'BizQQWPA'});
+    </script>
+
+    <!--小能客服系统-->
+    <script language="javascript" type="text/javascript" charset="gb2312">
+	var uidForntke	= getCookie("WAPMUID");
+	var nameForntke	= getCookie("LOGINNAME");
+	if(typeof(uidForntke) == 'undefined'){
+	uidForntke = "";
+	}
+	if(typeof(nameForntke) == 'undefined'){
+	nameForntke = "";
+	}
+	var parStr = window.location.pathname;
+	var pattern = /-[0-9][0-9][0-9][0-9][0-9][0-9]-/;
+	var result = String(parStr.match(pattern));
+	var tmpRes = result.replace("-","");
+	var pId = tmpRes.replace("-","");
+	NTKF_PARAM = {
+	siteid:"kf_9801",
+	settingid:"kf_9801_1372750844694",
+	uid:uidForntke,
+	uname:nameForntke,
+	isvip:          "" ,
+	userlevel:	"",
+	ntalkerparam:{
+	　　		item:	{
+	　　			id: pId
+	　　		}
+	}
+
+	}
+
+    </script>
+    <script type="text/javascript" src="https://dl.ntalker.com/js/xn6/ntkfstat.js?siteid=kf_9801"
+            charset="utf-8"></script>
+    <!--小能客服系统结束-->
+
+    <!--[if IE 7]>
+    <script>
+    $(function(){
+        $(window).scroll(function () {
+            if ($('.proTab_m').css('position')==='fixed'){
+                $('.proTab_bg').css({
+                    display:'block',
+                    position:'fixed',
+                    top:'0'
+                });
+            }else {
+                $('.proTab_bg').css('display','none');
+            }
+        })
+    })
+
+    </script>
+    <![endif]-->
+    <style type="text/css">
+    body {background:#f5f5f5;}
+
+    </style>
+
+    <div id="content" class="content">
+        <div class="product">
+            <div class="pro_top clearfix">
+                <!--左侧-->
+                <div class="pro_l clearFix">
+                    <!--商品缩略图片-->
+                    <div class="pro_img_list">
+                        <div class="goods_scroll">
+                            <div class="prev"></div>
+                            <div class="prev_cur"></div>
+                            <div class="next"></div>
+                            <div class="next_cur"></div>
+                            <div class="scroll_mask">
+                                <ul id="mycarousel1" class="goods_list3">
+                                    <!--图片右侧缩略小图-->
+                                    {% for img in goodslist.get_proimg() %}
+                                        <li class="list_edit"><a class="" picnum="" href="javascript:void(0);"
+                                                             rel="{gallery:'gal1',smallimage:'{{img}}', largeimage:'{{img}}'}"><img
+                                            src="{{img}}"
+                                            alt="" width="50" height="60"/></a></li>
+                                    {% end %}
+                                    <!--<li class="list_edit"><a class="" picnum="1" href="javascript:void(0);"-->
+                                                             <!--rel="{gallery:'gal1',smallimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg', largeimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg'}"><img-->
+                                            <!--src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg"-->
+                                            <!--alt="" width="50" height="60"/></a></li>-->
+                                    <!--<li class="list_edit"><a class="" picnum="2" href="javascript:void(0);"-->
+                                                             <!--rel="{gallery:'gal1',smallimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263059940fc6b7c02-800x960.jpg', largeimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263059940fc6b7c02-800x960.jpg'}"><img-->
+                                            <!--src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263059940fc6b7c02-800x960.jpg"-->
+                                            <!--alt="" width="50" height="60"/></a></li>-->
+                                    <!--<li class="list_edit"><a class="" picnum="3" href="javascript:void(0);"-->
+                                                             <!--rel="{gallery:'gal1',smallimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263259940fc897094-800x960.jpg', largeimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263259940fc897094-800x960.jpg'}"><img-->
+                                            <!--src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263259940fc897094-800x960.jpg"-->
+                                            <!--alt="" width="50" height="60"/></a></li>-->
+                                    <!--<li class="list_edit"><a class="" picnum="4" href="javascript:void(0);"-->
+                                                             <!--rel="{gallery:'gal1',smallimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263459940fca38750-800x960.jpg', largeimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263459940fca38750-800x960.jpg'}"><img-->
+                                            <!--src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263459940fca38750-800x960.jpg"-->
+                                            <!--alt="" width="50" height="60"/></a></li>-->
+                                    <!--<li class="list_edit"><a class="" picnum="5" href="javascript:void(0);"-->
+                                                             <!--rel="{gallery:'gal1',smallimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263659940fcc24d64-800x960.jpg', largeimage:'http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263659940fcc24d64-800x960.jpg'}"><img-->
+                                            <!--src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263659940fcc24d64-800x960.jpg"-->
+                                            <!--alt="" width="50" height="60"/></a></li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--商品大图-->
+                    <div class="pro_img">
+                        <a class="jqzoom" href="javascript:void(0);"
+                           name="{{goodslist.get_proimg()[0]}}"
+                           rel="gal1"><img
+                                src="{{goodslist.get_proimg()[0]}}"
+                                onerror="javascript:this.src='/static/img/list_load.gif';" alt="" width="383"
+                                height="460"/></a>
+                    </div>
+                </div>
+                <!--左侧结束-->
+
+                <!--右侧-->
+                <div class="pro_r float_l">
+                    <!--品牌以及商品标题-->
+                    <h1 class="relative clearfix">
+                        <a class="c_purple float_l " href="" title="了解品牌" target="_blank">{{goodslist.get_brand()}}</a>
+                    </h1>
+                    <div class="clearfix">
+                        <div class="ws_pro_r_detail">{{goodslist.get_productitle()}}</div>
+                    </div>
+                    <!--参考价格-->
+                    <div class="position_rel">
+                        <div class="pro_r_price relative clearfix">
+                            <div class="now_price"><i class="c_gray_2" style="display:inline-block; width:55px;">美西价</i><span>￥<em>{{goodslist.get_price()}}</em></span>
+                            </div>
+                            <!--<div class="pro_taxes_fees">
+    </div>
+<div class="pro_hint"><span></span>该商品售价由商品单价、<br/>行邮税、运费组成。</div>-->
+                        </div>
+                    </div>
+                    <!--选择颜色-->
+                    <div class="pro_color">
+                        <table width="100%">
+                            <colgroup>
+                                <col width="55px"/>
+                            </colgroup>
+                            <tr>
+                                <th>颜色</th>
+                                <td>
+                                    <ul class="clearfix">
+                                        <li class="colorcur" color-id='{{goodslist.get_color()}}'
+                                            title='{{goodslist.get_color()}}'>
+                                            <div class="listColor listColor{{goodslist.get_color()}}">{{goodslist.get_color()}}</div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!--选择尺码-->
+                    <div class="pro_size" style="padding: 15px 0;">
+                        <table width="100%" style="display:none;">
+                            <colgroup>
+                                <col width="55px"/>
+                            </colgroup>
+                            <tr>
+                                <th>尺码</th>
+                                <td>
+                                    <ul class="clearfix">
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><span class="proshowsize">查看尺码说明</span></td>
+                            </tr>
+                            <tr></tr>
+                        </table>
+
+                    </div>
+                    <!--购买按钮-->
+                    <div id="addbutton" class="pro_btn clearfix" style="display:block">
+                        <input id="skuId" class="productskuId" type="hidden" name="skuId" value="305865">
+                        <button type="button" class="btn_add_shopping float_l"
+                                onclick="member_cart_buyone(); _hmt.push(['_trackEvent', '商品详细页', '即刻购买', $('#skuId').val() ]);">
+                            即刻购买
+                        </button>
+                        <button type="button" class="btn_buy_now float_l"
+                                onclick="member_cart_add(); _hmt.push(['_trackEvent', '商品详细页', '加入购物袋', $('#skuId').val() ]);">
+                            加入购物袋
+                        </button>
+
+                        <div class="pro_collect">
+                            <!--是否收藏-->
+                            <a title="加入收藏" class=" pro_collect_y" href="javascript:void(0);"
+                               onclick="addcollect(this); _hmt.push(['_trackEvent', '商品详细页', '标签', '加入收藏']);"></a>
+                        </div>
+                        <div class="pro_share">
+                            <div class="pro_share_m">
+                                <div class="header_sj"></div>
+                                <div class="pro_share_n bdsharebuttonbox public_share">
+                                    <a class="ps_wechat" href="javascript:void(0);" data-cmd="weixin" title="分享到微信"></a>
+                                    <a class="ps_sina" href="javascript:void(0);" data-cmd="tsina" title="分享到新浪微博"></a>
+                                    <a class="ps_qq" href="javascript:void(0);" data-cmd="sqq" title="分享到QQ好友"></a>
+                                </div>
+
+                                <div class="bdsharebuttonbox">
+                                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#"
+                                                                                                          class="bds_tsina"
+                                                                                                          data-cmd="tsina"
+                                                                                                          title="分享到新浪微博"></a><a
+                                        href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--售罄状态-->
+                    <div class="pro_btn_none" style="display:none">该商品已售罄
+                        <!-- ，<a class="link_purple" href="javascript:void(0);">订阅到货通知</a> 。 --></div>
+                    <div class="pro_statement">
+                        <ul>
+                            <li class="clearfix">
+                                <span class="pro_statement_tit">到货时间</span>
+                                <span class="pro_statement_con">该商品到货时间预计15-20个工作日,具体时间受海关放行效率影响。</span>
+                                <!--<div class="pro_statement_t clearfix"><div class="pst_l float_l">到货时间</div><div class="pst_r float_r"><em class="pst01"></em></div></div>-->
+                                <!--<div class="pro_statement_b">该商品到货时间预计15-20个工作日,具体时间受海关放行效率影响。</div>-->
+                            </li>
+                            <li class="clearfix">
+                                <span class="pro_statement_tit">退货说明</span>
+                                <span class="pro_statement_con">若该商品无质量问题不支持退换货</span>
+
+                                <!--<div class="pro_statement_t clearfix"><div class="pst_l float_l">退货说明</div><div class="pst_r float_r"><em class="pst01"></em></div></div>-->
+                                <!--<div class="pro_statement_b">-->
+                                <!--若该商品无质量问题不支持退换货&lt;!&ndash; 若该商品无质量问题不支持退换货。 &ndash;&gt;-->
+                                <!--</div>-->
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!--右侧结束-->
+            </div>
+
+            <!--相关推荐-->
+            <div class="pro_hty">
+                <div class="pro_pubtit">
+                    <div class="tabTitle">
+                        <div class="tabTitle_m">Product <span>Recommend</span></div>
+                        <p>相关推荐</p>
+                    </div>
+                </div>
+                <div id="Product_Recommend" class="pro_recommend">
+                    <div class="cart_prev">
+                        <div class="cart_prev_m"></div>
+                    </div>
+                    <div class="cart_next">
+                        <div class="cart_next_m"></div>
+                    </div>
+                    <ul class="clearfix">
+                        <li>
+                            <a title="" href="/product/detail/id/298265/saleid/156059.html" title=" 皮革 女士 平底鞋"
+                               target="_blank">
+                                <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170724/1606165975aa78a8c24-160x192.jpg"
+                                     width="160" height="192" alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Valentino 华伦天奴</span><br>
+                                    <span class="prn_m"> 皮革 女士 平底鞋</span><br>
+                                    <span class="prn_m">3930.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/305864/saleid/159206.html" title="牛皮 女士 单肩包"
+                               target="_blank">
+                                <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170816/163754599404629c12d-160x192.jpg"
+                                     width="160" height="192" alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Chloe 蔻依</span><br>
+                                    <span class="prn_m">牛皮 女士 单肩包</span><br>
+                                    <span class="prn_m">11438.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/305283/saleid/158976.html" title="牛皮 女士 斜挎包"
+                               target="_blank">
+                                <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170814/12050659912172c651f-160x192.jpg"
+                                     width="160" height="192" alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Marni 玛尼</span><br>
+                                    <span class="prn_m">牛皮 女士 斜挎包</span><br>
+                                    <span class="prn_m">9375.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/305267/saleid/158964.html" title="牛皮 女士 单肩包"
+                               target="_blank">
+                                <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170815/1702055992b88dcf442-160x192.jpg"
+                                     width="160" height="192" alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Chloe 蔻依</span><br>
+                                    <span class="prn_m">牛皮 女士 单肩包</span><br>
+                                    <span class="prn_m">11500.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/302683/saleid/157733.html" title="金属 女士 颈饰"
+                               target="_blank">
+                                <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170803/1826315982fa5746269-160x192.jpg"
+                                     width="160" height="192" alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Hermes 爱马仕</span><br>
+                                    <span class="prn_m">金属 女士 颈饰</span><br>
+                                    <span class="prn_m">55714.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/296580/saleid/155347.html" title="18K/钻石 女士 颈饰"
+                               target="_blank">
+                                <img src="https://img3.meicicdn.com/u/LvProduct/pic/20170717/142403596c58035b3b5-160x192.jpg"
+                                     width="160" height="192" alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Isabel 伊珊贝</span><br>
+                                    <span class="prn_m">18K/钻石 女士 颈饰</span><br>
+                                    <span class="prn_m">280000.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/125618/saleid/123076.html" title="17新款 牛皮 女士 手提包"
+                               target="_blank">
+                                <img src="https://img.meicicdn.com/p/126/125618/h-125618-1.jpg" width="160" height="192"
+                                     alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Chloe 蔻依</span><br>
+                                    <span class="prn_m">17新款 牛皮 女士 手提包</span><br>
+                                    <span class="prn_m">11200.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/121564/saleid/119024.html" title="Serpenti Forever翻盖包"
+                               target="_blank">
+                                <img src="https://img.meicicdn.com/p/122/121564/h-121564-1.jpg" width="160" height="192"
+                                     alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">BVLGARI 宝格丽</span><br>
+                                    <span class="prn_m">Serpenti Forever翻盖包</span><br>
+                                    <span class="prn_m">17790.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/120594/saleid/118056.html" title="牛皮 女士 宝石单肩包"
+                               target="_blank">
+                                <img src="https://img.meicicdn.com/p/121/120594/h-120594-1.jpg" width="160" height="192"
+                                     alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Marni 玛尼</span><br>
+                                    <span class="prn_m">牛皮 女士 宝石单肩包</span><br>
+                                    <span class="prn_m">12110.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/119521/saleid/116983.html" title="合金 女士 手链"
+                               target="_blank">
+                                <img src="https://img.meicicdn.com/p/120/119521/h-119521-1.jpg" width="160" height="192"
+                                     alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Hermes 爱马仕</span><br>
+                                    <span class="prn_m">合金 女士 手链</span><br>
+                                    <span class="prn_m">3220.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/116644/saleid/114106.html" title="仿蛇皮 女士 斜挎包"
+                               target="_blank">
+                                <img src="https://img.meicicdn.com/p/117/116644/h-116644-1.jpg" width="160" height="192"
+                                     alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Chloe 蔻依</span><br>
+                                    <span class="prn_m">仿蛇皮 女士 斜挎包</span><br>
+                                    <span class="prn_m">12620.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="/product/detail/id/113428/saleid/110890.html" title="羊皮 女士 斜挎包"
+                               target="_blank">
+                                <img src="https://img.meicicdn.com/p/114/113428/h-113428-1.jpg" width="160" height="192"
+                                     alt=""/><br/>
+                                <div class="pro_recommend_name">
+                                    <span class="prn_t">Chloe 蔻依</span><br>
+                                    <span class="prn_m">羊皮 女士 斜挎包</span><br>
+                                    <span class="prn_m">11638.00</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="proTab_bg"
+                 style="width: 1200px;left: 50%;margin-left: -600px; background: white;height: 60px;display: none;z-index: 6;"></div>
+            <div class="proTab" style="*background: white;">
+                <div class="proTab_m clearfix">
+                    <ul id="tab" class="float_l">
+                        <li class="current" onclick="_hmt.push(['_trackEvent', '商品详细页', '标签', '商品详情']);">商品详情</li>
+                        <li onclick="_hmt.push(['_trackEvent', '商品详细页', '商品尺寸', '商品详情']);">商品尺寸</li>
+                        <li onclick="_hmt.push(['_trackEvent', '商品详细页', '商品尺寸', '配送及售后']);">配送及售后</li>
+                    </ul>
+
+                    <div class="proTab_btns" style="display:block">
+                        <div class="proTab_btn float_r">
+                            <button id="btn-shopping2" class="btn_add_shopping"
+                                    onclick="member_cart_buyone();_hmt.push(['_trackEvent', '商品详细页', '浮动即刻购买', $('#skuId').val()]);">
+                                即刻购买
+                            </button>
+                            <button id="btn-shopping1" class="btn_buy_now"
+                                    onclick="member_cart_add();_hmt.push(['_trackEvent', '商品详细页', '浮动加入购物袋', $('#skuId').val()]);">
+                                加入购物袋
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pro_main clearfix">
+                <!--商品详情，商品尺码，配送及售后-->
+                <div id="product_con">
+                    <div class="tabCon" style="display:block;">
+                        <div class="tabCon_m">
+                            <div class="pro_pubtit">
+                                <div class="tabTitle">
+                                    <div class="tabTitle_m">Product <span>Information</span></div>
+                                    <p>商品信息</p>
+                                </div>
+                            </div>
+                            <div class="proTableinfo">
+                                <table class="proTable" width="100%">
+                                    <colgroup>
+                                        <col width="70px"/>
+                                        <col width="195px"/>
+                                        <col width="70px"/>
+                                        <col width="195px"/>
+                                        <col width="70px"/>
+                                        <col width="195px"/>
+                                        <col width="70px"/>
+                                        <col width="195px"/>
+                                    </colgroup>
+                                    <tr>
+                                        <th>美西编号</th>
+                                        <td class="product_sku">{{goodslist.get_prodata()['美西编号']}}</td>
+                                        <th>货　　号</th>
+                                        <td>{{goodslist.get_prodata()['货　　号']}}</td>
+                                        <th>产　　地</th>
+                                        <td>{{goodslist.get_prodata()['产　　地']}}</td>
+                                        <th>年　　份</th>
+                                        <td>{{goodslist.get_prodata()['年　　份']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>适用人群</th>
+                                        <td>{{goodslist.get_prodata()['适用人群']}}</td>
+                                        <th>颜　　色</th>
+                                        <td class="product_color">{{goodslist.get_prodata()['颜　　色']}}</td>
+                                        <th>季　　节</th>
+                                        <td>{{goodslist.get_prodata()['季　　节']}}</td>
+                                        <th>系　　列</th>
+                                        <td>{{goodslist.get_prodata()['系　　列']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>材　　质</th>
+                                        <td colspan="7">{{goodslist.get_prodata()['材　　质']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="border:none;" valign="top">
+                                            <div>商品描述</div>
+                                        </th>
+                                        <td colspan="7" style="border:none;" valign="top">
+                                            <div style="width: 100%;word-break:break-all;padding-top: 16px;">
+                                                {{goodslist.get_prodata()['商品描述']}}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tabCon_m">
+                            <div class="pro_pubtit">
+                                <div class="tabTitle">
+                                    <div class="tabTitle_m">Brand <span>Story</span></div>
+                                    <p>品牌故事</p>
+                                </div>
+                            </div>
+                            <div class="brand_story">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <div class="proBrand_l">
+                                                <p>
+                                                    {{goodslist.get_brandstory()}}</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="proBrand_r">
+                                                <div class="proBrand_r_line"></div>
+                                                <img src="{{goodslist.get_brandimg()}}">
+                                                <a class="moreBrandCon" href="/brands/detail/id/8.html" target="_blank"
+                                                   onclick="_hmt.push(['_trackEvent', '商品详细页', '查看更多品牌商品', 'Chloe 蔻依']);">查看更多品牌商品</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tabCon_m">
+                            <div class="pro_pubtit">
+                                <div class="tabTitle">
+                                    <div class="tabTitle_m">Product <span>Details</span></div>
+                                    <p>商品详情</p>
+                                </div>
+                            </div>
+                            <div class="proImg">
+                                <ul class="clearfix">
+                                    {% for img in goodslist.get_proimg() %}
+                                    <li><img
+                                            src="{{img}}"
+                                            width="485"></li>
+                                    {% end %}
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tabCon">
+                        <div class="tabCon_m">
+                            <div class="pro_pubtit">
+                                <div class="tabTitle">
+                                    <div class="tabTitle_m">Distribution</div>
+                                    <p>配送</p>
+                                </div>
+                            </div>
+                            <div class="pro_service">
+                                <div class="ser_t">配送方式：</div>
+                                <p>为了给您提供快捷、可靠的快递服务，我们选择全球最具规模的快递公司-顺丰快递为您配送。若您选择货到付款，需加收2%的手续费，注册并验证后可免手续费。</p>
+                                <p>如遇超出配送范围的地址，您亦可选择网络覆盖范围最广的中国邮政速递物流-EMS。</p>
+                                <p>若您身处上海，也可以到美西的实体展厅前来挑选购买，支持现场刷卡和现金支付。</p>
+                            </div>
+                            <div class="pro_pubtit">
+                                <div class="tabTitle">
+                                    <div class="tabTitle_m">After <span>Service</span></div>
+                                    <p>售后服务</p>
+                                </div>
+                            </div>
+                            <div class="pro_service">
+                                <div class="ser_t">1.退换货政策：</div>
+                                <p>美西秉承“轻松享受奢华”的服务理念，希望您所购买的商品都是最满意的。因此当您在收到商品觉得不满意时，我们会竭诚为您提供退换货服务。</p>
+                                <p>
+                                    （1）商品发货后自签收之日起的七日内，若对商品质量有任何不满意，都可以联系我们要求退换货；由于个人原因不喜欢商品，退货运费由买家承担。一个订单，只提供一次退换货服务。</p>
+                                <p>（2）商品发货后自签收之日起的七日之后，我们将不再提供任何退换货服务。</p>
+                                <p>（3）请保证美西安全封绳的完好无损，退换的商品没有被使用过，并带有所有商品相关配件，包括说明书、身份证卡、防尘袋、包装盒等。</p>
+                                <p>（4）如果商品是一个系列中的一件，退换时需要包括整个系列。</p>
+                                <p>（5）特殊商品（见特别提示）非因质量问题不予退换货 。</p>
+                                <p>（6）参与活动的商品，非因质量问题不予退换货。</p>
+                                <p>（7）商品因人为使用不当导致得损坏及使用中造成的正常磨损：例如商品上的金属制品使用后出现氧化、褪色等情况不予退换货。</p>
+                                <p>（8）退款服务处理周期：正常退货退款处理周期为自接收到商品之日起5-7个工作日（国家法定假日除外）；</p>
+                                <p>若货到付款签收商品后，退货退款处理周期为自接收到商品之日起10-15个工作日。</p>
+                            </div>
+                            <div class="pro_service">
+                                <p>如您有任何问题，欢迎您拨打 4000－250－630 联系我们 。（周一至周五 9：00－21：00 周六至周日 10：00－18：00）</p>
+                                <p>更多退换货信息，<a href="/services/service.html" target="_blank">点击查看</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="pro_meicicafe">-->
+            <!--<div class="all_img">-->
+            <!--<img src="https://static3.meicicdn.com/web/img/pro_cafe.jpg" />-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--猜你喜欢-->
+            <div class="pro_hty">
+                <div class="pro_pubtit">
+                    <div class="tabTitle">
+                        <div class="tabTitle_m">Guess Your Like</div>
+                        <p>猜你喜欢</p>
+                    </div>
+                </div>
+                <div id="GuessLike" class="pro_recommend">
+                    <!--<div class="like_prev"><div class="like_prev_m"></div></div>
+                    <div class="like_next"><div class="like_next_m"></div></div>
+                    <ul class="clearfix">
+                                </ul>-->
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--在线咨询-->
+    <div class="consult">
+        <ul>
+            <li class="consultApp">
+                <a class="consult_app" href="/app" title="美西APP"><em></em></a>
+                <div class="consult_app_m">
+                    <div class="consult_app_sj"></div>
+                    <div class="consult_app_code">
+                        <img src="http://img.meicicdn.com/skin/df/ewm_indexTop_1.png"/>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a class="consult_online" href="javascript:NTKF.im_openInPageChat('kf_9801_1372750844694');"
+                   title="在线咨询" onclick="_hmt.push(['_trackEvent', '商品详细页', '在线咨询', '在线咨询']);"><em></em></a>
+            </li>
+            <li>
+                <a id="BizQQWPA" class="consult_qq" href="javascript:void(0);" title="QQ咨询"
+                   onclick="_hmt.push(['_trackEvent', '商品详细页', '在线咨询', 'QQ咨询']);"><em></em></a>
+            </li>
+            <li>
+                <a class="consult_top" href="javascript:void(0);" onclick="backTop();" title="返回顶部"
+                   style="border:none;"><em></em></a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!--弹出层-->
+    <!--商品详细页主图点击后放大展示效果-->
+    <div class="mask_img" onclick="closeDetailImg();"></div>
+    <div id="viewImg">
+        <div id="BigViewTopr" class="pro_detail_img clearfix">
+            <div class="scroll_mask_3 picFocus pf0">
+                <div class="viewImg_top">
+                    <ul class="clearfix">
+                        <li><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg"
+                                 width="50" height="60"/></li>
+                        <li><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263059940fc6b7c02-800x960.jpg"
+                                 width="50" height="60"/></li>
+                        <li><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263259940fc897094-800x960.jpg"
+                                 width="50" height="60"/></li>
+                        <li><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263459940fca38750-800x960.jpg"
+                                 width="50" height="60"/></li>
+                        <li><img src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263659940fcc24d64-800x960.jpg"
+                                 width="50" height="60"/></li>
+                    </ul>
+                    <div class="close_button" onclick="closeDetailImg();"></div>
+                    <a href="javascript:void(0);" class="prevBtn prevBtn0">previous</a>
+                    <a href="javascript:void(0);" class="nextBtn nextBtn0">nextBtn</a>
+                </div>
+
+                <div class="viewImg_slider">
+                    <div class="viewImg_slider_m">
+                        <ul class="clearfix">
+                            <li><img
+                                    src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17262859940fc40a689-800x960.jpg"/>
+                            </li>
+                            <li><img
+                                    src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263059940fc6b7c02-800x960.jpg"/>
+                            </li>
+                            <li><img
+                                    src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263259940fc897094-800x960.jpg"/>
+                            </li>
+                            <li><img
+                                    src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263459940fca38750-800x960.jpg"/>
+                            </li>
+                            <li><img
+                                    src="http://img3.meicicdn.com/u/LvProduct/pic/20170816/17263659940fcc24d64-800x960.jpg"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--注册登录框-->
+    <div id="bc01" class="ac_box ac_small">
+        <div class="ac_box_tit">
+            <span>用户登录</span>
+            <div class="close_btn">╳</div>
+        </div>
+        <div class="ac_content poplogin" id="login_form" class="login_form">
+            <form class="form-horizontal" role="form" method="post">
+                <div class="member_m">
+                    <div class="member_li clearfix">
+                        <div class="memberico01 float_l"></div>
+                        <div class="memberint float_l">
+                            <input name="account" class="form-control" type="text" placeholder="请输入手机号或邮箱"
+                                   onblur="member_index.checkaccount()" validate-title="帐号"/>
+                        </div>
+                    </div>
+                    <div class="member_li clearfix">
+                        <div class="memberico02 float_l"></div>
+                        <div class="memberint float_l">
+                            <input name="password" class="form-control" type="password" placeholder="请输入密码"
+                                   onblur="member_index.checkpassword()" validate-title="密码"/>
+                        </div>
+                    </div>
+                    <div class="m_opt clearfix">
+                        <span class="float_l"><label for="login_auto"><input id="login_auto" checked="checked"
+                                                                             type="checkbox"><span>自动登录</span></label></span>
+                        <a class="float_r" href="/member/index/forgetPassword.html" target="_blank">忘记密码？</a>
+                    </div>
+                    <div class="men_err_msg">
+                    </div>
+                    <div class="member_form_btn">
+                        <button type="button" onclick="submitLogin();">登录</button>
+                    </div>
+                    <div class="m_t"><a class="acclink" href="/member/index/register.html">立即注册</a></div>
+                    <div class="jointLogonBox">
+                        <div class="jointLogonBox_tit relative">
+                            <div class="jlb_mid_line absolute"></div>
+                            <p class="jlb_theme relative">其他登录方式</p>
+                        </div>
+                        <div class="jointLogonBox_ico">
+                            <ul class="clearfix">
+                                <!--<li><a class="jlb_qq" href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101413073&redirect_uri=http://www.meici.com/member/callback/qq?forward_url=/product/detail/id/305865/saleid/159207.html?from=special_643&state=72a55d57de9a77aa4322967eb3117bb7&scope=get_user_info" title="QQ登录"></a></li>-->
+                                <li><a class="jlb_wechat"
+                                       href="https://open.weixin.qq.com/connect/qrconnect?appid=wx19c92f11d7f5132a&redirect_uri=http%3A%2F%2Fwww.meici.com%2Fmember%2Fcallback%2Fweixin%3Fforward_url%3D%2Fproduct%2Fdetail%2Fid%2F305865%2Fsaleid%2F159207.html%3Ffrom%3Dspecial_643&response_type=code&scope=snsapi_login&state=#wechat_redirect"
+                                       title="微信登录" target="_blank"></a></li>
+                                <li><a class="jlb_sina"
+                                       href="https://api.weibo.com/oauth2/authorize?client_id=4014181329&redirect_uri=http%3A%2F%2Fwww.meici.com%2Fmember%2Fcallback%2Fsina%3Fforward_url%3D%2Fproduct%2Fdetail%2Fid%2F305865%2Fsaleid%2F159207.html%3Ffrom%3Dspecial_643&response_type=code"
+                                       title="新浪微博登录"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <style type="text/css">
+    .size_box_item { background: #ffe8e8 none repeat scroll 0 0;border: 1px solid #db9a9a;margin-top: -1px; padding-left:2px; padding-bottom:8px;}
+
+    </style>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/jquery.jqzoom-core.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/lib/cookie.js"></script>
+    <script type="text/javascript">
+    function submitLogin() {
+        member_index.loginwinSubmit($('#login_form'),function () {
+//            window.setTimeout(function() { member_cart_buyone(); },500);
+            location.reload();
+        });
+    }
+
+    //异步加载数据
+    function getAsyncData(spu,sku) {
+        $.post(app + '/sale/detail/getProDetail', {id:sku,saleid:spu}, function (ret) {
+            ret = $.isPlainObject(ret)?ret:$.parseJSON(ret);
+            if(!ret) {
+                showMsg('showMsg','温馨提示','网络延迟，请重试');
+                return false;
+            }else if(!ret.status){
+                showMsg('showMsg','温馨提示',ret.msg);
+                return false;
+            }else{
+                product = ret.data;
+            }
+        })
+    }
+
+
+    $(function(){
+        //获取参数存入cookie
+        Setcookie();
+        //meta 和标题加上商品名称
+        var obj = $('meta[name="Keywords"]');
+        var product_name = "Chloe"+" "+"蔻依"+" "+"牛皮 女士 单肩包"+" ";
+        obj.attr("content",product_name+obj.attr("content"));
+        //$("title").html(product_name+$("title").html());
+        document.title = product_name+$("title").html();
+
+        //相关推荐
+        $("#Product_Recommend").jCarouselLite({
+            visible: 4,
+            btnNext: ".cart_next",
+            btnPrev: ".cart_prev",
+            auto: null,
+            speed: 800,
+            scroll: 4,
+            start: 0
+        });
+
+        $(function () {
+            $.postH(app + '/sale/detail/guesslike',{},function (str) {
+                $('#GuessLike').html(str);
+                //猜你喜欢
+                window.setTimeout(function () {
+                    $("#GuessLike").jCarouselLite({
+                        visible: 4,
+                        btnNext: ".like_next",
+                        btnPrev: ".like_prev",
+                        auto: null,
+                        speed: 800,
+                        scroll: 4,
+                        start: 0
+                    });
+                },200);
+            });
+        });
+        //getAsyncData("159207","305865");
+
+        //non cur colorcur
+        /*绑定点击颜色  */
+        $('.pro_color ul li').on('click',function(){
+            $(this).addClass('colorcur').siblings('li').removeClass('colorcur');
+            co_id = $(this).attr('color-id');
+            //sizes = (product['colorSize']['color']==undefined) ? '' : product['colorSize']['color'][co_id].split(",");
+            try {var sizes = (product['colorSize']['color']==undefined) ? '' : product['colorSize']['color'][co_id].split(",");}catch(ex) {}
+            $('.pro_size ul>li').each(function(){
+                $(this).addClass('non').removeClass('cur');
+                var size = $(this).attr('size-id');
+                if($.inArray(size,sizes) != -1 ){
+                    $(this).removeClass("non").css('cursor','pointer');
+                    if(sz_id == size) $(this).addClass('cur');
+                }
+            });
+            if($(".pro_size ul").find('.cur').length==0) sz_id=0;
+            setproductinfo(co_id,sz_id);
+        });
+
+        /*绑定点击尺寸*/
+        $('.pro_size ul li').on('click',function(){
+            if(!$(this).hasClass('non')){
+                $(this).addClass('cur').siblings('li').removeClass('cur');
+                sz_id= $(this).attr('size-id');
+                setproductinfo(co_id,sz_id);
+            }
+        });
+
+        function setproductinfo(co_id,sz_id){
+            //定位SKU设置价格
+            if( sz_id == ''){
+                sku = product['colorSize']['sku'][co_id];
+            }else{
+                sku = product['colorSize']['sku'][co_id+'_'+sz_id] ;
+            }
+            getAsyncData("159207",sku);
+
+            //判断库存是否售罄
+            if(product['spu']['skus'][sku]['quantity']<=0 || product['spu']['skus'][sku]['quantity_cache']<=0 || product['spu']['skus'][sku]['status']!=1){
+                $("#addbutton").hide().next().show();
+                $(".proTab .proTab_m .proTab_btns").hide();
+            }else{
+                $("#addbutton").show().next().hide();
+                $(".proTab .proTab_m .proTab_btns").show();
+            }
+            //商品加入购物车
+            $('#skuId ').val(sku);
+            window._bd_share_config.bdPic = product['spu']['skus'][sku]['img']['0'];
+            //商品价格
+            var str = '';
+            if(!product['spu']['skus'][sku]['pre_price']){
+                str = '<div class="now_price">' +
+//                    '<i class="c_gray_2" style="display:inline-block; width:55px;">美西价</i>' +
+                    '<span>￥<em>'+parseFloat(product['spu']['skus'][sku]['price']).toFixed(2)+'</em></span></div>';
+            }else{
+                if(product['spu']['skus'][sku]['act_price']>0){
+                    if(product['spu']['skus'][sku]['is_club_price']==0){
+                        str = '<div class="clubprice"><div class="now_price" style="float:none;">' +
+//                            '<i class="c_gray_2" style="display:inline-block; width:55px;">美西价</i>' +
+                            '<span style="color:#c53f3e;">￥<em>'+parseFloat(product['spu']['skus'][sku]['price']).toFixed(2)+'</em></span></div><div class="now_price" style="float:none; margin-top:10px;">' +
+//                            '<i class="c_gray_2" style="display:inline-block; width:55px;">会员价</i>' +
+                            '<span>￥<em style="font-weight:normal; margin-right:20px;">'+parseFloat(product['spu']['skus'][sku]['act_price']).toFixed(2)+'</em></span><i class="c_gray_2">成为美西Club会员即可享受会员价</i></div></div>';
+                    }else{
+                        str = '<div class="now_price">' +
+//                            '<i class="c_gray_2" style="display:inline-block; min-width:50px;margin-right: 5px;">'+product['spu']['skus'][sku]['pre_price']+'</i>' +
+                            '<span>￥<em>'+parseFloat(product['spu']['skus'][sku]['act_price']).toFixed(2)+'</em></span></div><div class="del_price" style="margin-left:18px;">' +
+//                            '<i class="c_gray_2" style="display:inline-block; width:55px;">美西价</i>' +
+                            '<span>￥'+parseFloat(product['spu']['skus'][sku]['price']).toFixed(2)+'</span></div>';
+                    }
+                }else{
+                    str = '<div class="now_price">' +
+//                        '<i class="c_gray_2" style="display:inline-block; min-width:50px;margin-right: 5px;">'+product['spu']['skus'][sku]['pre_price']+'</i>' +
+                        '<span>￥<em>'+parseFloat(product['spu']['skus'][sku]['price']).toFixed(2)+'</em></span></div>';
+                }
+            }
+            $(".position_rel .pro_r_price ").html(str); //价格
+
+            //商品属性
+            $('.proTableinfo .product_sku').html(sku);
+            $('.proTableinfo .product_color').html(product['colors'][co_id]['value']);
+
+            //是否已收藏
+            if(product['spu']['skus'][sku]['isFav']){
+                $(".pro_collect a").removeClass('pro_collect_y').addClass('pro_collect_n');
+            }else{
+                $(".pro_collect a").addClass('pro_collect_y').removeClass('pro_collect_n');
+            }
+
+            //商品图片
+            $(".pcsMain .pcsMain_img img").attr('src',product['spu']['skus'][sku]['img']['0']); //弹框图片
+            var str1 = str2 = str3 = str4 = img_url ='';
+            for(var k in product['spu']['skus'][sku]['img']){
+                img_url = product['spu']['skus'][sku]['img'][k];
+                str1 += '<li class="list_edit"><a class="'+((k==0)?'zoomThumbActive':'')+'" picnum="' + parseInt(parseInt(k) + 1) + '" href="javascript:void(0);" rel="{gallery:'+"'gal1',smallimage:'"+img_url+"', largeimage:'"+img_url+"'}"+'"><img src="'+img_url+'" onerror="javascript:this.src=\'/static/img/list_load.gif\';" alt=""  width="50" height="60"/></a></li>';
+                str2 += '<li><img src="'+img_url+'" width="50" height="60" /></li>';
+                str3 += '<li><img src="'+img_url+'" /></li>';
+                str4 += '<li><img src="'+img_url+'" width="485"/></li>';
+            }
+            $("#mycarousel1").html(str1);
+            $('.pro_detail_img .viewImg_top ul').html(str2);
+            $('.pro_detail_img .viewImg_slider_m').empty().append("<ul class='clearfix'></ul>");
+            $('.pro_detail_img .viewImg_slider_m ul').html(str3);
+            $('.proImg ul').html(str4);
+
+            var str5 = product['spu']['skus'][sku]['img'][0];
+            var o=new Image();
+            o.src=str5;
+            $(".pro_l .pro_img").html('<a class="jqzoom" href="javascript:void(0);" name="'+str5+'" rel="gal1"><img src="'+str5+'"  onerror="javascript:this.src=\'/static/img/list_load.gif\';" alt="" height="460" /></a>');
+            o.onerror=function(){
+                str5 = '/static/img/list_load.gif';
+                $(".pro_l .pro_img").html('<a class="jqzoom" href="javascript:void(0);" name="'+str5+'" rel="gal1"><img src="'+str5+'"  onerror="javascript:this.src=\'/static/img/list_load.gif\';" alt="" height="460" /></a>');
+            };
+            //config = { showNum : product['spu']['skus'][sku]['img'].length}; //设置图片个数
+            //picShow(config, 'mycarousel1'); //小图移动变化
+            $(".picFocus").removeClass("pf"+pfnum);
+            $(".prevBtn").removeClass("prevBtn"+pfnum);
+            $(".nextBtn").removeClass("nextBtn"+pfnum);
+            pfnum++;
+            $(".picFocus").addClass("pf"+pfnum);
+            $(".prevBtn").addClass("prevBtn"+pfnum);
+            $(".nextBtn").addClass("nextBtn"+pfnum);
+            picFocusNum = 0;
+//            history.pushState({}, 0,changeURLArg(sku)); //不刷新页面修改url地址
+            History.pushState({}, 0, changeURLArg(sku)); //兼容IE9以下
+        }
+
+        //触发点击选中颜色事件
+
+        $('.pro_color ul .colorcur').trigger("click");
+
+
+        //关闭收藏
+        //$(".close_collect_box").click(function(){ $(".collect_box").hide(); });//关闭收藏*/
+    });
+
+
+    /*
+     * url 目标url
+     * arg 需要替换的参数名称
+     * arg_val 替换后的参数的值
+     * return url 参数替换后的url
+     */
+    function changeURLArg(sku){
+        // 组装请求的url
+        var url = '';
+        for ( var k in get_parment ){
+            if(k=='id'){
+                url += "/"+k+'/'+sku;
+            }else{
+                url += "/"+k+'/'+get_parment[k];
+            }
+        }
+        return "/product/detail"+url+'.html';
+    }
+
+    //加入收藏
+    function addcollect(obj){
+        if($(obj).hasClass('pro_collect_y')){
+            var sku =$('#skuId').val();
+            if(sku==''){showMsg('showMsg','温馨提示','请选择颜色与尺码进行商品收藏！'); return false; }
+            $.post('/sale/detail/addfavorite',{'sku':sku},function(r) {
+                    r = $.isPlainObject(r)?r:$.parseJSON(r);
+                    if(r.status){
+                        product['spu']['skus'][sku]['isFav'] = parseInt(1);
+                        product['spu']['skus'][sku]['favNum'] += parseInt(1);
+                        $(obj).removeClass('pro_collect_y').addClass('pro_collect_n');
+                        getAsyncData("159207",sku);
+                    }else if(r.status==0){
+                        showMsg('showMsg','温馨提示',r.msg);
+                    }else if(r==0){
+                        boxShow("bc01");
+                    }else if (r == -1){
+                        location.href="/Member/Index/bind?dobind=1&forward_url=" + location.href;
+                    }
+
+
+            });
+        }
+    }
+
+
+    //商品大图展示效果
+    window.onload = function () {
+
+        $(".jqzoom").jqzoom({ zoomType: 'standard', lens:true, zoomWidth:388, zoomHeight:460, xOffset:65, preloadImages:false, preloadText: '图片加载中',yOffset:0});
+
+    }
+
+
+    </script>
+    <script type="text/javascript" src="https://static3.meicicdn.com/web/js/modules/Sale/Detail.js"></script>
+
+    <!--百度分享-->
+    <script>
+    var share_url = location.href;
+    if(share_url.indexOf("'")){
+        share_url = share_url.replace("'","&apos;")
+    }
+    var locationUrl = share_url+"?utm_source=MeiciShare&utm_medium=ProductDetail&utm_campaign=Share";
+    if(share_url.indexOf('utm_source=') >= 0 ){		//如果已有来源
+        locationUrl = share_url;
+    }
+    window._bd_share_config={
+        "common":{"bdSnsKey":{},
+            "bdText":"我刚发现,【Chloe 蔻依 牛皮 女士 单肩包】。很喜欢好想要！",
+            "bdUrl":locationUrl,
+            "bdMini":"2",
+            "bdMiniList":false,
+            "bdPic": product['spu']['skus'][sku]['img']['0'],
+            "bdStyle":"0",
+            "bdSize":"16"},
+        "share":{}
+    };
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
+    </script>
+    <style type="text/css">
+    .bdshare-button-style0-16 a, .bdshare-button-style0-16 .bds_more {background:url(https://static3.meicicdn.com/web/img/shareico.gif) no-repeat; height:25px; float:none; padding:0;}
+
+    </style>
+
+    <!--Criteo  Product page tag 商品详细页 #Jungle---->
+    <!--
+    <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+    <script type="text/javascript">
+        window.criteo_q = window.criteo_q || [];
+        window.criteo_q.push(
+            { event: "setAccount", account: 19582 },
+            { event: "setSiteType", type: "d" },
+        { event: "viewItem", item: "305865" }
+        );
+
+    </script>-->
+
+</div>
+{% end %}
+
+
+</body>
+</html>
+
+
